@@ -1,0 +1,1 @@
+SELECT COUNT(distinct(g.goods_id)) FROM `diyache`.`ecs_goods` AS g,`diyache`.`ecs_supplier_goods_cat` as sgc WHERE sgc.goods_id=g.goods_id AND is_delete='1' AND sgc.supplier_id='1' 
