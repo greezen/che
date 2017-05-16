@@ -100,9 +100,9 @@ switch ($act)
         if (empty($phone) || !$user->check_mobile_phone($phone)){
 
         } else {
-            
+
         }
-        $results = array('result' => 'false', 'data' => array());
+
         $sql = "SELECT `shipping_id`, `shipping_name`, `insure` FROM " . $ecs->table('shipping');
         $result = $db->getAll($sql);
         if (!empty($result))
