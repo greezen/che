@@ -33,30 +33,48 @@ switch ($act)
 {
     case 'register':
     {
-        $shop_id = isset($data['shop_id'])? intval($data['shop_id']):0;
-        $record_number = isset($data['record_number'])? intval($data['record_number']):20;
-        $page_number = isset($data['page_number'])? intval($data['page_number']):0;
-        $limit = ' LIMIT ' . ($record_number * $page_number) . ', ' . ($record_number+1);
-        $sql = "SELECT `goods_id`, `goods_name`, `goods_number`, `shop_price`, `keywords`, `goods_brief`, `goods_thumb`, `goods_img`, `last_update` FROM " . $ecs->table('goods') . " WHERE `is_delete`='0' ORDER BY `goods_id` ASC $limit ";
-        $results = array('result' => 'false', 'next' => 'false', 'data' => array());
-        $query = $db->query($sql);
-        $record_count = 0;
-        while ($goods = $db->fetch_array($query))
+        require_once (ROOT_PATH . 'includes/lib_validate_record.php');
+
+        $phone = ! empty($_POST['phone']) ? trim($_POST['phone']) : '';
+        $code = ! empty($_POST['code']) ? trim($_POST['code']) : '';
+
+        $record = get_validate_record($mobile_phone);
+
+        $session_phone = $_SESSION[VT_MOBILE_REGISTER];
+
+        /* 手机验证码检查 */
+        if(empty($code))
         {
-            $goods['goods_thumb'] = (!empty($goods['goods_thumb']))? 'http://' . $_SERVER['SERVER_NAME'] . '/' . $goods['goods_thumb']:'';
-            $goods['goods_img'] = (!empty($goods['goods_img']))? 'http://' . $_SERVER['SERVER_NAME'] . '/' . $goods['goods_img']:'';
-            $results['data'][] = $goods;
-            $record_count++;
+            helper::json('false', '验证码不正确');
         }
-        if ($record_count > 0)
+        // 检查发送短信验证码的手机号码和提交的手机号码是否匹配
+        else if($session_mobile_phone != $mobile_phone)
         {
-            $results['result'] = 'true';
+            make_json_error($_LANG['mobile_phone_changed']);
         }
-        if ($record_count > $record_number)
+        // 检查验证码是否正确
+        else if($record['record_code'] != $mobile_code)
         {
-            array_pop($results['data']);
-            $results['next'] = 'true';
+            make_json_error($_LANG['invalid_mobile_phone_code']);
         }
+        // 检查过期时间
+        else if($record['expired_time'] < time())
+        {
+            make_json_error($_LANG['invalid_mobile_phone_code']);
+        }
+
+        /* 手机注册时，用户名默认为u+手机号 */
+        $username = generate_username_by_mobile($mobile_phone);
+
+        /* 手机注册 */
+        $result = register_by_mobile($username, $password, $mobile_phone, $other);
+
+        if($result)
+        {
+            /* 删除注册的验证记录 */
+            remove_validate_record($mobile_phone);
+        }
+
         exit($json->encode($results));
         break;
     }
@@ -97,20 +115,27 @@ switch ($act)
     {
         $phone = empty($_POST['phone'])?null:$_POST['phone'];
 
-        if (empty($phone) || !$user->check_mobile_phone($phone)){
-
+        $results = array('result' => 'false', 'msg' => '', 'data' => array());
+        if (empty($phone) || $user->check_mobile_phone($phone)){
+            $results['msg'] = '手机号不可以注册';
         } else {
-
-        }
-
-        $sql = "SELECT `shipping_id`, `shipping_name`, `insure` FROM " . $ecs->table('shipping');
-        $result = $db->getAll($sql);
-        if (!empty($result))
-        {
             $results['result'] = 'true';
-            $results['data'] = $result;
+            $results['msg'] = '手机号可以注册';
         }
+
         exit($json->encode($results));
+        break;
+    }
+    case 'code':
+    {
+        $phone = empty($_POST['phone'])?null:$_POST['phone'];
+
+        if (empty($phone)){
+            helper::json('false', '手机不能为空');
+        } else {
+        }
+
+        helper::json('true', '发送成功');
         break;
     }
     default:
