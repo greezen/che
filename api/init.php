@@ -75,8 +75,10 @@ require(ROOT_PATH . 'includes/inc_constant.php');
 require(ROOT_PATH . 'includes/cls_ecshop.php');
 require(ROOT_PATH . 'includes/lib_base.php');
 require(ROOT_PATH . 'includes/lib_common.php');
+require(ROOT_PATH . 'includes/lib_main.php');
 require(ROOT_PATH . 'includes/lib_time.php');
 require(ROOT_PATH . 'api/include/helper.php');
+require(ROOT_PATH . 'includes/cls_error.php');
 
 /* 对用户传入的变量进行转义操作。*/
 if (!get_magic_quotes_gpc())
@@ -110,6 +112,9 @@ $sess       = new cls_session($db, $ecs->table('sessions'), $ecs->table('session
 
 /* 载入系统参数 */
 $_CFG = load_config();
+
+/* 创建错误处理对象 */
+$err = new ecs_error('message.dwt');
 
 /* 初始化用户插件 */
 $user =& init_users();

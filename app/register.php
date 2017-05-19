@@ -165,7 +165,7 @@ function action_send_mobile_code ()
 	{
 		make_json_error("手机号格式不正确");
 	}
-	else if($user->check_mobile_phone($mobile))
+	else if($user->check_mobile_phone($mobile_phone))
 	{
 		make_json_error("手机号已经被注册");
 	}

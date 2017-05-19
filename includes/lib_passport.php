@@ -102,7 +102,7 @@ function _register ($username, $password, $email_or_mobile, $other = array(), $r
 		{
 			if(! is_mobile_phone($mobile))
 			{
-				$GLOBALS['err']->add(sprintf($GLOBALS['_LANG']['mobile_phone_invalid'], htmlspecialchars($email)));
+				$GLOBALS['err']->add(sprintf($GLOBALS['_LANG']['mobile_phone_invalid'], htmlspecialchars($mobile)));
 			}
 		}
 	}
