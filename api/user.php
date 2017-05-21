@@ -81,7 +81,29 @@ function action_default()
  * 登录
  */
 function action_login()
-{}
+{
+    $phone = empty($_POST['phone'])?null:trim($_POST['phone']);
+    $password = empty($_POST['password'])?null:trim($_POST['password']);
+
+    if (empty($phone) || empty($password) || !is_mobile_phone($phone)) {
+        helper::json('false', '账号或密码不正确');
+    }
+
+    $sql = "SELECT user_id, password, salt, ec_salt " . " FROM " . $GLOBALS['ecs']->table('users') . " WHERE mobile_phone='".$phone."'";
+    $row = $GLOBALS['db']->getRow($sql);
+    $ec_salt = $row['ec_salt'];
+    $pwd = $GLOBALS['user']->compile_password(array('password' => $password, 'ec_salt' => $ec_salt));
+
+    if(empty($row) || $row['password'] !== $pwd) {
+        helper::json('false', '账号或密码不正确');
+    }
+
+    $data = array(
+        'access_token' => helper::gen_access_token($row['user_id'], 5)
+    );
+
+    helper::json('true', '登录成功', $data);
+}
 
 /**
  * 发送验证码
@@ -161,62 +183,4 @@ function generate_username_by_mobile ($mobile)
     return $username;
 }
 
-/**
- * 解密函数
- *
- * @param string $txt
- * @param string $key
- * @return string
- */
-function passport_decrypt($txt, $key)
-{
-    $txt = passport_key(base64_decode($txt), $key);
-    $tmp = '';
-    for ($i = 0;$i < strlen($txt); $i++) {
-        $md5 = $txt[$i];
-        $tmp .= $txt[++$i] ^ $md5;
-    }
-    return $tmp;
-}
-
-/**
- * 加密函数
- *
- * @param string $txt
- * @param string $key
- * @return string
- */
-function passport_encrypt($txt, $key)
-{
-    srand((double)microtime() * 1000000);
-    $encrypt_key = md5(rand(0, 32000));
-    $ctr = 0;
-    $tmp = '';
-    for($i = 0; $i < strlen($txt); $i++ )
-    {
-        $ctr = $ctr == strlen($encrypt_key) ? 0 : $ctr;
-        $tmp .= $encrypt_key[$ctr].($txt[$i] ^ $encrypt_key[$ctr++]);
-    }
-    return base64_encode(passport_key($tmp, $key));
-}
-
-/**
- * 编码函数
- *
- * @param string $txt
- * @param string $key
- * @return string
- */
-function passport_key($txt, $encrypt_key)
-{
-    $encrypt_key = md5($encrypt_key);
-    $ctr = 0;
-    $tmp = '';
-    for($i = 0; $i < strlen($txt); $i++)
-    {
-        $ctr = $ctr == strlen($encrypt_key) ? 0 : $ctr;
-        $tmp .= $txt[$i] ^ $encrypt_key[$ctr++];
-    }
-    return $tmp;
-}
 ?>

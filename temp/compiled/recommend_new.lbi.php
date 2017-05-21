@@ -1,21 +1,21 @@
 <?php if ($this->_var['new_goods']): ?>
 <div class="tabs-panel sale-goods-list">
   <ul>
-    <?php $_from = $this->_var['new_goods']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'goods_0_38632600_1494434390');$this->_foreach['index_goods'] = array('total' => count($_from), 'iteration' => 0);
+    <?php $_from = $this->_var['new_goods']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'goods_0_35269100_1495366446');$this->_foreach['index_goods'] = array('total' => count($_from), 'iteration' => 0);
 if ($this->_foreach['index_goods']['total'] > 0):
-    foreach ($_from AS $this->_var['goods_0_38632600_1494434390']):
+    foreach ($_from AS $this->_var['goods_0_35269100_1495366446']):
         $this->_foreach['index_goods']['iteration']++;
 ?> 
     <?php if ($this->_foreach['index_goods']['iteration'] < 6): ?>
     <li>
       <dl>
-        <dt class="goods-name"> <a target="_blank" href="<?php echo $this->_var['goods_0_38632600_1494434390']['url']; ?>" title="<?php echo htmlspecialchars($this->_var['goods_0_38632600_1494434390']['name']); ?>"><?php echo $this->_var['goods_0_38632600_1494434390']['short_name']; ?></a> </dt>
-        <dd class="goods-thumb"> <a target="_blank" href="<?php echo $this->_var['goods_0_38632600_1494434390']['url']; ?>" title="<?php echo htmlspecialchars($this->_var['goods_0_38632600_1494434390']['name']); ?>"> <img data-original="<?php echo $this->_var['goods_0_38632600_1494434390']['thumb']; ?>" src="themes/68ecshopcom_360buy/images/loading.gif" alt="<?php echo htmlspecialchars($this->_var['goods_0_38632600_1494434390']['name']); ?>"> </a> </dd>
+        <dt class="goods-name"> <a target="_blank" href="<?php echo $this->_var['goods_0_35269100_1495366446']['url']; ?>" title="<?php echo htmlspecialchars($this->_var['goods_0_35269100_1495366446']['name']); ?>"><?php echo $this->_var['goods_0_35269100_1495366446']['short_name']; ?></a> </dt>
+        <dd class="goods-thumb"> <a target="_blank" href="<?php echo $this->_var['goods_0_35269100_1495366446']['url']; ?>" title="<?php echo htmlspecialchars($this->_var['goods_0_35269100_1495366446']['name']); ?>"> <img data-original="<?php echo $this->_var['goods_0_35269100_1495366446']['thumb']; ?>" src="themes/68ecshopcom_360buy/images/loading.gif" alt="<?php echo htmlspecialchars($this->_var['goods_0_35269100_1495366446']['name']); ?>"> </a> </dd>
         <dd class="goods-price"> 商城价： <em> 
-          <?php if ($this->_var['goods_0_38632600_1494434390']['promote_price'] != ""): ?> 
-          <?php echo $this->_var['goods_0_38632600_1494434390']['promote_price']; ?> 
+          <?php if ($this->_var['goods_0_35269100_1495366446']['promote_price'] != ""): ?> 
+          <?php echo $this->_var['goods_0_35269100_1495366446']['promote_price']; ?> 
           <?php else: ?> 
-          <?php echo $this->_var['goods_0_38632600_1494434390']['shop_price']; ?> 
+          <?php echo $this->_var['goods_0_35269100_1495366446']['shop_price']; ?> 
           <?php endif; ?> 
           </em> </dd>
       </dl>
