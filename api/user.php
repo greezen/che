@@ -119,6 +119,8 @@ function action_code()
         $code = mt_rand(100000, 999999);
         //TODO:发短信
         $res = true;
+        $content = '您的验证码为 ' . $code . ' 客服不会索取此验证码，请注意保管。';
+        helper::send_sms($phone, $content);
 
         if ($res) {
             save_validate_record($phone, $code, VT_MOBILE_REGISTER, time(), time() + 600);

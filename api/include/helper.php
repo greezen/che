@@ -39,4 +39,21 @@ class helper
 
         return $token;
     }
+
+    public static function send_sms($phone, $content, $sgin = '允升网络传媒', $stime = '')
+    {
+        require(ROOT_PATH . 'includes/lib_sms.php');
+        $url = 'http://210.5.152.195:1860/asmx/smsservice.aspx';
+        $data = array(
+            'type' => 'pt',
+            'name' => 'cpsyswlcm',
+            'pwd' => '9BE5342D1E106A1C355744BB8A4C',
+            'content' => $content,
+            'mobile' => $phone,
+            'sign' => $sgin,
+            'stime' => $stime,
+        );
+        $res = dopost($url, $data);
+        var_dump($res);exit;
+    }
 }
