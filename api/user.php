@@ -99,10 +99,54 @@ function action_login()
     }
 
     $data = array(
-        'access_token' => helper::gen_access_token($row['user_id'], 5)
+        'access_token' => helper::gen_access_token($row['user_id'], 86400 * 7)
     );
 
     helper::json('true', '登录成功', $data);
+}
+
+/**
+ * 修改密码
+ */
+function action_chpwd()
+{
+    $access_token = helper::post('access_token');
+    $old_pwd = helper::post('old_pwd');
+    $new_pwd = helper::post('new_pwd');
+    $phone = helper::post('phone');
+    $access_data = helper::get_cache($access_token);
+
+    if (empty($access_data)) {
+        helper::json('false', '登录超时，请重新登录');
+    } elseif (empty($old_pwd)) {
+        helper::json('false', '原密码不正确');
+    } elseif (empty($new_pwd) || mb_strlen($new_pwd) < 6) {
+        helper::json('false', '新密码必须大于6位');
+    } elseif (!empty($phone) && !is_mobile_phone($phone)) {
+        helper::json('false', '手机号不正确');
+    }
+
+    $uid = $access_data['uid'];
+    $db = $GLOBALS['db'];
+    $user = $GLOBALS['user'];
+
+    $sql = "SELECT user_id, password, salt, ec_salt " . " FROM " . $GLOBALS['ecs']->table('users') . " WHERE user_id='".$uid."'";
+    $row = $db->getRow($sql);
+    $pwd = $user->compile_password(array('password' => $old_pwd, 'ec_salt' => $row['ec_salt']));
+
+    if ($pwd != $row['password']) {
+        helper::json('false', '原密码不正确');
+    }
+
+    $salt = helper::rand_str(8);
+    $new_password = $user->compile_password(array('password' => $new_pwd, 'ec_salt' => $salt));
+
+    $sql = "UPDATE " . $GLOBALS['ecs']->table('users') . " SET `password` = '{$new_password}',`ec_salt` = '{$salt}' WHERE user_id = ".$uid;
+    if ($db->query($sql)) {
+        helper::json('true', '密码修改成功');
+    }
+
+    helper::json('false', '密码修改失败');
 }
 
 /**
@@ -118,11 +162,9 @@ function action_code()
     } else {
         $code = mt_rand(100000, 999999);
         //TODO:发短信
-        $res = true;
         $content = '您的验证码为 ' . $code . ' 客服不会索取此验证码，请注意保管。';
-        helper::send_sms($phone, $content);
 
-        if ($res) {
+        if (helper::send_sms($phone, $content)) {
             save_validate_record($phone, $code, VT_MOBILE_REGISTER, time(), time() + 600);
             helper::json('true', '发送成功');
         }
