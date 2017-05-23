@@ -113,7 +113,6 @@ function action_chpwd()
     $access_token = helper::post('access_token');
     $old_pwd = helper::post('old_pwd');
     $new_pwd = helper::post('new_pwd');
-    $phone = helper::post('phone');
     $access_data = helper::get_cache($access_token);
 
     if (empty($access_data)) {
@@ -122,8 +121,6 @@ function action_chpwd()
         helper::json('false', '原密码不正确');
     } elseif (empty($new_pwd) || mb_strlen($new_pwd) < 6) {
         helper::json('false', '新密码必须大于6位');
-    } elseif (!empty($phone) && !is_mobile_phone($phone)) {
-        helper::json('false', '手机号不正确');
     }
 
     $uid = $access_data['uid'];
@@ -147,6 +144,23 @@ function action_chpwd()
     }
 
     helper::json('false', '密码修改失败');
+}
+
+/**
+ * 获取个人信息
+ */
+function action_get_profile()
+{
+}
+
+/**
+ * 设置个人信息
+ */
+function action_set_profile()
+{
+    $usre_name = helper::post('user_name');
+    $qq = helper::post('qq');
+    $address = helper::post('address');
 }
 
 /**

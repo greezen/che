@@ -146,6 +146,11 @@ class helper
      */
     public static function post($key = null, $default = null, $fun = 'trim')
     {
+        if ($key == 'ALL') {
+            foreach ($_POST as &$field) {
+                $field = $fun($field);
+            }
+        }
         if (!empty($key) && isset($_POST[$key])) {
             return $fun($_POST[$key]);
         }
