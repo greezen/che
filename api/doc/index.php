@@ -1,16 +1,8 @@
 <?php
-/**
- * Short description for index.php
- *
- * @package index
- * @author 吴振宁 EN(daling ng) <13416001387@163.com>
- * @version 0.1
- * @copyright (C) 2016 吴振宁 EN(daling ng) <13416001387@163.com>
- * @license MIT
- */
 
 $host = $_SERVER['HTTP_HOST'];
-if (!in_array($host, ['che.dev'])) {
+
+if (!in_array($host, ['che.dev', 'diyache.adipower.net:81'])) {
     header('Location: http://diyache.adipower.net:81/api/doc/');
 }
 
