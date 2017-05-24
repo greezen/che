@@ -160,7 +160,6 @@ function action_set_profile()
 {
     $usre_name = helper::post('user_name');
     $qq = helper::post('qq');
-    $address = helper::post('address');
 }
 
 /**
