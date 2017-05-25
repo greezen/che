@@ -104,7 +104,7 @@ return array(
     ),
     array(
         'id' => 'v1-0_login',
-        'title' => '手机号可用性检查',
+        'title' => '登录',
         'api' => '/api/user.php?act=login',
         'method' => 'POST',
         'param' =>

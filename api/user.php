@@ -151,6 +151,29 @@ function action_chpwd()
  */
 function action_get_profile()
 {
+    $access_token = helper::post('access_token');
+    $access_data = helper::get_cache($access_token);
+
+    if (empty($access_token) || empty($access_data)) {
+        helper::json('false', 'access_token错误');
+    }
+
+    $db = $GLOBALS['db'];
+    $sql = "SELECT * FROM " . $GLOBALS['ecs']->table('users') . " WHERE user_id=".$access_data['uid'];
+    $user_info = $db->getRow($sql);
+
+    if(!empty($user_info)) {
+        $data = array(
+            'user_name' => $user_info['user_name'],
+            'phone' => $user_info['mobile_phone'],
+            'wx' => '',
+            'qq' => $user_info['qq'],
+            'real_name' => '',
+        );
+        helper::json('true', '', $data);
+    }
+
+    helper::json('false', '获取信息失败');
 }
 
 /**
@@ -158,8 +181,34 @@ function action_get_profile()
  */
 function action_set_profile()
 {
-    $usre_name = helper::post('user_name');
+    $user_name = helper::post('user_name');
     $qq = helper::post('qq');
+    $access_token = helper::post('access_token');
+    $access_data = helper::get_cache($access_token);
+
+    if (empty($access_token) || empty($access_data)) {
+        helper::json('false', 'access_token错误');
+    } elseif (mb_strlen($user_name) > 20) {
+        helper::json('false', '用户名不能超过20个字符');
+    } elseif (!empty($qq) && !is_numeric($qq)) {
+        helper::json('false', 'qq不正确');
+    }
+
+    $db = $GLOBALS['db'];
+    $sql = "SELECT * FROM " . $GLOBALS['ecs']->table('users') . " WHERE user_id=".$access_data['uid'];
+    $user_info = $db->getRow($sql);
+
+    if (empty($user_name)) {
+        $user_name = $user_info['username'];
+    } elseif (empty($qq)) {
+        $qq = $user_info['qq'];
+    }
+    $sql = "UPDATE ". $GLOBALS['ecs']->table('users') . " SET user_name = '{$user_name}',qq='{$qq}' WHERE user_id=".$access_data['uid'];
+    if($db->query($sql)) {
+        helper::json('true', '更新信息成功');
+    }
+
+    helper::json('false', '更新信息失败');
 }
 
 /**
