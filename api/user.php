@@ -212,6 +212,14 @@ function action_set_profile()
 }
 
 /**
+ * 企业会员认证
+ */
+function action_certify()
+{
+
+}
+
+/**
  * 发送验证码
  */
 function action_code()

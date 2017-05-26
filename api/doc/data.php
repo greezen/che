@@ -181,4 +181,76 @@ return array(
         }
                     ',
     ),
+    array(
+        'id' => 'v1-0_set_profile',
+        'title' => '设置个人资料',
+        'api' => '/api/user.php?act=set_profile',
+        'method' => 'POST',
+        'param' =>
+            array(
+                array(
+                    'attr' => 'access_token',
+                    'type' => 'string(32)',
+                    'desc' => 'access_token',
+                    'required' => true,
+                ),
+                array(
+                    'attr' => 'qq',
+                    'type' => 'numeric',
+                    'desc' => 'qq',
+                    'required' => false,
+                ),
+                array(
+                    'attr' => 'user_name',
+                    'type' => 'string(1-20)',
+                    'desc' => '用户名',
+                    'required' => false,
+                ),
+            ),
+        'response' => '
+        {
+            "result":"true",//失败返回字符串false,msg中是具体的错误和提示信息
+            "msg":"",
+            "data":[]
+        }
+
+    ',
+        'remark' => '',
+        'demo' => '
+        {
+            "access_token" : "b1e087dcd49735071e3392fae6586747",
+            "qq" : "123456",
+            "user_name" : "用户名",
+        }
+                    ',
+    ),
+    array(
+        'id' => 'v1-0_get_profile',
+        'title' => '获取个人资料',
+        'api' => '/api/user.php?act=get_profile',
+        'method' => 'POST',
+        'param' =>
+            array(
+                array(
+                    'attr' => 'access_token',
+                    'type' => 'string(32)',
+                    'desc' => 'access_token',
+                    'required' => true,
+                ),
+            ),
+        'response' => '
+        {
+            "result":"true",//失败返回字符串false,msg中是具体的错误和提示信息
+            "msg":"",
+            "data":[]
+        }
+
+    ',
+        'remark' => '',
+        'demo' => '
+        {
+            "access_token" : "b1e087dcd49735071e3392fae6586747",
+        }
+                    ',
+    ),
 );

@@ -163,4 +163,24 @@ class helper
         $source = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
         return substr(str_shuffle($source), 0,$length);
     }
+
+    /**
+     * 数据验证
+     * @param $param
+     * @param $rule
+     * @return bool|mixed
+     */
+    public static function validator($param, $rule)
+    {
+        require_once ROOT_PATH . 'api/include/valitron.php';
+        $v = new \Valitron\Validator($param);
+        $v->rules($rule);
+        if ($v->validate()) {
+            return true;
+        } else {
+            $error = array_shift($v->errors());
+            //self::json('false', $error[0]);
+            //return array_shift($res);
+        }
+    }
 }
