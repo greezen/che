@@ -99,6 +99,8 @@ if (!get_magic_quotes_gpc())
 /* 创建 ECSHOP 对象 */
 $ecs = new ECS($db_name, $prefix);
 $data_dir = $ecs->data_dir();
+define('DATA_DIR', $ecs->data_dir());
+define('IMAGE_DIR', $ecs->image_dir());
 
 /* 初始化数据库类 */
 require(ROOT_PATH . 'includes/cls_mysql.php');

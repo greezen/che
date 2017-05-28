@@ -216,7 +216,44 @@ function action_set_profile()
  */
 function action_certify()
 {
+    $zhizhao = isset($_FILES['zhizhao'])?$_FILES['zhizhao']:null;//营业执照
+    $organization_code = isset($_FILES['organization_code'])?$_FILES['organization_code']:null;//组织机构代码证
+    $idcard_front = isset($_FILES['idcard_front'])?$_FILES['idcard_front']:null;//法人身份证正面
+    $idcard_reverse = isset($_FILES['idcard_reverse'])?$_FILES['idcard_reverse']:null;//法人身份证反面
 
+    $business_licence_number = helper::post('business_licence_number');//营业执照号
+    $contacts_phone = helper::post('contacts_phone');//联系人手机号
+    $contacts_name = helper::post('contacts_name');//联系人姓名
+    $settlement_bank_account_name = helper::post('settlement_bank_account_name');//对公账户名
+    $settlement_bank_account_number = helper::post('settlement_bank_account_number');//对公账号
+    $settlement_bank_name = helper::post('settlement_bank_name');//开户行
+
+    $access_token = helper::post('access_token');
+    $access_data = helper::get_cache($access_token);
+
+    $_CFG = $GLOBALS['_CFG'];
+    $upload_size_limit = $_CFG['upload_size_limit'] == '-1' ? ini_get('upload_max_filesize') : $_CFG['upload_size_limit'];
+    if (empty($access_token) || empty($access_data)) {
+        //helper::json('false', 'access_token错误');
+    } elseif (empty($zhizhao)) {
+        helper::json('false', '未上传营业执照');
+    } elseif (empty($organization_code)) {
+        helper::json('false', '未上传组织机构代码证');
+    } elseif (empty($idcard_front)) {
+        helper::json('false', '未上传法人身份证正面');
+    } elseif (empty($idcard_reverse)) {
+        helper::json('false', '未上传法人身份证反面');
+    } elseif  ($zhizhao['size'] / 1024 > $upload_size_limit) {
+        helper::json('false', '营业执照图片尺寸不能超过'.($upload_size_limit/1024).'M');
+    } elseif  ($organization_code['size'] / 1024 > $upload_size_limit) {
+        helper::json('false', '组织机构代码证图片尺寸不能超过'.($upload_size_limit/1024).'M');
+    } elseif  ($idcard_front['size'] / 1024 > $upload_size_limit) {
+        helper::json('false', '法人身份证正面图片尺寸不能超过'.($upload_size_limit/1024).'M');
+    } elseif  ($idcard_reverse['size'] / 1024 > $upload_size_limit) {
+        helper::json('false', '法人身份证反面图片尺寸不能超过'.($upload_size_limit/1024).'M');
+    }
+    $res = upload_file($_FILES['zhizhao'], 'supplier');
+    var_dump($res);
 }
 
 /**
