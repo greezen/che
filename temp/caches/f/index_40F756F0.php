@@ -1,4 +1,4 @@
-<?php exit;?>a:3:{s:8:"template";a:20:{i:0;s:55:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/index.dwt";i:1;s:75:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/page_header_index.lbi";i:2;s:69:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/user_header.lbi";i:3;s:75:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/user_header_right.lbi";i:4;s:66:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/index_ad.lbi";i:5;s:83:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/recommend_right_promotion.lbi";i:6;s:70:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/cat_articles.lbi";i:7;s:73:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/index_ad_groups.lbi";i:8;s:69:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/ad_position.lbi";i:9;s:68:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/stores_tab.lbi";i:10;s:77:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/recommend_promotion.lbi";i:11;s:76:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/recommend_hot_sale.lbi";i:12;s:71:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/recommend_hot.lbi";i:13;s:72:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/recommend_best.lbi";i:14;s:71:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/recommend_new.lbi";i:15;s:67:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/cat_goods.lbi";i:16;s:71:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/right_sidebar.lbi";i:17;s:75:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/page_footer_index.lbi";i:18;s:71:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/arrive_notice.lbi";i:19;s:70:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/left_sidebar.lbi";}s:7:"expires";i:1495981357;s:8:"maketime";i:1495977757;}<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?php exit;?>a:3:{s:8:"template";a:20:{i:0;s:55:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/index.dwt";i:1;s:75:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/page_header_index.lbi";i:2;s:69:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/user_header.lbi";i:3;s:75:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/user_header_right.lbi";i:4;s:66:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/index_ad.lbi";i:5;s:83:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/recommend_right_promotion.lbi";i:6;s:70:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/cat_articles.lbi";i:7;s:73:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/index_ad_groups.lbi";i:8;s:69:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/ad_position.lbi";i:9;s:68:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/stores_tab.lbi";i:10;s:77:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/recommend_promotion.lbi";i:11;s:76:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/recommend_hot_sale.lbi";i:12;s:71:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/recommend_hot.lbi";i:13;s:72:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/recommend_best.lbi";i:14;s:71:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/recommend_new.lbi";i:15;s:67:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/cat_goods.lbi";i:16;s:71:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/right_sidebar.lbi";i:17;s:75:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/page_footer_index.lbi";i:18;s:71:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/arrive_notice.lbi";i:19;s:70:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/left_sidebar.lbi";}s:7:"expires";i:1496028712;s:8:"maketime";i:1496025112;}<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <base href="http://che.dev/" />
@@ -2871,11 +2871,6 @@ $(function(){
 								<div class="brand-con">
 									<ul class="yyyy_5"  style="position: absolute; width: 1210px; height: 40px; top: 0px; left: 1px;">
 																				<li class="fore1">
-											<a href="category.php?id=5&amp;brand=71" target="_blank" title="格兰仕">
-												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437433840630073088.jpg" alt="格兰仕">
-											</a>
-										</li>
-																				<li >
 											<a href="category.php?id=5&amp;brand=68" target="_blank" title="格力">
 												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437433795060834486.jpg" alt="格力">
 											</a>
@@ -2908,6 +2903,11 @@ $(function(){
 																				<li >
 											<a href="category.php?id=5&amp;brand=30" target="_blank" title="三星">
 												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437430441802693617.png" alt="三星">
+											</a>
+										</li>
+																				<li >
+											<a href="category.php?id=5&amp;brand=71" target="_blank" title="格兰仕">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437433840630073088.jpg" alt="格兰仕">
 											</a>
 										</li>
 																			</ul>
@@ -3557,6 +3557,46 @@ $(function(){
 								<div class="brand-con">
 									<ul class="yyyy_4"  style="position: absolute; width: 1210px; height: 40px; top: 0px; left: 1px;">
 																				<li class="fore1">
+											<a href="category.php?id=4&amp;brand=32" target="_blank" title="努比亚">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437430574094435270.png" alt="努比亚">
+											</a>
+										</li>
+																				<li >
+											<a href="category.php?id=4&amp;brand=80" target="_blank" title="溢彩年华">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437434684850488373.jpg" alt="溢彩年华">
+											</a>
+										</li>
+																				<li >
+											<a href="category.php?id=4&amp;brand=29" target="_blank" title="苹果">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437430433744102612.jpg" alt="苹果">
+											</a>
+										</li>
+																				<li >
+											<a href="category.php?id=4&amp;brand=24" target="_blank" title="htc">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437430325761583576.jpg" alt="htc">
+											</a>
+										</li>
+																				<li >
+											<a href="category.php?id=4&amp;brand=22" target="_blank" title="中兴">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437430298555384602.jpg" alt="中兴">
+											</a>
+										</li>
+																				<li >
+											<a href="category.php?id=4&amp;brand=74" target="_blank" title="艾力斯特">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437434180841305731.jpg" alt="艾力斯特">
+											</a>
+										</li>
+																				<li >
+											<a href="category.php?id=4&amp;brand=72" target="_blank" title="海信">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437433854063455383.jpg" alt="海信">
+											</a>
+										</li>
+																				<li >
+											<a href="category.php?id=4&amp;brand=73" target="_blank" title="伊莱克斯">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437434172223731860.jpg" alt="伊莱克斯">
+											</a>
+										</li>
+																				<li >
 											<a href="category.php?id=4&amp;brand=30" target="_blank" title="三星">
 												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437430441802693617.png" alt="三星">
 											</a>
@@ -3584,46 +3624,6 @@ $(function(){
 																				<li >
 											<a href="category.php?id=4&amp;brand=70" target="_blank" title="西门子">
 												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437433823734794032.gif" alt="西门子">
-											</a>
-										</li>
-																				<li >
-											<a href="category.php?id=4&amp;brand=11" target="_blank" title="MISS FACE">
-												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437429301820829673.jpg" alt="MISS FACE">
-											</a>
-										</li>
-																				<li >
-											<a href="category.php?id=4&amp;brand=27" target="_blank" title="金立">
-												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437430366575268584.jpg" alt="金立">
-											</a>
-										</li>
-																				<li >
-											<a href="category.php?id=4&amp;brand=49" target="_blank" title="西域美农">
-												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437431645949723761.jpg" alt="西域美农">
-											</a>
-										</li>
-																				<li >
-											<a href="category.php?id=4&amp;brand=20" target="_blank" title="小米">
-												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437430279260423099.jpg" alt="小米">
-											</a>
-										</li>
-																				<li >
-											<a href="category.php?id=4&amp;brand=23" target="_blank" title="朵唯">
-												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437430309280593896.jpg" alt="朵唯">
-											</a>
-										</li>
-																				<li >
-											<a href="category.php?id=4&amp;brand=28" target="_blank" title="LG">
-												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437430374768843113.jpg" alt="LG">
-											</a>
-										</li>
-																				<li >
-											<a href="category.php?id=4&amp;brand=96" target="_blank" title="贝古贝古">
-												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437438440162456222.jpg" alt="贝古贝古">
-											</a>
-										</li>
-																				<li >
-											<a href="category.php?id=4&amp;brand=32" target="_blank" title="努比亚">
-												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437430574094435270.png" alt="努比亚">
 											</a>
 										</li>
 																			</ul>
@@ -4270,6 +4270,31 @@ $(function(){
 								<div class="brand-con">
 									<ul class="yyyy_6"  style="position: absolute; width: 1210px; height: 40px; top: 0px; left: 1px;">
 																				<li class="fore1">
+											<a href="category.php?id=6&amp;brand=48" target="_blank" title="楼兰密语">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437431622196514430.jpg" alt="楼兰密语">
+											</a>
+										</li>
+																				<li >
+											<a href="category.php?id=6&amp;brand=6" target="_blank" title="Dior">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437428980225446797.jpg" alt="Dior">
+											</a>
+										</li>
+																				<li >
+											<a href="category.php?id=6&amp;brand=78" target="_blank" title="罗莱">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437434636974815215.jpg" alt="罗莱">
+											</a>
+										</li>
+																				<li >
+											<a href="category.php?id=6&amp;brand=52" target="_blank" title="猫人">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437432522356081645.jpg" alt="猫人">
+											</a>
+										</li>
+																				<li >
+											<a href="category.php?id=6&amp;brand=71" target="_blank" title="格兰仕">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437433840630073088.jpg" alt="格兰仕">
+											</a>
+										</li>
+																				<li >
 											<a href="category.php?id=6&amp;brand=81" target="_blank" title="慧乐家">
 												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437434929995564906.jpg" alt="慧乐家">
 											</a>
@@ -4297,31 +4322,6 @@ $(function(){
 																				<li >
 											<a href="category.php?id=6&amp;brand=84" target="_blank" title="全有家居">
 												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437436872931901715.jpg" alt="全有家居">
-											</a>
-										</li>
-																				<li >
-											<a href="category.php?id=6&amp;brand=48" target="_blank" title="楼兰密语">
-												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437431622196514430.jpg" alt="楼兰密语">
-											</a>
-										</li>
-																				<li >
-											<a href="category.php?id=6&amp;brand=6" target="_blank" title="Dior">
-												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437428980225446797.jpg" alt="Dior">
-											</a>
-										</li>
-																				<li >
-											<a href="category.php?id=6&amp;brand=78" target="_blank" title="罗莱">
-												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437434636974815215.jpg" alt="罗莱">
-											</a>
-										</li>
-																				<li >
-											<a href="category.php?id=6&amp;brand=52" target="_blank" title="猫人">
-												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437432522356081645.jpg" alt="猫人">
-											</a>
-										</li>
-																				<li >
-											<a href="category.php?id=6&amp;brand=71" target="_blank" title="格兰仕">
-												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437433840630073088.jpg" alt="格兰仕">
 											</a>
 										</li>
 																			</ul>
@@ -4968,36 +4968,6 @@ $(function(){
 								<div class="brand-con">
 									<ul class="yyyy_2"  style="position: absolute; width: 1210px; height: 40px; top: 0px; left: 1px;">
 																				<li class="fore1">
-											<a href="category.php?id=2&amp;brand=80" target="_blank" title="溢彩年华">
-												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437434684850488373.jpg" alt="溢彩年华">
-											</a>
-										</li>
-																				<li >
-											<a href="category.php?id=2&amp;brand=54" target="_blank" title="缪诗">
-												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437432540121764652.jpg" alt="缪诗">
-											</a>
-										</li>
-																				<li >
-											<a href="category.php?id=2&amp;brand=57" target="_blank" title="佐丹奴">
-												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437432569401929463.jpg" alt="佐丹奴">
-											</a>
-										</li>
-																				<li >
-											<a href="category.php?id=2&amp;brand=55" target="_blank" title="卓诗尼">
-												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437436548477690017.jpg" alt="卓诗尼">
-											</a>
-										</li>
-																				<li >
-											<a href="category.php?id=2&amp;brand=60" target="_blank" title="曼妮芬（ManniForm）">
-												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437432607921594733.jpg" alt="曼妮芬（ManniForm）">
-											</a>
-										</li>
-																				<li >
-											<a href="category.php?id=2&amp;brand=51" target="_blank" title="享爱.">
-												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437432512022024124.jpg" alt="享爱.">
-											</a>
-										</li>
-																				<li >
 											<a href="category.php?id=2&amp;brand=58" target="_blank" title="达芙妮">
 												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437436184083765295.jpg" alt="达芙妮">
 											</a>
@@ -5025,6 +4995,36 @@ $(function(){
 																				<li >
 											<a href="category.php?id=2&amp;brand=56" target="_blank" title="七匹狼">
 												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437432559402862574.jpg" alt="七匹狼">
+											</a>
+										</li>
+																				<li >
+											<a href="category.php?id=2&amp;brand=80" target="_blank" title="溢彩年华">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437434684850488373.jpg" alt="溢彩年华">
+											</a>
+										</li>
+																				<li >
+											<a href="category.php?id=2&amp;brand=54" target="_blank" title="缪诗">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437432540121764652.jpg" alt="缪诗">
+											</a>
+										</li>
+																				<li >
+											<a href="category.php?id=2&amp;brand=57" target="_blank" title="佐丹奴">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437432569401929463.jpg" alt="佐丹奴">
+											</a>
+										</li>
+																				<li >
+											<a href="category.php?id=2&amp;brand=55" target="_blank" title="卓诗尼">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437436548477690017.jpg" alt="卓诗尼">
+											</a>
+										</li>
+																				<li >
+											<a href="category.php?id=2&amp;brand=60" target="_blank" title="曼妮芬（ManniForm）">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437432607921594733.jpg" alt="曼妮芬（ManniForm）">
+											</a>
+										</li>
+																				<li >
+											<a href="category.php?id=2&amp;brand=51" target="_blank" title="享爱.">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437432512022024124.jpg" alt="享爱.">
 											</a>
 										</li>
 																			</ul>
@@ -5671,6 +5671,26 @@ $(function(){
 								<div class="brand-con">
 									<ul class="yyyy_3"  style="position: absolute; width: 1210px; height: 40px; top: 0px; left: 1px;">
 																				<li class="fore1">
+											<a href="category.php?id=3&amp;brand=18" target="_blank" title="兰芝">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437429934755120717.jpg" alt="兰芝">
+											</a>
+										</li>
+																				<li >
+											<a href="category.php?id=3&amp;brand=1" target="_blank" title="资生堂">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437428736611050860.jpg" alt="资生堂">
+											</a>
+										</li>
+																				<li >
+											<a href="category.php?id=3&amp;brand=6" target="_blank" title="Dior">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437428980225446797.jpg" alt="Dior">
+											</a>
+										</li>
+																				<li >
+											<a href="category.php?id=3&amp;brand=5" target="_blank" title="相宜本草">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437428934219489398.jpg" alt="相宜本草">
+											</a>
+										</li>
+																				<li >
 											<a href="category.php?id=3&amp;brand=19" target="_blank" title="碧欧泉">
 												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437430106997787476.jpg" alt="碧欧泉">
 											</a>
@@ -5698,26 +5718,6 @@ $(function(){
 																				<li >
 											<a href="category.php?id=3&amp;brand=17" target="_blank" title="珀莱雅">
 												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437429832547767116.jpg" alt="珀莱雅">
-											</a>
-										</li>
-																				<li >
-											<a href="category.php?id=3&amp;brand=18" target="_blank" title="兰芝">
-												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437429934755120717.jpg" alt="兰芝">
-											</a>
-										</li>
-																				<li >
-											<a href="category.php?id=3&amp;brand=1" target="_blank" title="资生堂">
-												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437428736611050860.jpg" alt="资生堂">
-											</a>
-										</li>
-																				<li >
-											<a href="category.php?id=3&amp;brand=6" target="_blank" title="Dior">
-												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437428980225446797.jpg" alt="Dior">
-											</a>
-										</li>
-																				<li >
-											<a href="category.php?id=3&amp;brand=5" target="_blank" title="相宜本草">
-												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437428934219489398.jpg" alt="相宜本草">
 											</a>
 										</li>
 																			</ul>
@@ -6993,6 +6993,36 @@ $(function(){
 								<div class="brand-con">
 									<ul class="yyyy_8"  style="position: absolute; width: 1210px; height: 40px; top: 0px; left: 1px;">
 																				<li class="fore1">
+											<a href="category.php?id=8&amp;brand=97" target="_blank" title="皇家宝贝">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437438450967200189.jpg" alt="皇家宝贝">
+											</a>
+										</li>
+																				<li >
+											<a href="category.php?id=8&amp;brand=40" target="_blank" title="蒙牛">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437431322523724265.jpg" alt="蒙牛">
+											</a>
+										</li>
+																				<li >
+											<a href="category.php?id=8&amp;brand=103" target="_blank" title="巴拉巴拉">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437438555681581254.jpg" alt="巴拉巴拉">
+											</a>
+										</li>
+																				<li >
+											<a href="category.php?id=8&amp;brand=100" target="_blank" title="美赞臣">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437438523104074504.jpg" alt="美赞臣">
+											</a>
+										</li>
+																				<li >
+											<a href="category.php?id=8&amp;brand=98" target="_blank" title="呵宝童车">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437438478070289990.png" alt="呵宝童车">
+											</a>
+										</li>
+																				<li >
+											<a href="category.php?id=8&amp;brand=80" target="_blank" title="溢彩年华">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437434684850488373.jpg" alt="溢彩年华">
+											</a>
+										</li>
+																				<li >
 											<a href="category.php?id=8&amp;brand=41" target="_blank" title="伊利">
 												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437431337248235690.jpg" alt="伊利">
 											</a>
@@ -7030,36 +7060,6 @@ $(function(){
 																				<li >
 											<a href="category.php?id=8&amp;brand=12" target="_blank" title="姬芮">
 												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437429559203552370.jpg" alt="姬芮">
-											</a>
-										</li>
-																				<li >
-											<a href="category.php?id=8&amp;brand=99" target="_blank" title="合生元">
-												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437438487779734440.jpg" alt="合生元">
-											</a>
-										</li>
-																				<li >
-											<a href="category.php?id=8&amp;brand=97" target="_blank" title="皇家宝贝">
-												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437438450967200189.jpg" alt="皇家宝贝">
-											</a>
-										</li>
-																				<li >
-											<a href="category.php?id=8&amp;brand=40" target="_blank" title="蒙牛">
-												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437431322523724265.jpg" alt="蒙牛">
-											</a>
-										</li>
-																				<li >
-											<a href="category.php?id=8&amp;brand=103" target="_blank" title="巴拉巴拉">
-												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437438555681581254.jpg" alt="巴拉巴拉">
-											</a>
-										</li>
-																				<li >
-											<a href="category.php?id=8&amp;brand=100" target="_blank" title="美赞臣">
-												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437438523104074504.jpg" alt="美赞臣">
-											</a>
-										</li>
-																				<li >
-											<a href="category.php?id=8&amp;brand=98" target="_blank" title="呵宝童车">
-												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437438478070289990.png" alt="呵宝童车">
 											</a>
 										</li>
 																			</ul>
@@ -7709,6 +7709,31 @@ $(function(){
 								<div class="brand-con">
 									<ul class="yyyy_1"  style="position: absolute; width: 1210px; height: 40px; top: 0px; left: 1px;">
 																				<li class="fore1">
+											<a href="category.php?id=1&amp;brand=44" target="_blank" title="三元">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437431370729213687.jpg" alt="三元">
+											</a>
+										</li>
+																				<li >
+											<a href="category.php?id=1&amp;brand=51" target="_blank" title="享爱.">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437432512022024124.jpg" alt="享爱.">
+											</a>
+										</li>
+																				<li >
+											<a href="category.php?id=1&amp;brand=46" target="_blank" title="三只松鼠">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437431595688289538.jpg" alt="三只松鼠">
+											</a>
+										</li>
+																				<li >
+											<a href="category.php?id=1&amp;brand=34" target="_blank" title="肯德基">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437431062768997274.jpg" alt="肯德基">
+											</a>
+										</li>
+																				<li >
+											<a href="category.php?id=1&amp;brand=47" target="_blank" title="口水娃">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437431609681889286.jpg" alt="口水娃">
+											</a>
+										</li>
+																				<li >
 											<a href="category.php?id=1&amp;brand=100" target="_blank" title="美赞臣">
 												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437438523104074504.jpg" alt="美赞臣">
 											</a>
@@ -7746,31 +7771,6 @@ $(function(){
 																				<li >
 											<a href="category.php?id=1&amp;brand=38" target="_blank" title="必胜客">
 												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437431098320240967.jpg" alt="必胜客">
-											</a>
-										</li>
-																				<li >
-											<a href="category.php?id=1&amp;brand=44" target="_blank" title="三元">
-												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437431370729213687.jpg" alt="三元">
-											</a>
-										</li>
-																				<li >
-											<a href="category.php?id=1&amp;brand=51" target="_blank" title="享爱.">
-												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437432512022024124.jpg" alt="享爱.">
-											</a>
-										</li>
-																				<li >
-											<a href="category.php?id=1&amp;brand=46" target="_blank" title="三只松鼠">
-												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437431595688289538.jpg" alt="三只松鼠">
-											</a>
-										</li>
-																				<li >
-											<a href="category.php?id=1&amp;brand=34" target="_blank" title="肯德基">
-												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437431062768997274.jpg" alt="肯德基">
-											</a>
-										</li>
-																				<li >
-											<a href="category.php?id=1&amp;brand=47" target="_blank" title="口水娃">
-												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437431609681889286.jpg" alt="口水娃">
 											</a>
 										</li>
 																			</ul>
@@ -7991,7 +7991,7 @@ $(function(){
                     <input type="text" id="authcode" name="captcha" class="text text-1" tabindex="3" placeholder="验证码"/>
                 </div>
                 <label class="img fl">
-                    <img src="captcha.php?is_login=1&719492447" alt="captcha" style="vertical-align: middle;cursor: pointer;" onClick="this.src='captcha.php?is_login=1&'+Math.random()" />
+                    <img src="captcha.php?is_login=1&1691996720" alt="captcha" style="vertical-align: middle;cursor: pointer;" onClick="this.src='captcha.php?is_login=1&'+Math.random()" />
                 </label>
             </div>
                         <div class="safety" id="autoentry">

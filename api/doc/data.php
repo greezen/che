@@ -253,4 +253,89 @@ return array(
         }
                     ',
     ),
+    array(
+        'id' => 'v1-0_certify',
+        'title' => '企业会员认证',
+        'api' => '/api/user.php?act=certify',
+        'method' => 'POST',
+        'param' =>
+            array(
+                array(
+                    'attr' => 'access_token',
+                    'type' => 'string(32)',
+                    'desc' => 'access_token',
+                    'required' => true,
+                ),
+                array(
+                    'attr' => 'zhizhao',
+                    'type' => 'file',
+                    'desc' => '营业执照(图片)',
+                    'required' => true,
+                ),
+                array(
+                    'attr' => 'organization_code',
+                    'type' => 'file',
+                    'desc' => '组织机构代码证(图片)',
+                    'required' => true,
+                ),
+                array(
+                    'attr' => 'idcard_front',
+                    'type' => 'file',
+                    'desc' => '法人身份证正面(图片)',
+                    'required' => true,
+                ),
+                array(
+                    'attr' => 'idcard_reverse',
+                    'type' => 'file',
+                    'desc' => '法人身份证反面(图片)',
+                    'required' => true,
+                ),
+                array(
+                    'attr' => 'business_licence_number',
+                    'type' => 'string(1-100)',
+                    'desc' => '营业执照号',
+                    'required' => true,
+                ),
+                array(
+                    'attr' => 'contacts_phone',
+                    'type' => 'string(11)',
+                    'desc' => '联系人手机号',
+                    'required' => true,
+                ),
+                array(
+                    'attr' => 'contacts_name',
+                    'type' => 'string(1-100)',
+                    'desc' => '联系人姓名',
+                    'required' => true,
+                ),
+                array(
+                    'attr' => 'settlement_bank_account_name',
+                    'type' => 'string(1-100)',
+                    'desc' => '对公账户名',
+                    'required' => true,
+                ),
+                array(
+                    'attr' => 'settlement_bank_account_number',
+                    'type' => 'string(1-100)',
+                    'desc' => '对公账号',
+                    'required' => true,
+                ),
+                array(
+                    'attr' => 'settlement_bank_name',
+                    'type' => 'string(1-100)',
+                    'desc' => '开户行',
+                    'required' => true,
+                ),
+            ),
+        'response' => '
+        {
+            "result":"true",//失败返回字符串false,msg中是具体的错误和提示信息
+            "msg":"",
+            "data":[]
+        }
+
+    ',
+        'remark' => '',
+        'demo' => '',
+    ),
 );

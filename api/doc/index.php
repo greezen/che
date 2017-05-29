@@ -137,22 +137,22 @@ $data = require_once realpath(__DIR__ . DIRECTORY_SEPARATOR . 'data.php');
                         <?=$item['demo']?>
                     </pre>
                     </div>
-                    <div class="col-md-4">
-                        <form action="<?=$item['api']?>" method="<?=$item['method']?>" class="form-horizontal">
-                            <div class="form-group">
-                                <label class="control-label col-md-3">params</label>
-                                <div class="col-md-9">
-                                    <textarea name="params" required="required" class="form-control" cols="30" rows="10"></textarea>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <div class="col-xs-12">
-                                    <button type="submit" class="btn btn-warning btn-block">测试</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+<!--                    <div class="col-md-4">-->
+<!--                        <form action="--><?//=$item['api']?><!--" method="--><?//=$item['method']?><!--" class="form-horizontal">-->
+<!--                            <div class="form-group">-->
+<!--                                <label class="control-label col-md-3">params</label>-->
+<!--                                <div class="col-md-9">-->
+<!--                                    <textarea name="params" required="required" class="form-control" cols="30" rows="10"></textarea>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!---->
+<!--                            <div class="form-group">-->
+<!--                                <div class="col-xs-12">-->
+<!--                                    <button type="submit" class="btn btn-warning btn-block">测试</button>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </form>-->
+<!--                    </div>-->
                     <div class="col-md-8">
                         <div class="content"></div>
                     </div>

@@ -232,9 +232,10 @@ function action_certify()
     $access_data = helper::get_cache($access_token);
 
     $_CFG = $GLOBALS['_CFG'];
+    $db = $GLOBALS['db'];
     $upload_size_limit = $_CFG['upload_size_limit'] == '-1' ? ini_get('upload_max_filesize') : $_CFG['upload_size_limit'];
     if (empty($access_token) || empty($access_data)) {
-        //helper::json('false', 'access_token错误');
+        helper::json('false', 'access_token错误');
     } elseif (empty($zhizhao)) {
         helper::json('false', '未上传营业执照');
     } elseif (empty($organization_code)) {
@@ -245,15 +246,61 @@ function action_certify()
         helper::json('false', '未上传法人身份证反面');
     } elseif  ($zhizhao['size'] / 1024 > $upload_size_limit) {
         helper::json('false', '营业执照图片尺寸不能超过'.($upload_size_limit/1024).'M');
-    } elseif  ($organization_code['size'] / 1024 > $upload_size_limit) {
+    } elseif ($organization_code['size'] / 1024 > $upload_size_limit) {
         helper::json('false', '组织机构代码证图片尺寸不能超过'.($upload_size_limit/1024).'M');
-    } elseif  ($idcard_front['size'] / 1024 > $upload_size_limit) {
+    } elseif ($idcard_front['size'] / 1024 > $upload_size_limit) {
         helper::json('false', '法人身份证正面图片尺寸不能超过'.($upload_size_limit/1024).'M');
-    } elseif  ($idcard_reverse['size'] / 1024 > $upload_size_limit) {
+    } elseif ($idcard_reverse['size'] / 1024 > $upload_size_limit) {
         helper::json('false', '法人身份证反面图片尺寸不能超过'.($upload_size_limit/1024).'M');
+    } elseif (empty($business_licence_number)) {
+        helper::json('false', '营业执照号不能为空');
+    } elseif (empty($contacts_phone)) {
+        helper::json('false', '联系人手机号不能为空');
+    } elseif (empty(contacts_name)) {
+        helper::json('false', '联系人姓名不能为空');
+    } elseif (empty($settlement_bank_account_name)) {
+        helper::json('false', '对公账户名不能为空');
+    } elseif (empty($settlement_bank_account_number)) {
+        helper::json('false', '对公账号不能为空');
+    } elseif (empty($settlement_bank_name)) {
+        helper::json('false', '开户行不能为空');
+    } elseif (!is_mobile_phone($contacts_phone)){
+        helper::json('false', '手机号不正确');
     }
-    $res = upload_file($_FILES['zhizhao'], 'supplier');
-    var_dump($res);
+    $zhizhao_img = upload_file($_FILES['zhizhao'], 'supplier');
+    $organization_code_img = upload_file($_FILES['organization_code'], 'supplier');
+    $idcard_front_img = upload_file($_FILES['idcard_front'], 'supplier');
+    $idcard_reverse_img = upload_file($_FILES['idcard_reverse'], 'supplier');
+
+    if ($zhizhao_img === false) {
+        helper::json('false', '营业执照上传失败');
+    } elseif ($organization_code_img === false) {
+        helper::json('false', '组织机构代码证上传失败');
+    } elseif ($idcard_front_img === false) {
+        helper::json('false', '法人身份证正面上传失败');
+    } elseif ($idcard_reverse_img === false) {
+        helper::json('false', '法人身份证反面上传失败');
+    }
+
+    $save = array(
+        'zhizhao' => $zhizhao_img,
+        'organization_code' => $organization_code_img,
+        'idcard_front' => $idcard_front_img,
+        'idcard_reverse' => $idcard_reverse_img,
+        'business_licence_number' => $business_licence_number,
+        'contacts_phone' => $contacts_phone,
+        'contacts_name' => $contacts_name,
+        'settlement_bank_account_name' => $settlement_bank_account_name,
+        'settlement_bank_account_number' => $settlement_bank_account_number,
+        'settlement_bank_name' => $settlement_bank_name,
+        'user_id' => $access_data['uid'],
+    );
+
+    if ($db->autoExecute($GLOBALS['ecs']->table('supplier'), $save, 'INSERT') !== false){
+       helper::json('true', '认证资料提交成功');
+    }
+
+    helper::json('false', '认证资料提交失败');
 }
 
 /**
