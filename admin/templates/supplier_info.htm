@@ -364,7 +364,7 @@
       </tr>
       <tr>
         <td class="label">身份证反面：</td>
-        <td>{if $supplier.handheld_idcard}<img src="../data/supplier/{$supplier.idcard_reverse}" width=50 height=50>&nbsp;&nbsp;<input type="button" onclick="window.open('../data/supplier/{$supplier.idcard_reverse}');" value="查看原图">{/if}</td>
+        <td>{if $supplier.idcard_reverse}<img src="../data/supplier/{$supplier.idcard_reverse}" width=50 height=50>&nbsp;&nbsp;<input type="button" onclick="window.open('../data/supplier/{$supplier.idcard_reverse}');" value="查看原图">{/if}</td>
       </tr>
     </tbody>
   </table>

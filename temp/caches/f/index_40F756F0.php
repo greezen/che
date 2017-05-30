@@ -1,4 +1,4 @@
-<?php exit;?>a:3:{s:8:"template";a:20:{i:0;s:55:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/index.dwt";i:1;s:75:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/page_header_index.lbi";i:2;s:69:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/user_header.lbi";i:3;s:75:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/user_header_right.lbi";i:4;s:66:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/index_ad.lbi";i:5;s:83:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/recommend_right_promotion.lbi";i:6;s:70:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/cat_articles.lbi";i:7;s:73:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/index_ad_groups.lbi";i:8;s:69:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/ad_position.lbi";i:9;s:68:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/stores_tab.lbi";i:10;s:77:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/recommend_promotion.lbi";i:11;s:76:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/recommend_hot_sale.lbi";i:12;s:71:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/recommend_hot.lbi";i:13;s:72:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/recommend_best.lbi";i:14;s:71:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/recommend_new.lbi";i:15;s:67:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/cat_goods.lbi";i:16;s:71:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/right_sidebar.lbi";i:17;s:75:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/page_footer_index.lbi";i:18;s:71:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/arrive_notice.lbi";i:19;s:70:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/left_sidebar.lbi";}s:7:"expires";i:1496028712;s:8:"maketime";i:1496025112;}<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?php exit;?>a:3:{s:8:"template";a:20:{i:0;s:55:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/index.dwt";i:1;s:75:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/page_header_index.lbi";i:2;s:69:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/user_header.lbi";i:3;s:75:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/user_header_right.lbi";i:4;s:66:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/index_ad.lbi";i:5;s:83:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/recommend_right_promotion.lbi";i:6;s:70:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/cat_articles.lbi";i:7;s:73:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/index_ad_groups.lbi";i:8;s:69:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/ad_position.lbi";i:9;s:68:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/stores_tab.lbi";i:10;s:77:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/recommend_promotion.lbi";i:11;s:76:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/recommend_hot_sale.lbi";i:12;s:71:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/recommend_hot.lbi";i:13;s:72:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/recommend_best.lbi";i:14;s:71:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/recommend_new.lbi";i:15;s:67:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/cat_goods.lbi";i:16;s:71:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/right_sidebar.lbi";i:17;s:75:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/page_footer_index.lbi";i:18;s:71:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/arrive_notice.lbi";i:19;s:70:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/left_sidebar.lbi";}s:7:"expires";i:1496153991;s:8:"maketime";i:1496150391;}<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <base href="http://che.dev/" />
@@ -2871,6 +2871,11 @@ $(function(){
 								<div class="brand-con">
 									<ul class="yyyy_5"  style="position: absolute; width: 1210px; height: 40px; top: 0px; left: 1px;">
 																				<li class="fore1">
+											<a href="category.php?id=5&amp;brand=71" target="_blank" title="格兰仕">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437433840630073088.jpg" alt="格兰仕">
+											</a>
+										</li>
+																				<li >
 											<a href="category.php?id=5&amp;brand=68" target="_blank" title="格力">
 												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437433795060834486.jpg" alt="格力">
 											</a>
@@ -2903,11 +2908,6 @@ $(function(){
 																				<li >
 											<a href="category.php?id=5&amp;brand=30" target="_blank" title="三星">
 												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437430441802693617.png" alt="三星">
-											</a>
-										</li>
-																				<li >
-											<a href="category.php?id=5&amp;brand=71" target="_blank" title="格兰仕">
-												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437433840630073088.jpg" alt="格兰仕">
 											</a>
 										</li>
 																			</ul>
@@ -3557,6 +3557,11 @@ $(function(){
 								<div class="brand-con">
 									<ul class="yyyy_4"  style="position: absolute; width: 1210px; height: 40px; top: 0px; left: 1px;">
 																				<li class="fore1">
+											<a href="category.php?id=4&amp;brand=96" target="_blank" title="贝古贝古">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437438440162456222.jpg" alt="贝古贝古">
+											</a>
+										</li>
+																				<li >
 											<a href="category.php?id=4&amp;brand=32" target="_blank" title="努比亚">
 												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437430574094435270.png" alt="努比亚">
 											</a>
@@ -3619,11 +3624,6 @@ $(function(){
 																				<li >
 											<a href="category.php?id=4&amp;brand=21" target="_blank" title="摩托罗拉">
 												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437430289405669696.jpg" alt="摩托罗拉">
-											</a>
-										</li>
-																				<li >
-											<a href="category.php?id=4&amp;brand=70" target="_blank" title="西门子">
-												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437433823734794032.gif" alt="西门子">
 											</a>
 										</li>
 																			</ul>
@@ -4270,6 +4270,16 @@ $(function(){
 								<div class="brand-con">
 									<ul class="yyyy_6"  style="position: absolute; width: 1210px; height: 40px; top: 0px; left: 1px;">
 																				<li class="fore1">
+											<a href="category.php?id=6&amp;brand=62" target="_blank" title="稻草人">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437432889680565833.jpg" alt="稻草人">
+											</a>
+										</li>
+																				<li >
+											<a href="category.php?id=6&amp;brand=84" target="_blank" title="全有家居">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437436872931901715.jpg" alt="全有家居">
+											</a>
+										</li>
+																				<li >
 											<a href="category.php?id=6&amp;brand=48" target="_blank" title="楼兰密语">
 												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437431622196514430.jpg" alt="楼兰密语">
 											</a>
@@ -4312,16 +4322,6 @@ $(function(){
 																				<li >
 											<a href="category.php?id=6&amp;brand=11" target="_blank" title="MISS FACE">
 												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437429301820829673.jpg" alt="MISS FACE">
-											</a>
-										</li>
-																				<li >
-											<a href="category.php?id=6&amp;brand=62" target="_blank" title="稻草人">
-												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437432889680565833.jpg" alt="稻草人">
-											</a>
-										</li>
-																				<li >
-											<a href="category.php?id=6&amp;brand=84" target="_blank" title="全有家居">
-												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437436872931901715.jpg" alt="全有家居">
 											</a>
 										</li>
 																			</ul>
@@ -7991,7 +7991,7 @@ $(function(){
                     <input type="text" id="authcode" name="captcha" class="text text-1" tabindex="3" placeholder="验证码"/>
                 </div>
                 <label class="img fl">
-                    <img src="captcha.php?is_login=1&1691996720" alt="captcha" style="vertical-align: middle;cursor: pointer;" onClick="this.src='captcha.php?is_login=1&'+Math.random()" />
+                    <img src="captcha.php?is_login=1&465377325" alt="captcha" style="vertical-align: middle;cursor: pointer;" onClick="this.src='captcha.php?is_login=1&'+Math.random()" />
                 </label>
             </div>
                         <div class="safety" id="autoentry">
