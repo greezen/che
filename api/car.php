@@ -27,19 +27,10 @@ call_user_func($function_name);
 function action_brand()
 {
     $db = $GLOBALS['db'];
-    var_dump(GetPinyin('1bmw'));
     $brand_list = $db->getAll("SELECT brand_id id,brand_name name,brand_logo logo FROM " . $GLOBALS['ecs']->table('brand'));
-    $brand_list = array(
-        array(
-            'name' => '珀莱雅'
-        ),array(
-            'name' => '缪诗'
-        ),array(
-            'name' => '泸州老窖'
-        ),
-    );
-    $s = helper::orderByName($brand_list);
-    var_dump($s);
+
+    $list = helper::orderBrand($brand_list);
+    helper::json('true', '', $list);
 }
 
 function action_default()

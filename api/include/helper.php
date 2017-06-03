@@ -190,7 +190,6 @@ class helper
         $s = iconv('UTF-8', 'gb2312', $s0);       //将UTF-8转换成GB2312编码
         if (ord($s0) > 128) {                      //汉字开头，汉字没有以U、V开头的
             $asc = ord($s{0}) * 256 + ord($s{1}) - 65536;
-            var_dump($asc);exit;
             if ($asc >= -20319 and $asc <= -20284) return "A";
             if ($asc >= -20283 and $asc <= -19776) return "B";
             if ($asc >= -19775 and $asc <= -19219) return "C";
@@ -254,7 +253,6 @@ class helper
         $charArray = array();
         foreach ($list as $item) {
             $char = self::getFirstChar($item['name']);
-            var_dump($char);exit;
             $nameArray = array();//将姓名按照姓的首字母与相对的首字母键进行配对
             if (count($charArray[$char]) != 0) {
                 $nameArray = $charArray[$char];
@@ -264,5 +262,18 @@ class helper
         }
         ksort($charArray);//根据键值对排序
         return $charArray;
+    }
+
+    public static function orderBrand($list)
+    {
+        $ret = array();
+        foreach ($list as &$item) {
+            $item['logo'] = 'http://' . $_SERVER['HTTP_HOST'] . '/data/brandlogo/'. $item['logo'];
+            $short = GetPinyin($item['name'], true);
+            $ret[strtoupper($short[0])][] = $item;
+        }
+
+        ksort($ret);
+        return $ret;
     }
 }
