@@ -223,6 +223,7 @@ if ($_REQUEST['act'] == 'insert')
 	$cat['cat_adimg_2']        =   basename($image->upload_image($_FILES['cat_adimg_2'], $catimg_dir));
 	$cat['cat_adimg_2']		=	 $cat['cat_adimg_2']  ?   $catimg_dir. '/' . $cat['cat_adimg_2']  :  '';
 	$cat['cat_adurl_2']        = !empty($_POST['cat_adurl_2']) ?  trim($_POST['cat_adurl_2'])      : '';
+	$cat['cat_logo']        = basename($image->upload_image($_FILES['cat_logo'], $catimg_dir));
 	$cat['cat_index_rightad']        =   basename($image->upload_image($_FILES['cat_index_rightad'], $catimg_dir));
 	$cat['cat_index_rightad']		=	 $cat['cat_index_rightad']  ?   $catimg_dir. '/' . $cat['cat_index_rightad']  :  '';
 	/* 代码增加_end Byjdy */
@@ -230,6 +231,11 @@ if ($_REQUEST['act'] == 'insert')
    $cat['cat_recommend']  = !empty($_POST['cat_recommend'])  ? $_POST['cat_recommend'] : array();$cat['filter_attr']  = !empty($_POST['filter_attr'])  ? implode(',', array_unique(array_diff($_POST['filter_attr'],array(0)))) : 0;
  
    $cat['cat_name']     = !empty($_POST['cat_name'])     ? trim($_POST['cat_name'])     : '';
+    if (empty($cat['cat_name'])) {
+        sys_msg('名称不能为空');
+    } elseif (empty($_FILES['cat_logo'])) {
+        //sys_msg('未上传logo');
+    }
    $arrCatName = explode("," ,$cat['cat_name']);
   /*  代码增加_start By www.ecshop68.com */
    $cat['brand_qq']  = !empty($_POST['brand_wwwecshop68com']) ? $_POST['brand_wwwecshop68com'] : '';

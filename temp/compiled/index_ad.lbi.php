@@ -1,18 +1,18 @@
 <ul id="fullScreenSlides" class="full-screen-slides">
-  <?php $_from = $this->_var['flash']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'flash_0_32573300_1495366446');$this->_foreach['myflash'] = array('total' => count($_from), 'iteration' => 0);
+  <?php $_from = $this->_var['flash']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'flash_0_83430400_1496671475');$this->_foreach['myflash'] = array('total' => count($_from), 'iteration' => 0);
 if ($this->_foreach['myflash']['total'] > 0):
-    foreach ($_from AS $this->_var['flash_0_32573300_1495366446']):
+    foreach ($_from AS $this->_var['flash_0_83430400_1496671475']):
         $this->_foreach['myflash']['iteration']++;
 ?>
-  <li style=" background:url(<?php echo $this->_var['flash_0_32573300_1495366446']['src']; ?>) center no-repeat;<?php if (! ($this->_foreach['myflash']['iteration'] <= 1)): ?>display: none; <?php else: ?> display:list-item<?php endif; ?>"> 
-  	<a href="<?php echo $this->_var['flash_0_32573300_1495366446']['url']; ?>" target="_blank" title="<?php echo $this->_var['flash_0_32573300_1495366446']['title']; ?>">&nbsp;</a> 
+  <li style=" background:url(<?php echo $this->_var['flash_0_83430400_1496671475']['src']; ?>) center no-repeat;<?php if (! ($this->_foreach['myflash']['iteration'] <= 1)): ?>display: none; <?php else: ?> display:list-item<?php endif; ?>"> 
+  	<a href="<?php echo $this->_var['flash_0_83430400_1496671475']['url']; ?>" target="_blank" title="<?php echo $this->_var['flash_0_83430400_1496671475']['title']; ?>">&nbsp;</a> 
   </li>
   <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
 </ul>
 <ul class="full-screen-slides-pagination">
-	<?php $_from = $this->_var['flash']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'flash_0_32607400_1495366446');$this->_foreach['myflash'] = array('total' => count($_from), 'iteration' => 0);
+	<?php $_from = $this->_var['flash']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'flash_0_83460000_1496671475');$this->_foreach['myflash'] = array('total' => count($_from), 'iteration' => 0);
 if ($this->_foreach['myflash']['total'] > 0):
-    foreach ($_from AS $this->_var['flash_0_32607400_1495366446']):
+    foreach ($_from AS $this->_var['flash_0_83460000_1496671475']):
         $this->_foreach['myflash']['iteration']++;
 ?>
 	<li <?php if (($this->_foreach['myflash']['iteration'] <= 1)): ?>class="current"<?php endif; ?>><a href="javascript:;"><?php echo $this->_foreach['myflash']['iteration']; ?></a></li>
@@ -24,12 +24,12 @@ if ($this->_foreach['myflash']['total'] > 0):
         <?php
 		 $GLOBALS['smarty']->assign('index_lit_img1',get_advlist('首页幻灯片-小图下',6));
 		?>
-        <?php $_from = $this->_var['index_lit_img1']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'ad_0_32627800_1495366446');$this->_foreach['index_image'] = array('total' => count($_from), 'iteration' => 0);
+        <?php $_from = $this->_var['index_lit_img1']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'ad');$this->_foreach['index_image'] = array('total' => count($_from), 'iteration' => 0);
 if ($this->_foreach['index_image']['total'] > 0):
-    foreach ($_from AS $this->_var['ad_0_32627800_1495366446']):
+    foreach ($_from AS $this->_var['ad']):
         $this->_foreach['index_image']['iteration']++;
 ?> 
-        <li><a href="<?php echo $this->_var['ad_0_32627800_1495366446']['url']; ?>" target="_blank" title="<?php echo $this->_var['ad_0_32627800_1495366446']['name']; ?>"><img src="<?php echo $this->_var['ad_0_32627800_1495366446']['image']; ?>"  alt="<?php echo $this->_var['ad_0_32627800_1495366446']['name']; ?>" /></a> </li>
+        <li><a href="<?php echo $this->_var['ad']['url']; ?>" target="_blank" title="<?php echo $this->_var['ad']['name']; ?>"><img src="<?php echo $this->_var['ad']['image']; ?>"  alt="<?php echo $this->_var['ad']['name']; ?>" /></a> </li>
         <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
     </ul>
   </div>

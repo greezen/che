@@ -268,7 +268,7 @@ class helper
     {
         $ret = array();
         foreach ($list as &$item) {
-            $item['logo'] = 'http://' . $_SERVER['HTTP_HOST'] . '/data/brandlogo/'. $item['logo'];
+            $item['logo'] = 'http://' . $_SERVER['HTTP_HOST'] . '/data/category_img/'. $item['logo'];
             $short = GetPinyin($item['name'], true);
             $ret[strtoupper($short[0])][] = $item;
         }

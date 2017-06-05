@@ -8,7 +8,7 @@
       <tr>
         <td class="label">{$lang.cat_name}:</td>
         <td><textarea name='cat_name' rows="3" cols="48">{$cat_info.cat_name|escape:html}</textarea>
-          <font color="red">*</font> <span class="notice-span" {if $help_open}style="display:block" {else} style="display:none" {/if} id="noticeCat_name">{$lang.notice_cat_name}</span></td>
+          <font color="red">*</font> <span class="notice-span" {if $help_open}style="display:block" {else} style="display:none" {/if} id="noticeCat_name"><!--{$lang.notice_cat_name}--></span></td>
       </tr>
       
 	 {* 代码增加_start  By  www.68ecshop.com *}
@@ -32,7 +32,7 @@
       </tr>
         <tr>
         <td class="label">logo:</td>
-        <td><input type="file" name="logo" id="logo" size="45"></td>
+        <td><input type="file" name="cat_logo" id="logo" size="45"></td>
       </tr>
       <!--<tr id="measure_unit">
         <td class="label">{$lang.measure_unit}:</td>
