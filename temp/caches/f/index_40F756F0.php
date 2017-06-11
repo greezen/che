@@ -1,4 +1,4 @@
-<?php exit;?>a:3:{s:8:"template";a:20:{i:0;s:55:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/index.dwt";i:1;s:75:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/page_header_index.lbi";i:2;s:69:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/user_header.lbi";i:3;s:75:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/user_header_right.lbi";i:4;s:66:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/index_ad.lbi";i:5;s:83:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/recommend_right_promotion.lbi";i:6;s:70:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/cat_articles.lbi";i:7;s:73:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/index_ad_groups.lbi";i:8;s:69:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/ad_position.lbi";i:9;s:68:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/stores_tab.lbi";i:10;s:77:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/recommend_promotion.lbi";i:11;s:76:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/recommend_hot_sale.lbi";i:12;s:71:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/recommend_hot.lbi";i:13;s:72:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/recommend_best.lbi";i:14;s:71:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/recommend_new.lbi";i:15;s:67:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/cat_goods.lbi";i:16;s:71:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/right_sidebar.lbi";i:17;s:75:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/page_footer_index.lbi";i:18;s:71:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/arrive_notice.lbi";i:19;s:70:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/left_sidebar.lbi";}s:7:"expires";i:1496675075;s:8:"maketime";i:1496671475;}<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?php exit;?>a:3:{s:8:"template";a:20:{i:0;s:55:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/index.dwt";i:1;s:75:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/page_header_index.lbi";i:2;s:69:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/user_header.lbi";i:3;s:75:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/user_header_right.lbi";i:4;s:66:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/index_ad.lbi";i:5;s:83:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/recommend_right_promotion.lbi";i:6;s:70:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/cat_articles.lbi";i:7;s:73:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/index_ad_groups.lbi";i:8;s:69:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/ad_position.lbi";i:9;s:68:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/stores_tab.lbi";i:10;s:77:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/recommend_promotion.lbi";i:11;s:76:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/recommend_hot_sale.lbi";i:12;s:71:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/recommend_hot.lbi";i:13;s:72:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/recommend_best.lbi";i:14;s:71:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/recommend_new.lbi";i:15;s:67:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/cat_goods.lbi";i:16;s:71:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/right_sidebar.lbi";i:17;s:75:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/page_footer_index.lbi";i:18;s:71:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/arrive_notice.lbi";i:19;s:70:"E:/xampp/htdocs/che/themes/68ecshopcom_360buy/library/left_sidebar.lbi";}s:7:"expires";i:1497194442;s:8:"maketime";i:1497190842;}<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <base href="http://che.dev/" />
@@ -490,11 +490,11 @@ $(function(){
      
         <li>
       <dl>
-        <dt class="goods-name"> <a target="_blank" href="goods.php?id=287" title="韩国原装进口lotte乐天 2%富足水蜜桃果汁饮料240ml听装 夏季饮料">韩国原装进口lotte乐天 2%富足水蜜桃果汁饮...</a> </dt>
-        <dd class="goods-thumb"> <a target="_blank" href="goods.php?id=287"> <img data-original="images/201603/thumb_img/287_thumb_G_1457592139010.jpg" src="themes/68ecshopcom_360buy/images/loading.gif" alt="韩国原装进口lotte乐天 2%富足水蜜桃果汁饮料240ml听装 夏季饮料"> </a> </dd>
+        <dt class="goods-name"> <a target="_blank" href="goods.php?id=284" title="香蕉牛奶 韩国宾格瑞香蕉牛奶饮料200ml12支">香蕉牛奶 韩国宾格瑞香蕉牛奶饮料200ml12支</a> </dt>
+        <dd class="goods-thumb"> <a target="_blank" href="goods.php?id=284"> <img data-original="images/201603/thumb_img/284_thumb_G_1457590275784.jpg" src="themes/68ecshopcom_360buy/images/loading.gif" alt="香蕉牛奶 韩国宾格瑞香蕉牛奶饮料200ml12支"> </a> </dd>
         <dd class="goods-price"> 商城价： <em> 
            
-          ¥5.3 
+          ¥59.0 
            
           </em> </dd>
       </dl>
@@ -503,11 +503,11 @@ $(function(){
      
         <li>
       <dl>
-        <dt class="goods-name"> <a target="_blank" href="goods.php?id=285" title="LOTTE乐天 韩国原装进口 牛奶碳酸饮料 250ml">LOTTE乐天 韩国原装进口 牛奶碳酸饮料 25...</a> </dt>
-        <dd class="goods-thumb"> <a target="_blank" href="goods.php?id=285"> <img data-original="images/201603/thumb_img/285_thumb_G_1457590792869.jpg" src="themes/68ecshopcom_360buy/images/loading.gif" alt="LOTTE乐天 韩国原装进口 牛奶碳酸饮料 250ml"> </a> </dd>
+        <dt class="goods-name"> <a target="_blank" href="goods.php?id=38" title="高端2015夏装新款修身淑坊女女装蕾丝短袖复古森女连衣裙装">高端2015夏装新款修身淑坊女女装蕾丝短袖复古森...</a> </dt>
+        <dd class="goods-thumb"> <a target="_blank" href="goods.php?id=38"> <img data-original="images/201507/thumb_img/38_thumb_G_1437514275132.jpg" src="themes/68ecshopcom_360buy/images/loading.gif" alt="高端2015夏装新款修身淑坊女女装蕾丝短袖复古森女连衣裙装"> </a> </dd>
         <dd class="goods-price"> 商城价： <em> 
            
-          ¥5.2 
+          ¥178.0 
            
           </em> </dd>
       </dl>
@@ -598,7 +598,7 @@ $(function(){
 				<div class="floor-title">
 					<h2>
 						<span> 1F </span>
-						<a href="category.php?id=5" target="_blank">2004款1.8T(125马力)</a>
+						<a href="category.php?id=5" target="_blank">奥迪A4L</a>
 					</h2>
                     <ul class="floor-tabs-nav">
 						<li class="floor-tabs-selected">
@@ -688,7 +688,7 @@ $(function(){
 				<div class="floor-title">
 					<h2>
 						<span> 2F </span>
-						<a href="category.php?id=4" target="_blank">奥迪A4L</a>
+						<a href="category.php?id=4" target="_blank">奥迪A6</a>
 					</h2>
                     <ul class="floor-tabs-nav">
 						<li class="floor-tabs-selected">
@@ -763,10 +763,142 @@ $(function(){
                     <div class="floor-right">
                     	
 							<div class="floor-tabs-panel" style="border-top: 1px #e31939 solid;">
-																							</div>
+																								<div class="goods" id="li_60" >
+									<div class="wrap">
+										<a target="_blank" href="goods.php?id=60" title="德国 进口牛奶 欧德堡（Oldenburger）超高温处理全脂纯牛奶1L*12">
+											<img data-original="images/201507/thumb_img/60_thumb_G_1437520982494.jpg" src="themes/68ecshopcom_360buy/images/loading.gif" alt="德国 进口牛奶 欧德堡（Oldenburger）超高温处理全脂纯牛奶1L*12" height="140" width="140" class="pic_img_60">
+										</a>
+										<p class="title">
+											<a target="_blank" href="goods.php?id=60" title="德国 进口牛奶 欧德堡（Oldenburger）超高温处理全脂纯牛奶1L*12">德国 进口牛奶 欧德堡（Oldenburger）...</a>
+										</p>
+										<p class="price">
+											<span>
+																								¥119.0																							</span>
+										</p>
+										<a class="add-cart" onclick="addToCart(60)" title="加入购物车"></a>
+									</div>
+								</div>
+																<div class="goods" id="li_62" >
+									<div class="wrap">
+										<a target="_blank" href="goods.php?id=62" title="澳大利亚 进口牛奶 德运（Devondale） 全脂牛奶 1L*10 整箱装">
+											<img data-original="images/201507/thumb_img/62_thumb_G_1437521071878.jpg" src="themes/68ecshopcom_360buy/images/loading.gif" alt="澳大利亚 进口牛奶 德运（Devondale） 全脂牛奶 1L*10 整箱装" height="140" width="140" class="pic_img_62">
+										</a>
+										<p class="title">
+											<a target="_blank" href="goods.php?id=62" title="澳大利亚 进口牛奶 德运（Devondale） 全脂牛奶 1L*10 整箱装">澳大利亚 进口牛奶 德运（Devondale） ...</a>
+										</p>
+										<p class="price">
+											<span>
+																								¥99.0																							</span>
+										</p>
+										<a class="add-cart" onclick="addToCart(62)" title="加入购物车"></a>
+									</div>
+								</div>
+																<div class="goods" id="li_68" >
+									<div class="wrap">
+										<a target="_blank" href="goods.php?id=68" title="新西兰 原装进口 纯牛奶 纽麦福（ Meadow fresh ）全脂1L*12盒/箱">
+											<img data-original="images/201507/thumb_img/68_thumb_G_1437521651986.jpg" src="themes/68ecshopcom_360buy/images/loading.gif" alt="新西兰 原装进口 纯牛奶 纽麦福（ Meadow fresh ）全脂1L*12盒/箱" height="140" width="140" class="pic_img_68">
+										</a>
+										<p class="title">
+											<a target="_blank" href="goods.php?id=68" title="新西兰 原装进口 纯牛奶 纽麦福（ Meadow fresh ）全脂1L*12盒/箱">新西兰 原装进口 纯牛奶 纽麦福（ Meadow...</a>
+										</p>
+										<p class="price">
+											<span>
+																								¥109.0																							</span>
+										</p>
+										<a class="add-cart" onclick="addToCart(68)" title="加入购物车"></a>
+									</div>
+								</div>
+																<div class="goods" id="li_72" style="width: 234px">
+									<div class="wrap">
+										<a target="_blank" href="goods.php?id=72" title="波兰 进口牛奶 日昇（MLEKOVITA）全脂牛奶1L*12盒">
+											<img data-original="images/201507/thumb_img/72_thumb_G_1437521848992.jpg" src="themes/68ecshopcom_360buy/images/loading.gif" alt="波兰 进口牛奶 日昇（MLEKOVITA）全脂牛奶1L*12盒" height="140" width="140" class="pic_img_72">
+										</a>
+										<p class="title">
+											<a target="_blank" href="goods.php?id=72" title="波兰 进口牛奶 日昇（MLEKOVITA）全脂牛奶1L*12盒">波兰 进口牛奶 日昇（MLEKOVITA）全脂牛...</a>
+										</p>
+										<p class="price">
+											<span>
+																								¥109.0																							</span>
+										</p>
+										<a class="add-cart" onclick="addToCart(72)" title="加入购物车"></a>
+									</div>
+								</div>
+																<div class="goods" id="li_74" >
+									<div class="wrap">
+										<a target="_blank" href="goods.php?id=74" title="德运Devondale 脱脂高钙奶粉1kg">
+											<img data-original="images/201507/thumb_img/74_thumb_G_1437521987425.jpg" src="themes/68ecshopcom_360buy/images/loading.gif" alt="德运Devondale 脱脂高钙奶粉1kg" height="140" width="140" class="pic_img_74">
+										</a>
+										<p class="title">
+											<a target="_blank" href="goods.php?id=74" title="德运Devondale 脱脂高钙奶粉1kg">德运Devondale 脱脂高钙奶粉1kg</a>
+										</p>
+										<p class="price">
+											<span>
+																								¥79.9																							</span>
+										</p>
+										<a class="add-cart" onclick="addToCart(74)" title="加入购物车"></a>
+									</div>
+								</div>
+																<div class="goods" id="li_79" >
+									<div class="wrap">
+										<a target="_blank" href="goods.php?id=79" title="蒙牛 特仑苏 纯牛奶 250ml*12 礼盒装">
+											<img data-original="images/201507/thumb_img/79_thumb_G_1437522204345.jpg" src="themes/68ecshopcom_360buy/images/loading.gif" alt="蒙牛 特仑苏 纯牛奶 250ml*12 礼盒装" height="140" width="140" class="pic_img_79">
+										</a>
+										<p class="title">
+											<a target="_blank" href="goods.php?id=79" title="蒙牛 特仑苏 纯牛奶 250ml*12 礼盒装">蒙牛 特仑苏 纯牛奶 250ml*12 礼盒装</a>
+										</p>
+										<p class="price">
+											<span>
+																								¥55.0																							</span>
+										</p>
+										<a class="add-cart" onclick="addToCart(79)" title="加入购物车"></a>
+									</div>
+								</div>
+																<div class="goods" id="li_81" >
+									<div class="wrap">
+										<a target="_blank" href="goods.php?id=81" title="伊利 味可滋（巧克力）奶昔乳饮品240ml*12盒">
+											<img data-original="images/201507/thumb_img/81_thumb_G_1437522277060.jpg" src="themes/68ecshopcom_360buy/images/loading.gif" alt="伊利 味可滋（巧克力）奶昔乳饮品240ml*12盒" height="140" width="140" class="pic_img_81">
+										</a>
+										<p class="title">
+											<a target="_blank" href="goods.php?id=81" title="伊利 味可滋（巧克力）奶昔乳饮品240ml*12盒">伊利 味可滋（巧克力）奶昔乳饮品240ml*12...</a>
+										</p>
+										<p class="price">
+											<span>
+																								¥45.0																							</span>
+										</p>
+										<a class="add-cart" onclick="addToCart(81)" title="加入购物车"></a>
+									</div>
+								</div>
+															</div>
 							                    </div>
                 </div>
-                                			</div>
+                                                <div class="floor-brand">
+					<div class="tabs-brand">
+							<div class="brand">
+								<div class="brand-con">
+									<ul class="yyyy_4"  style="position: absolute; width: 1210px; height: 40px; top: 0px; left: 1px;">
+																				<li class="fore1">
+											<a href="category.php?id=4&amp;brand=44" target="_blank" title="三元">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437431370729213687.jpg" alt="三元">
+											</a>
+										</li>
+																				<li >
+											<a href="category.php?id=4&amp;brand=41" target="_blank" title="伊利">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437431337248235690.jpg" alt="伊利">
+											</a>
+										</li>
+																			</ul>
+									<div class="brand-btn">
+										<a class="brand-left right_4" href="javascript:void(0)">&lt;</a>
+										<a class="brand-right left_4" href="javascript:void(0)">&gt;</a>
+									</div>
+								</div>
+							</div>
+						<script type="text/javascript">
+						Move(".left_4",".right_4",".yyyy_4",".brand","10");
+						</script>
+					</div>
+				</div>
+                			</div>
 		</div>
 </div>
 <div class="floor" floor="3" color="#e31939">
@@ -775,7 +907,7 @@ $(function(){
 				<div class="floor-title">
 					<h2>
 						<span> 3F </span>
-						<a href="category.php?id=6" target="_blank"></a>
+						<a href="category.php?id=6" target="_blank">奥迪Q3</a>
 					</h2>
                     <ul class="floor-tabs-nav">
 						<li class="floor-tabs-selected">
@@ -862,7 +994,7 @@ $(function(){
 				<div class="floor-title">
 					<h2>
 						<span> 4F </span>
-						<a href="category.php?id=2" target="_blank">一汽大众奥迪</a>
+						<a href="category.php?id=2" target="_blank">奥迪</a>
 					</h2>
                     <ul class="floor-tabs-nav">
 						<li class="floor-tabs-selected">
@@ -937,10 +1069,192 @@ $(function(){
                     <div class="floor-right">
                     	
 							<div class="floor-tabs-panel" style="border-top: 1px #e31939 solid;">
-																							</div>
+																								<div class="goods" id="li_286" >
+									<div class="wrap">
+										<a target="_blank" href="goods.php?id=286" title="永味堂红番石榴汁饮料960ml">
+											<img data-original="images/201603/thumb_img/286_thumb_G_1457592064813.jpg" src="themes/68ecshopcom_360buy/images/loading.gif" alt="永味堂红番石榴汁饮料960ml" height="140" width="140" class="pic_img_286">
+										</a>
+										<p class="title">
+											<a target="_blank" href="goods.php?id=286" title="永味堂红番石榴汁饮料960ml">永味堂红番石榴汁饮料960ml</a>
+										</p>
+										<p class="price">
+											<span>
+																								¥13.5																							</span>
+										</p>
+										<a class="add-cart" onclick="addToCart(286)" title="加入购物车"></a>
+									</div>
+								</div>
+																<div class="goods" id="li_250" >
+									<div class="wrap">
+										<a target="_blank" href="goods.php?id=250" title="怡宝 纯净水 4.5L*4 箱装">
+											<img data-original="images/201602/thumb_img/250_thumb_G_1456450428826.jpg" src="themes/68ecshopcom_360buy/images/loading.gif" alt="怡宝 纯净水 4.5L*4 箱装" height="140" width="140" class="pic_img_250">
+										</a>
+										<p class="title">
+											<a target="_blank" href="goods.php?id=250" title="怡宝 纯净水 4.5L*4 箱装">怡宝 纯净水 4.5L*4 箱装</a>
+										</p>
+										<p class="price">
+											<span>
+																								¥29.9																							</span>
+										</p>
+										<a class="add-cart" onclick="addToCart(250)" title="加入购物车"></a>
+									</div>
+								</div>
+																<div class="goods" id="li_60" >
+									<div class="wrap">
+										<a target="_blank" href="goods.php?id=60" title="德国 进口牛奶 欧德堡（Oldenburger）超高温处理全脂纯牛奶1L*12">
+											<img data-original="images/201507/thumb_img/60_thumb_G_1437520982494.jpg" src="themes/68ecshopcom_360buy/images/loading.gif" alt="德国 进口牛奶 欧德堡（Oldenburger）超高温处理全脂纯牛奶1L*12" height="140" width="140" class="pic_img_60">
+										</a>
+										<p class="title">
+											<a target="_blank" href="goods.php?id=60" title="德国 进口牛奶 欧德堡（Oldenburger）超高温处理全脂纯牛奶1L*12">德国 进口牛奶 欧德堡（Oldenburger）...</a>
+										</p>
+										<p class="price">
+											<span>
+																								¥119.0																							</span>
+										</p>
+										<a class="add-cart" onclick="addToCart(60)" title="加入购物车"></a>
+									</div>
+								</div>
+																<div class="goods" id="li_62" style="width: 234px">
+									<div class="wrap">
+										<a target="_blank" href="goods.php?id=62" title="澳大利亚 进口牛奶 德运（Devondale） 全脂牛奶 1L*10 整箱装">
+											<img data-original="images/201507/thumb_img/62_thumb_G_1437521071878.jpg" src="themes/68ecshopcom_360buy/images/loading.gif" alt="澳大利亚 进口牛奶 德运（Devondale） 全脂牛奶 1L*10 整箱装" height="140" width="140" class="pic_img_62">
+										</a>
+										<p class="title">
+											<a target="_blank" href="goods.php?id=62" title="澳大利亚 进口牛奶 德运（Devondale） 全脂牛奶 1L*10 整箱装">澳大利亚 进口牛奶 德运（Devondale） ...</a>
+										</p>
+										<p class="price">
+											<span>
+																								¥99.0																							</span>
+										</p>
+										<a class="add-cart" onclick="addToCart(62)" title="加入购物车"></a>
+									</div>
+								</div>
+																<div class="goods" id="li_68" >
+									<div class="wrap">
+										<a target="_blank" href="goods.php?id=68" title="新西兰 原装进口 纯牛奶 纽麦福（ Meadow fresh ）全脂1L*12盒/箱">
+											<img data-original="images/201507/thumb_img/68_thumb_G_1437521651986.jpg" src="themes/68ecshopcom_360buy/images/loading.gif" alt="新西兰 原装进口 纯牛奶 纽麦福（ Meadow fresh ）全脂1L*12盒/箱" height="140" width="140" class="pic_img_68">
+										</a>
+										<p class="title">
+											<a target="_blank" href="goods.php?id=68" title="新西兰 原装进口 纯牛奶 纽麦福（ Meadow fresh ）全脂1L*12盒/箱">新西兰 原装进口 纯牛奶 纽麦福（ Meadow...</a>
+										</p>
+										<p class="price">
+											<span>
+																								¥109.0																							</span>
+										</p>
+										<a class="add-cart" onclick="addToCart(68)" title="加入购物车"></a>
+									</div>
+								</div>
+																<div class="goods" id="li_72" >
+									<div class="wrap">
+										<a target="_blank" href="goods.php?id=72" title="波兰 进口牛奶 日昇（MLEKOVITA）全脂牛奶1L*12盒">
+											<img data-original="images/201507/thumb_img/72_thumb_G_1437521848992.jpg" src="themes/68ecshopcom_360buy/images/loading.gif" alt="波兰 进口牛奶 日昇（MLEKOVITA）全脂牛奶1L*12盒" height="140" width="140" class="pic_img_72">
+										</a>
+										<p class="title">
+											<a target="_blank" href="goods.php?id=72" title="波兰 进口牛奶 日昇（MLEKOVITA）全脂牛奶1L*12盒">波兰 进口牛奶 日昇（MLEKOVITA）全脂牛...</a>
+										</p>
+										<p class="price">
+											<span>
+																								¥109.0																							</span>
+										</p>
+										<a class="add-cart" onclick="addToCart(72)" title="加入购物车"></a>
+									</div>
+								</div>
+																<div class="goods" id="li_74" >
+									<div class="wrap">
+										<a target="_blank" href="goods.php?id=74" title="德运Devondale 脱脂高钙奶粉1kg">
+											<img data-original="images/201507/thumb_img/74_thumb_G_1437521987425.jpg" src="themes/68ecshopcom_360buy/images/loading.gif" alt="德运Devondale 脱脂高钙奶粉1kg" height="140" width="140" class="pic_img_74">
+										</a>
+										<p class="title">
+											<a target="_blank" href="goods.php?id=74" title="德运Devondale 脱脂高钙奶粉1kg">德运Devondale 脱脂高钙奶粉1kg</a>
+										</p>
+										<p class="price">
+											<span>
+																								¥79.9																							</span>
+										</p>
+										<a class="add-cart" onclick="addToCart(74)" title="加入购物车"></a>
+									</div>
+								</div>
+																<div class="goods" id="li_79" style="width: 234px">
+									<div class="wrap">
+										<a target="_blank" href="goods.php?id=79" title="蒙牛 特仑苏 纯牛奶 250ml*12 礼盒装">
+											<img data-original="images/201507/thumb_img/79_thumb_G_1437522204345.jpg" src="themes/68ecshopcom_360buy/images/loading.gif" alt="蒙牛 特仑苏 纯牛奶 250ml*12 礼盒装" height="140" width="140" class="pic_img_79">
+										</a>
+										<p class="title">
+											<a target="_blank" href="goods.php?id=79" title="蒙牛 特仑苏 纯牛奶 250ml*12 礼盒装">蒙牛 特仑苏 纯牛奶 250ml*12 礼盒装</a>
+										</p>
+										<p class="price">
+											<span>
+																								¥55.0																							</span>
+										</p>
+										<a class="add-cart" onclick="addToCart(79)" title="加入购物车"></a>
+									</div>
+								</div>
+															</div>
 							                    </div>
                 </div>
-                                			</div>
+                                                <div class="floor-brand">
+					<div class="tabs-brand">
+							<div class="brand">
+								<div class="brand-con">
+									<ul class="yyyy_2"  style="position: absolute; width: 1210px; height: 40px; top: 0px; left: 1px;">
+																				<li class="fore1">
+											<a href="category.php?id=2&amp;brand=7" target="_blank" title="爱丽">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437429042714176893.jpg" alt="爱丽">
+											</a>
+										</li>
+																				<li >
+											<a href="category.php?id=2&amp;brand=63" target="_blank" title="斯提亚">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437432901296336878.jpg" alt="斯提亚">
+											</a>
+										</li>
+																				<li >
+											<a href="category.php?id=2&amp;brand=96" target="_blank" title="贝古贝古">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437438440162456222.jpg" alt="贝古贝古">
+											</a>
+										</li>
+																				<li >
+											<a href="category.php?id=2&amp;brand=12" target="_blank" title="姬芮">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437429559203552370.jpg" alt="姬芮">
+											</a>
+										</li>
+																				<li >
+											<a href="category.php?id=2&amp;brand=41" target="_blank" title="伊利">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437431337248235690.jpg" alt="伊利">
+											</a>
+										</li>
+																				<li >
+											<a href="category.php?id=2&amp;brand=97" target="_blank" title="皇家宝贝">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437438450967200189.jpg" alt="皇家宝贝">
+											</a>
+										</li>
+																				<li >
+											<a href="category.php?id=2&amp;brand=103" target="_blank" title="巴拉巴拉">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437438555681581254.jpg" alt="巴拉巴拉">
+											</a>
+										</li>
+																				<li >
+											<a href="category.php?id=2&amp;brand=44" target="_blank" title="三元">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437431370729213687.jpg" alt="三元">
+											</a>
+										</li>
+																				<li >
+											<a href="category.php?id=2&amp;brand=80" target="_blank" title="溢彩年华">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437434684850488373.jpg" alt="溢彩年华">
+											</a>
+										</li>
+																			</ul>
+									<div class="brand-btn">
+										<a class="brand-left right_2" href="javascript:void(0)">&lt;</a>
+										<a class="brand-right left_2" href="javascript:void(0)">&gt;</a>
+									</div>
+								</div>
+							</div>
+						<script type="text/javascript">
+						Move(".left_2",".right_2",".yyyy_2",".brand","10");
+						</script>
+					</div>
+				</div>
+                			</div>
 		</div>
 </div>
 <div class="floor" floor="5" color="#e31939">
@@ -949,7 +1263,7 @@ $(function(){
 				<div class="floor-title">
 					<h2>
 						<span> 5F </span>
-						<a href="category.php?id=3" target="_blank">奥迪A6</a>
+						<a href="category.php?id=3" target="_blank">一汽大众奥迪</a>
 					</h2>
                     <ul class="floor-tabs-nav">
 						<li class="floor-tabs-selected">
@@ -1024,10 +1338,142 @@ $(function(){
                     <div class="floor-right">
                     	
 							<div class="floor-tabs-panel" style="border-top: 1px #e31939 solid;">
-																							</div>
+																								<div class="goods" id="li_60" >
+									<div class="wrap">
+										<a target="_blank" href="goods.php?id=60" title="德国 进口牛奶 欧德堡（Oldenburger）超高温处理全脂纯牛奶1L*12">
+											<img data-original="images/201507/thumb_img/60_thumb_G_1437520982494.jpg" src="themes/68ecshopcom_360buy/images/loading.gif" alt="德国 进口牛奶 欧德堡（Oldenburger）超高温处理全脂纯牛奶1L*12" height="140" width="140" class="pic_img_60">
+										</a>
+										<p class="title">
+											<a target="_blank" href="goods.php?id=60" title="德国 进口牛奶 欧德堡（Oldenburger）超高温处理全脂纯牛奶1L*12">德国 进口牛奶 欧德堡（Oldenburger）...</a>
+										</p>
+										<p class="price">
+											<span>
+																								¥119.0																							</span>
+										</p>
+										<a class="add-cart" onclick="addToCart(60)" title="加入购物车"></a>
+									</div>
+								</div>
+																<div class="goods" id="li_62" >
+									<div class="wrap">
+										<a target="_blank" href="goods.php?id=62" title="澳大利亚 进口牛奶 德运（Devondale） 全脂牛奶 1L*10 整箱装">
+											<img data-original="images/201507/thumb_img/62_thumb_G_1437521071878.jpg" src="themes/68ecshopcom_360buy/images/loading.gif" alt="澳大利亚 进口牛奶 德运（Devondale） 全脂牛奶 1L*10 整箱装" height="140" width="140" class="pic_img_62">
+										</a>
+										<p class="title">
+											<a target="_blank" href="goods.php?id=62" title="澳大利亚 进口牛奶 德运（Devondale） 全脂牛奶 1L*10 整箱装">澳大利亚 进口牛奶 德运（Devondale） ...</a>
+										</p>
+										<p class="price">
+											<span>
+																								¥99.0																							</span>
+										</p>
+										<a class="add-cart" onclick="addToCart(62)" title="加入购物车"></a>
+									</div>
+								</div>
+																<div class="goods" id="li_68" >
+									<div class="wrap">
+										<a target="_blank" href="goods.php?id=68" title="新西兰 原装进口 纯牛奶 纽麦福（ Meadow fresh ）全脂1L*12盒/箱">
+											<img data-original="images/201507/thumb_img/68_thumb_G_1437521651986.jpg" src="themes/68ecshopcom_360buy/images/loading.gif" alt="新西兰 原装进口 纯牛奶 纽麦福（ Meadow fresh ）全脂1L*12盒/箱" height="140" width="140" class="pic_img_68">
+										</a>
+										<p class="title">
+											<a target="_blank" href="goods.php?id=68" title="新西兰 原装进口 纯牛奶 纽麦福（ Meadow fresh ）全脂1L*12盒/箱">新西兰 原装进口 纯牛奶 纽麦福（ Meadow...</a>
+										</p>
+										<p class="price">
+											<span>
+																								¥109.0																							</span>
+										</p>
+										<a class="add-cart" onclick="addToCart(68)" title="加入购物车"></a>
+									</div>
+								</div>
+																<div class="goods" id="li_72" style="width: 234px">
+									<div class="wrap">
+										<a target="_blank" href="goods.php?id=72" title="波兰 进口牛奶 日昇（MLEKOVITA）全脂牛奶1L*12盒">
+											<img data-original="images/201507/thumb_img/72_thumb_G_1437521848992.jpg" src="themes/68ecshopcom_360buy/images/loading.gif" alt="波兰 进口牛奶 日昇（MLEKOVITA）全脂牛奶1L*12盒" height="140" width="140" class="pic_img_72">
+										</a>
+										<p class="title">
+											<a target="_blank" href="goods.php?id=72" title="波兰 进口牛奶 日昇（MLEKOVITA）全脂牛奶1L*12盒">波兰 进口牛奶 日昇（MLEKOVITA）全脂牛...</a>
+										</p>
+										<p class="price">
+											<span>
+																								¥109.0																							</span>
+										</p>
+										<a class="add-cart" onclick="addToCart(72)" title="加入购物车"></a>
+									</div>
+								</div>
+																<div class="goods" id="li_74" >
+									<div class="wrap">
+										<a target="_blank" href="goods.php?id=74" title="德运Devondale 脱脂高钙奶粉1kg">
+											<img data-original="images/201507/thumb_img/74_thumb_G_1437521987425.jpg" src="themes/68ecshopcom_360buy/images/loading.gif" alt="德运Devondale 脱脂高钙奶粉1kg" height="140" width="140" class="pic_img_74">
+										</a>
+										<p class="title">
+											<a target="_blank" href="goods.php?id=74" title="德运Devondale 脱脂高钙奶粉1kg">德运Devondale 脱脂高钙奶粉1kg</a>
+										</p>
+										<p class="price">
+											<span>
+																								¥79.9																							</span>
+										</p>
+										<a class="add-cart" onclick="addToCart(74)" title="加入购物车"></a>
+									</div>
+								</div>
+																<div class="goods" id="li_79" >
+									<div class="wrap">
+										<a target="_blank" href="goods.php?id=79" title="蒙牛 特仑苏 纯牛奶 250ml*12 礼盒装">
+											<img data-original="images/201507/thumb_img/79_thumb_G_1437522204345.jpg" src="themes/68ecshopcom_360buy/images/loading.gif" alt="蒙牛 特仑苏 纯牛奶 250ml*12 礼盒装" height="140" width="140" class="pic_img_79">
+										</a>
+										<p class="title">
+											<a target="_blank" href="goods.php?id=79" title="蒙牛 特仑苏 纯牛奶 250ml*12 礼盒装">蒙牛 特仑苏 纯牛奶 250ml*12 礼盒装</a>
+										</p>
+										<p class="price">
+											<span>
+																								¥55.0																							</span>
+										</p>
+										<a class="add-cart" onclick="addToCart(79)" title="加入购物车"></a>
+									</div>
+								</div>
+																<div class="goods" id="li_81" >
+									<div class="wrap">
+										<a target="_blank" href="goods.php?id=81" title="伊利 味可滋（巧克力）奶昔乳饮品240ml*12盒">
+											<img data-original="images/201507/thumb_img/81_thumb_G_1437522277060.jpg" src="themes/68ecshopcom_360buy/images/loading.gif" alt="伊利 味可滋（巧克力）奶昔乳饮品240ml*12盒" height="140" width="140" class="pic_img_81">
+										</a>
+										<p class="title">
+											<a target="_blank" href="goods.php?id=81" title="伊利 味可滋（巧克力）奶昔乳饮品240ml*12盒">伊利 味可滋（巧克力）奶昔乳饮品240ml*12...</a>
+										</p>
+										<p class="price">
+											<span>
+																								¥45.0																							</span>
+										</p>
+										<a class="add-cart" onclick="addToCart(81)" title="加入购物车"></a>
+									</div>
+								</div>
+															</div>
 							                    </div>
                 </div>
-                                			</div>
+                                                <div class="floor-brand">
+					<div class="tabs-brand">
+							<div class="brand">
+								<div class="brand-con">
+									<ul class="yyyy_3"  style="position: absolute; width: 1210px; height: 40px; top: 0px; left: 1px;">
+																				<li class="fore1">
+											<a href="category.php?id=3&amp;brand=44" target="_blank" title="三元">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437431370729213687.jpg" alt="三元">
+											</a>
+										</li>
+																				<li >
+											<a href="category.php?id=3&amp;brand=41" target="_blank" title="伊利">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437431337248235690.jpg" alt="伊利">
+											</a>
+										</li>
+																			</ul>
+									<div class="brand-btn">
+										<a class="brand-left right_3" href="javascript:void(0)">&lt;</a>
+										<a class="brand-right left_3" href="javascript:void(0)">&gt;</a>
+									</div>
+								</div>
+							</div>
+						<script type="text/javascript">
+						Move(".left_3",".right_3",".yyyy_3",".brand","10");
+						</script>
+					</div>
+				</div>
+                			</div>
 		</div>
 </div>
 <div class="floor" floor="6" color="#e31939">
@@ -1036,7 +1482,7 @@ $(function(){
 				<div class="floor-title">
 					<h2>
 						<span> 6F </span>
-						<a href="category.php?id=7" target="_blank"></a>
+						<a href="category.php?id=7" target="_blank">奥迪进口</a>
 					</h2>
                     <ul class="floor-tabs-nav">
 						<li class="floor-tabs-selected">
@@ -1126,37 +1572,7 @@ $(function(){
 										<a class="add-cart" onclick="addToCart(286)" title="加入购物车"></a>
 									</div>
 								</div>
-																<div class="goods" id="li_287" >
-									<div class="wrap">
-										<a target="_blank" href="goods.php?id=287" title="韩国原装进口lotte乐天 2%富足水蜜桃果汁饮料240ml听装 夏季饮料">
-											<img data-original="images/201603/thumb_img/287_thumb_G_1457592139010.jpg" src="themes/68ecshopcom_360buy/images/loading.gif" alt="韩国原装进口lotte乐天 2%富足水蜜桃果汁饮料240ml听装 夏季饮料" height="140" width="140" class="pic_img_287">
-										</a>
-										<p class="title">
-											<a target="_blank" href="goods.php?id=287" title="韩国原装进口lotte乐天 2%富足水蜜桃果汁饮料240ml听装 夏季饮料">韩国原装进口lotte乐天 2%富足水蜜桃果汁饮...</a>
-										</p>
-										<p class="price">
-											<span>
-																								¥5.3																							</span>
-										</p>
-										<a class="add-cart" onclick="addToCart(287)" title="加入购物车"></a>
-									</div>
-								</div>
-																<div class="goods" id="li_285" >
-									<div class="wrap">
-										<a target="_blank" href="goods.php?id=285" title="LOTTE乐天 韩国原装进口 牛奶碳酸饮料 250ml">
-											<img data-original="images/201603/thumb_img/285_thumb_G_1457590792869.jpg" src="themes/68ecshopcom_360buy/images/loading.gif" alt="LOTTE乐天 韩国原装进口 牛奶碳酸饮料 250ml" height="140" width="140" class="pic_img_285">
-										</a>
-										<p class="title">
-											<a target="_blank" href="goods.php?id=285" title="LOTTE乐天 韩国原装进口 牛奶碳酸饮料 250ml">LOTTE乐天 韩国原装进口 牛奶碳酸饮料 25...</a>
-										</p>
-										<p class="price">
-											<span>
-																								¥5.2																							</span>
-										</p>
-										<a class="add-cart" onclick="addToCart(285)" title="加入购物车"></a>
-									</div>
-								</div>
-																<div class="goods" id="li_250" style="width: 234px">
+																<div class="goods" id="li_250" >
 									<div class="wrap">
 										<a target="_blank" href="goods.php?id=250" title="怡宝 纯净水 4.5L*4 箱装">
 											<img data-original="images/201602/thumb_img/250_thumb_G_1456450428826.jpg" src="themes/68ecshopcom_360buy/images/loading.gif" alt="怡宝 纯净水 4.5L*4 箱装" height="140" width="140" class="pic_img_250">
@@ -1174,7 +1590,59 @@ $(function(){
 															</div>
 							                    </div>
                 </div>
-                                			</div>
+                                                <div class="floor-brand">
+					<div class="tabs-brand">
+							<div class="brand">
+								<div class="brand-con">
+									<ul class="yyyy_7"  style="position: absolute; width: 1210px; height: 40px; top: 0px; left: 1px;">
+																				<li class="fore1">
+											<a href="category.php?id=7&amp;brand=7" target="_blank" title="爱丽">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437429042714176893.jpg" alt="爱丽">
+											</a>
+										</li>
+																				<li >
+											<a href="category.php?id=7&amp;brand=63" target="_blank" title="斯提亚">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437432901296336878.jpg" alt="斯提亚">
+											</a>
+										</li>
+																				<li >
+											<a href="category.php?id=7&amp;brand=96" target="_blank" title="贝古贝古">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437438440162456222.jpg" alt="贝古贝古">
+											</a>
+										</li>
+																				<li >
+											<a href="category.php?id=7&amp;brand=12" target="_blank" title="姬芮">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437429559203552370.jpg" alt="姬芮">
+											</a>
+										</li>
+																				<li >
+											<a href="category.php?id=7&amp;brand=97" target="_blank" title="皇家宝贝">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437438450967200189.jpg" alt="皇家宝贝">
+											</a>
+										</li>
+																				<li >
+											<a href="category.php?id=7&amp;brand=103" target="_blank" title="巴拉巴拉">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437438555681581254.jpg" alt="巴拉巴拉">
+											</a>
+										</li>
+																				<li >
+											<a href="category.php?id=7&amp;brand=80" target="_blank" title="溢彩年华">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437434684850488373.jpg" alt="溢彩年华">
+											</a>
+										</li>
+																			</ul>
+									<div class="brand-btn">
+										<a class="brand-left right_7" href="javascript:void(0)">&lt;</a>
+										<a class="brand-right left_7" href="javascript:void(0)">&gt;</a>
+									</div>
+								</div>
+							</div>
+						<script type="text/javascript">
+						Move(".left_7",".right_7",".yyyy_7",".brand","10");
+						</script>
+					</div>
+				</div>
+                			</div>
 		</div>
 </div>
 <div class="floor" floor="7" color="#e31939">
@@ -1186,7 +1654,7 @@ $(function(){
 				<div class="floor-title">
 					<h2>
 						<span> 7F </span>
-						<a href="category.php?id=8" target="_blank"></a>
+						<a href="category.php?id=8" target="_blank">奥迪R18</a>
 					</h2>
                     <ul class="floor-tabs-nav">
 						<li class="floor-tabs-selected">
@@ -1270,6 +1738,21 @@ $(function(){
 								<div class="brand-con">
 									<ul class="yyyy_8"  style="position: absolute; width: 1210px; height: 40px; top: 0px; left: 1px;">
 																				<li class="fore1">
+											<a href="category.php?id=8&amp;brand=7" target="_blank" title="爱丽">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437429042714176893.jpg" alt="爱丽">
+											</a>
+										</li>
+																				<li >
+											<a href="category.php?id=8&amp;brand=63" target="_blank" title="斯提亚">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437432901296336878.jpg" alt="斯提亚">
+											</a>
+										</li>
+																				<li >
+											<a href="category.php?id=8&amp;brand=96" target="_blank" title="贝古贝古">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437438440162456222.jpg" alt="贝古贝古">
+											</a>
+										</li>
+																				<li >
 											<a href="category.php?id=8&amp;brand=12" target="_blank" title="姬芮">
 												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437429559203552370.jpg" alt="姬芮">
 											</a>
@@ -1287,21 +1770,6 @@ $(function(){
 																				<li >
 											<a href="category.php?id=8&amp;brand=80" target="_blank" title="溢彩年华">
 												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437434684850488373.jpg" alt="溢彩年华">
-											</a>
-										</li>
-																				<li >
-											<a href="category.php?id=8&amp;brand=7" target="_blank" title="爱丽">
-												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437429042714176893.jpg" alt="爱丽">
-											</a>
-										</li>
-																				<li >
-											<a href="category.php?id=8&amp;brand=63" target="_blank" title="斯提亚">
-												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437432901296336878.jpg" alt="斯提亚">
-											</a>
-										</li>
-																				<li >
-											<a href="category.php?id=8&amp;brand=96" target="_blank" title="贝古贝古">
-												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437438440162456222.jpg" alt="贝古贝古">
 											</a>
 										</li>
 																			</ul>
@@ -1328,7 +1796,7 @@ $(function(){
 				<div class="floor-title">
 					<h2>
 						<span> 8F </span>
-						<a href="category.php?id=1" target="_blank">奥迪</a>
+						<a href="category.php?id=1" target="_blank">汽车</a>
 					</h2>
                     <ul class="floor-tabs-nav">
 						<li class="floor-tabs-selected">
@@ -1403,7 +1871,127 @@ $(function(){
                     <div class="floor-right">
                     	
 							<div class="floor-tabs-panel" style="border-top: 1px #e31939 solid;">
-																							</div>
+																								<div class="goods" id="li_286" >
+									<div class="wrap">
+										<a target="_blank" href="goods.php?id=286" title="永味堂红番石榴汁饮料960ml">
+											<img data-original="images/201603/thumb_img/286_thumb_G_1457592064813.jpg" src="themes/68ecshopcom_360buy/images/loading.gif" alt="永味堂红番石榴汁饮料960ml" height="140" width="140" class="pic_img_286">
+										</a>
+										<p class="title">
+											<a target="_blank" href="goods.php?id=286" title="永味堂红番石榴汁饮料960ml">永味堂红番石榴汁饮料960ml</a>
+										</p>
+										<p class="price">
+											<span>
+																								¥13.5																							</span>
+										</p>
+										<a class="add-cart" onclick="addToCart(286)" title="加入购物车"></a>
+									</div>
+								</div>
+																<div class="goods" id="li_250" >
+									<div class="wrap">
+										<a target="_blank" href="goods.php?id=250" title="怡宝 纯净水 4.5L*4 箱装">
+											<img data-original="images/201602/thumb_img/250_thumb_G_1456450428826.jpg" src="themes/68ecshopcom_360buy/images/loading.gif" alt="怡宝 纯净水 4.5L*4 箱装" height="140" width="140" class="pic_img_250">
+										</a>
+										<p class="title">
+											<a target="_blank" href="goods.php?id=250" title="怡宝 纯净水 4.5L*4 箱装">怡宝 纯净水 4.5L*4 箱装</a>
+										</p>
+										<p class="price">
+											<span>
+																								¥29.9																							</span>
+										</p>
+										<a class="add-cart" onclick="addToCart(250)" title="加入购物车"></a>
+									</div>
+								</div>
+																<div class="goods" id="li_60" >
+									<div class="wrap">
+										<a target="_blank" href="goods.php?id=60" title="德国 进口牛奶 欧德堡（Oldenburger）超高温处理全脂纯牛奶1L*12">
+											<img data-original="images/201507/thumb_img/60_thumb_G_1437520982494.jpg" src="themes/68ecshopcom_360buy/images/loading.gif" alt="德国 进口牛奶 欧德堡（Oldenburger）超高温处理全脂纯牛奶1L*12" height="140" width="140" class="pic_img_60">
+										</a>
+										<p class="title">
+											<a target="_blank" href="goods.php?id=60" title="德国 进口牛奶 欧德堡（Oldenburger）超高温处理全脂纯牛奶1L*12">德国 进口牛奶 欧德堡（Oldenburger）...</a>
+										</p>
+										<p class="price">
+											<span>
+																								¥119.0																							</span>
+										</p>
+										<a class="add-cart" onclick="addToCart(60)" title="加入购物车"></a>
+									</div>
+								</div>
+																<div class="goods" id="li_62" style="width: 234px">
+									<div class="wrap">
+										<a target="_blank" href="goods.php?id=62" title="澳大利亚 进口牛奶 德运（Devondale） 全脂牛奶 1L*10 整箱装">
+											<img data-original="images/201507/thumb_img/62_thumb_G_1437521071878.jpg" src="themes/68ecshopcom_360buy/images/loading.gif" alt="澳大利亚 进口牛奶 德运（Devondale） 全脂牛奶 1L*10 整箱装" height="140" width="140" class="pic_img_62">
+										</a>
+										<p class="title">
+											<a target="_blank" href="goods.php?id=62" title="澳大利亚 进口牛奶 德运（Devondale） 全脂牛奶 1L*10 整箱装">澳大利亚 进口牛奶 德运（Devondale） ...</a>
+										</p>
+										<p class="price">
+											<span>
+																								¥99.0																							</span>
+										</p>
+										<a class="add-cart" onclick="addToCart(62)" title="加入购物车"></a>
+									</div>
+								</div>
+																<div class="goods" id="li_68" >
+									<div class="wrap">
+										<a target="_blank" href="goods.php?id=68" title="新西兰 原装进口 纯牛奶 纽麦福（ Meadow fresh ）全脂1L*12盒/箱">
+											<img data-original="images/201507/thumb_img/68_thumb_G_1437521651986.jpg" src="themes/68ecshopcom_360buy/images/loading.gif" alt="新西兰 原装进口 纯牛奶 纽麦福（ Meadow fresh ）全脂1L*12盒/箱" height="140" width="140" class="pic_img_68">
+										</a>
+										<p class="title">
+											<a target="_blank" href="goods.php?id=68" title="新西兰 原装进口 纯牛奶 纽麦福（ Meadow fresh ）全脂1L*12盒/箱">新西兰 原装进口 纯牛奶 纽麦福（ Meadow...</a>
+										</p>
+										<p class="price">
+											<span>
+																								¥109.0																							</span>
+										</p>
+										<a class="add-cart" onclick="addToCart(68)" title="加入购物车"></a>
+									</div>
+								</div>
+																<div class="goods" id="li_72" >
+									<div class="wrap">
+										<a target="_blank" href="goods.php?id=72" title="波兰 进口牛奶 日昇（MLEKOVITA）全脂牛奶1L*12盒">
+											<img data-original="images/201507/thumb_img/72_thumb_G_1437521848992.jpg" src="themes/68ecshopcom_360buy/images/loading.gif" alt="波兰 进口牛奶 日昇（MLEKOVITA）全脂牛奶1L*12盒" height="140" width="140" class="pic_img_72">
+										</a>
+										<p class="title">
+											<a target="_blank" href="goods.php?id=72" title="波兰 进口牛奶 日昇（MLEKOVITA）全脂牛奶1L*12盒">波兰 进口牛奶 日昇（MLEKOVITA）全脂牛...</a>
+										</p>
+										<p class="price">
+											<span>
+																								¥109.0																							</span>
+										</p>
+										<a class="add-cart" onclick="addToCart(72)" title="加入购物车"></a>
+									</div>
+								</div>
+																<div class="goods" id="li_74" >
+									<div class="wrap">
+										<a target="_blank" href="goods.php?id=74" title="德运Devondale 脱脂高钙奶粉1kg">
+											<img data-original="images/201507/thumb_img/74_thumb_G_1437521987425.jpg" src="themes/68ecshopcom_360buy/images/loading.gif" alt="德运Devondale 脱脂高钙奶粉1kg" height="140" width="140" class="pic_img_74">
+										</a>
+										<p class="title">
+											<a target="_blank" href="goods.php?id=74" title="德运Devondale 脱脂高钙奶粉1kg">德运Devondale 脱脂高钙奶粉1kg</a>
+										</p>
+										<p class="price">
+											<span>
+																								¥79.9																							</span>
+										</p>
+										<a class="add-cart" onclick="addToCart(74)" title="加入购物车"></a>
+									</div>
+								</div>
+																<div class="goods" id="li_79" style="width: 234px">
+									<div class="wrap">
+										<a target="_blank" href="goods.php?id=79" title="蒙牛 特仑苏 纯牛奶 250ml*12 礼盒装">
+											<img data-original="images/201507/thumb_img/79_thumb_G_1437522204345.jpg" src="themes/68ecshopcom_360buy/images/loading.gif" alt="蒙牛 特仑苏 纯牛奶 250ml*12 礼盒装" height="140" width="140" class="pic_img_79">
+										</a>
+										<p class="title">
+											<a target="_blank" href="goods.php?id=79" title="蒙牛 特仑苏 纯牛奶 250ml*12 礼盒装">蒙牛 特仑苏 纯牛奶 250ml*12 礼盒装</a>
+										</p>
+										<p class="price">
+											<span>
+																								¥55.0																							</span>
+										</p>
+										<a class="add-cart" onclick="addToCart(79)" title="加入购物车"></a>
+									</div>
+								</div>
+															</div>
 							                    </div>
                 </div>
                                                 <div class="floor-brand">
@@ -1412,8 +2000,18 @@ $(function(){
 								<div class="brand-con">
 									<ul class="yyyy_1"  style="position: absolute; width: 1210px; height: 40px; top: 0px; left: 1px;">
 																				<li class="fore1">
-											<a href="category.php?id=1&amp;brand=48" target="_blank" title="楼兰密语">
-												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437431622196514430.jpg" alt="楼兰密语">
+											<a href="category.php?id=1&amp;brand=97" target="_blank" title="皇家宝贝">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437438450967200189.jpg" alt="皇家宝贝">
+											</a>
+										</li>
+																				<li >
+											<a href="category.php?id=1&amp;brand=103" target="_blank" title="巴拉巴拉">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437438555681581254.jpg" alt="巴拉巴拉">
+											</a>
+										</li>
+																				<li >
+											<a href="category.php?id=1&amp;brand=44" target="_blank" title="三元">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437431370729213687.jpg" alt="三元">
 											</a>
 										</li>
 																				<li >
@@ -1422,13 +2020,48 @@ $(function(){
 											</a>
 										</li>
 																				<li >
+											<a href="category.php?id=1&amp;brand=80" target="_blank" title="溢彩年华">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437434684850488373.jpg" alt="溢彩年华">
+											</a>
+										</li>
+																				<li >
 											<a href="category.php?id=1&amp;brand=47" target="_blank" title="口水娃">
 												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437431609681889286.jpg" alt="口水娃">
 											</a>
 										</li>
 																				<li >
+											<a href="category.php?id=1&amp;brand=7" target="_blank" title="爱丽">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437429042714176893.jpg" alt="爱丽">
+											</a>
+										</li>
+																				<li >
+											<a href="category.php?id=1&amp;brand=63" target="_blank" title="斯提亚">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437432901296336878.jpg" alt="斯提亚">
+											</a>
+										</li>
+																				<li >
 											<a href="category.php?id=1&amp;brand=45" target="_blank" title="百草味">
 												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437431586427003983.jpg" alt="百草味">
+											</a>
+										</li>
+																				<li >
+											<a href="category.php?id=1&amp;brand=96" target="_blank" title="贝古贝古">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437438440162456222.jpg" alt="贝古贝古">
+											</a>
+										</li>
+																				<li >
+											<a href="category.php?id=1&amp;brand=12" target="_blank" title="姬芮">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437429559203552370.jpg" alt="姬芮">
+											</a>
+										</li>
+																				<li >
+											<a href="category.php?id=1&amp;brand=41" target="_blank" title="伊利">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437431337248235690.jpg" alt="伊利">
+											</a>
+										</li>
+																				<li >
+											<a href="category.php?id=1&amp;brand=48" target="_blank" title="楼兰密语">
+												<img width="100" height="40" src="themes/68ecshopcom_360buy/images/loading.gif"  data-original="data/brandlogo/1437431622196514430.jpg" alt="楼兰密语">
 											</a>
 										</li>
 																			</ul>
@@ -1649,7 +2282,7 @@ $(function(){
                     <input type="text" id="authcode" name="captcha" class="text text-1" tabindex="3" placeholder="验证码"/>
                 </div>
                 <label class="img fl">
-                    <img src="captcha.php?is_login=1&1743386956" alt="captcha" style="vertical-align: middle;cursor: pointer;" onClick="this.src='captcha.php?is_login=1&'+Math.random()" />
+                    <img src="captcha.php?is_login=1&1823157684" alt="captcha" style="vertical-align: middle;cursor: pointer;" onClick="this.src='captcha.php?is_login=1&'+Math.random()" />
                 </label>
             </div>
                         <div class="safety" id="autoentry">

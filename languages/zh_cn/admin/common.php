@@ -210,6 +210,8 @@ $_LANG['virtual_category']	= '虚拟劵商品分类管理';
 $_LANG['virtual_district']	= '入驻商商圈管理';
 $_LANG['virtual_validate'] = '虚拟券验证';
 $_LANG['virtual_goods_s'] = '虚拟商品列表';
+$_LANG['05_car_area_list'] = '车辆所在地';
+$_LANG['add_car_area_list'] = '添加车辆所在地';
 /* 虚拟团购 代码增加 by www.68ecshop.com end */
 
 /* 促销管理 */

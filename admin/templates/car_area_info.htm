@@ -1,0 +1,66 @@
+<!-- $Id: category_info.htm 16752 2009-10-20 09:59:38Z wangleisvn $ -->
+
+{include file="pageheader.htm"} 
+<!-- start add new category form -->
+<div class="main-div">
+  <form action="car_area.php" method="post" name="theForm" enctype="multipart/form-data" onsubmit="return validate()">
+    <table width="100%" id="general-table">
+      <tr>
+        <td class="label">省份或直辖市:</td>
+        <td><input type="text" name='province' value="{$car_area_info.province}" placeholder="广东">
+          <font color="red">*</font></td>
+      </tr>
+      <tr>
+        <td class="label">简称:</td>
+        <td><input type="text" name="short" value="{$car_area_info.short}" placeholder="粤"><font color="red">*</font></td>
+      </tr>
+
+
+      <tr>
+        <td class="label">排序:</td>
+        <td><input type="text" name='sort_order' {if $car_area_info.sort_order}value='{$car_area_info.sort_order}'{else} value="0"{/if} size="15" /></td>
+      </tr>
+    </table>
+    <div class="button-div">
+      <input type="submit" class="button" value="{$lang.button_submit}" />
+      <input type="reset" class="button" value="{$lang.button_reset}" />
+    </div>
+    <input type="hidden" name="act" value="{$form_act}" />
+    <input type="hidden" name="id" value="{$car_area_info.id}" />
+  </form>
+</div>
+{insert_scripts files="../js/utils.js,validator.js"}
+{literal} 
+<script language="JavaScript">
+<!--
+/**
+ * 检查表单输入的数据
+ */
+function validate()
+{
+  validator = new Validator("theForm");
+  validator.required("province",      province_empty);
+  if (parseInt(document.forms['theForm'].elements['grade'].value) >10 || parseInt(document.forms['theForm'].elements['grade'].value) < 0)
+  {
+    validator.addErrorMsg('{$lang.grade_error}');
+  }
+  return validator.passed();
+}
+
+function _index_dwt(id, type)
+{
+	if(type == 0){
+		$("[name='style']").val("category_index.css");
+	}
+	document.getElementById(id).style.display = (type == 1 ? "" : "none");
+}
+
+function change_dwt()
+{
+	document.getElementById("index_dwt_0").checked = true;
+	document.getElementById("index_dwt_1").checked = false;
+}
+//-->
+</script> 
+{/literal}
+{include file="pagefooter.htm"}

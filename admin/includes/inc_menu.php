@@ -21,6 +21,7 @@ $modules['02_cat_and_goods']['01_goods_list'] = 'goods.php?act=list'; // 商品�
 $modules['02_cat_and_goods']['02_supplier_goods_list'] = 'goods.php?act=list&supp=1'; // 供货商商品列表
 $modules['02_cat_and_goods']['03_goods_add'] = 'goods.php?act=add'; // 添加商品
 $modules['02_cat_and_goods']['04_category_list'] = 'category.php?act=list';
+$modules['02_cat_and_goods']['05_car_area_list'] = 'car_area.php?act=list';//车辆所在地
 $modules['02_cat_and_goods']['05_comment_manage'] = 'comment_manage.php?act=list';
 // 代码增加 评论详情
 //shanchu   $modules['02_cat_and_goods']['05_order_comment'] = 'order_comment.php?act=list';

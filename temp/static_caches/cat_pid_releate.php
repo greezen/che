@@ -3,8 +3,8 @@ $data = array (
   0 => 
   array (
     'cat_id' => '1',
-    'cat_name' => '奥迪',
-    'cat_logo' => '1496670386696727624.jpg',
+    'cat_name' => '汽车',
+    'cat_logo' => '',
     'measure_unit' => '',
     'parent_id' => '0',
     'is_show' => '0',
@@ -17,8 +17,8 @@ $data = array (
   1 => 
   array (
     'cat_id' => '2',
-    'cat_name' => '一汽大众奥迪',
-    'cat_logo' => '1496670472974692065.jpg',
+    'cat_name' => '奥迪',
+    'cat_logo' => '1497016763990882049.jpg',
     'measure_unit' => '',
     'parent_id' => '1',
     'is_show' => '0',
@@ -31,8 +31,22 @@ $data = array (
   2 => 
   array (
     'cat_id' => '3',
-    'cat_name' => '奥迪A6',
-    'cat_logo' => '1496670491067589779.jpg',
+    'cat_name' => '一汽大众奥迪',
+    'cat_logo' => '',
+    'measure_unit' => '',
+    'parent_id' => '2',
+    'is_show' => '0',
+    'show_in_nav' => '0',
+    'grade' => '0',
+    'sort_order' => '50',
+    'has_children' => '3',
+    'goods_num' => 0,
+  ),
+  3 => 
+  array (
+    'cat_id' => '7',
+    'cat_name' => '奥迪进口',
+    'cat_logo' => '',
     'measure_unit' => '',
     'parent_id' => '2',
     'is_show' => '0',
@@ -40,27 +54,27 @@ $data = array (
     'grade' => '0',
     'sort_order' => '50',
     'has_children' => '1',
-    'goods_num' => 0,
+    'goods_num' => '2',
   ),
-  3 => 
+  4 => 
   array (
     'cat_id' => '4',
-    'cat_name' => '奥迪A4L',
-    'cat_logo' => '1496670510797586266.jpg',
+    'cat_name' => '奥迪A6',
+    'cat_logo' => '1497016826071620721.jpg',
     'measure_unit' => '',
-    'parent_id' => '2',
+    'parent_id' => '3',
     'is_show' => '0',
     'show_in_nav' => '0',
     'grade' => '0',
     'sort_order' => '50',
-    'has_children' => '0',
+    'has_children' => '2',
     'goods_num' => 0,
   ),
-  4 => 
+  5 => 
   array (
     'cat_id' => '5',
-    'cat_name' => '2004款1.8T(125马力)',
-    'cat_logo' => '',
+    'cat_name' => '奥迪A4L',
+    'cat_logo' => '1497016853411446705.jpg',
     'measure_unit' => '',
     'parent_id' => '3',
     'is_show' => '0',
@@ -69,6 +83,62 @@ $data = array (
     'sort_order' => '50',
     'has_children' => '0',
     'goods_num' => 0,
+  ),
+  6 => 
+  array (
+    'cat_id' => '6',
+    'cat_name' => '奥迪Q3',
+    'cat_logo' => '1497016865829549008.jpg',
+    'measure_unit' => '',
+    'parent_id' => '3',
+    'is_show' => '0',
+    'show_in_nav' => '0',
+    'grade' => '0',
+    'sort_order' => '50',
+    'has_children' => '0',
+    'goods_num' => 0,
+  ),
+  7 => 
+  array (
+    'cat_id' => '9',
+    'cat_name' => '2004款1.8T(125马力)',
+    'cat_logo' => '',
+    'measure_unit' => '',
+    'parent_id' => '4',
+    'is_show' => '0',
+    'show_in_nav' => '0',
+    'grade' => '0',
+    'sort_order' => '50',
+    'has_children' => '0',
+    'goods_num' => '8',
+  ),
+  8 => 
+  array (
+    'cat_id' => '10',
+    'cat_name' => '2004款1.8T手动基本',
+    'cat_logo' => '',
+    'measure_unit' => '',
+    'parent_id' => '4',
+    'is_show' => '0',
+    'show_in_nav' => '0',
+    'grade' => '0',
+    'sort_order' => '50',
+    'has_children' => '0',
+    'goods_num' => 0,
+  ),
+  9 => 
+  array (
+    'cat_id' => '8',
+    'cat_name' => '奥迪R18',
+    'cat_logo' => '1497016925153393759.jpg',
+    'measure_unit' => '',
+    'parent_id' => '7',
+    'is_show' => '0',
+    'show_in_nav' => '0',
+    'grade' => '0',
+    'sort_order' => '50',
+    'has_children' => '0',
+    'goods_num' => '8',
   ),
 );
 ?>

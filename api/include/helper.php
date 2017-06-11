@@ -276,4 +276,24 @@ class helper
         ksort($ret);
         return $ret;
     }
+
+    /**
+     * 获取抵押方式
+     * @param null $index
+     * @return array|mixed|string
+     */
+    public static function getHockList($index = null)
+    {
+        $hock_list = array(
+            'all' => '全款',
+            'bank' => '低押银行',
+            'loan' => '低押小贷',
+            'personal' => '低押个人',
+        );
+        if ($index === null) {
+            return $hock_list;
+        } else {
+            return isset($hock_list[$index]) ? $hock_list[$index] : '';
+        }
+    }
 }

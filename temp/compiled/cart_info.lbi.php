@@ -9,17 +9,17 @@
             <div class="cart-panel-content">
                 <?php if ($this->_var['goods']): ?>
                 <div class="cart-list">
-                    <?php $_from = $this->_var['goods']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'goods_0_93639400_1496671475');$this->_foreach['goods'] = array('total' => count($_from), 'iteration' => 0);
+                    <?php $_from = $this->_var['goods']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'goods_0_00267900_1497190843');$this->_foreach['goods'] = array('total' => count($_from), 'iteration' => 0);
 if ($this->_foreach['goods']['total'] > 0):
-    foreach ($_from AS $this->_var['goods_0_93639400_1496671475']):
+    foreach ($_from AS $this->_var['goods_0_00267900_1497190843']):
         $this->_foreach['goods']['iteration']++;
 ?>
                     <div class="cart-item">
                         <div class="item-goods">
-                            <span class="p-img"><a href="<?php echo $this->_var['goods_0_93639400_1496671475']['url']; ?>"><img src="<?php if ($this->_var['goods_0_93639400_1496671475']['goods_thumb'] == 'package_img'): ?>themes/68ecshopcom_360buy/images/jmpic/ico_cart_package.gif<?php else: ?><?php echo $this->_var['goods_0_93639400_1496671475']['goods_thumb']; ?><?php endif; ?>" width="50" height="50" alt="<?php echo $this->_var['goods_0_93639400_1496671475']['short_name']; ?>"></a></span>
-                        <div class="p-name"><a href="<?php echo $this->_var['goods_0_93639400_1496671475']['url']; ?>" title="<?php echo $this->_var['goods_0_93639400_1496671475']['short_name']; ?>"><?php echo $this->_var['goods_0_93639400_1496671475']['short_name']; ?></a></div>
-                        <div class="p-price"><strong><?php echo $this->_var['goods_0_93639400_1496671475']['goods_price']; ?></strong>×<?php echo $this->_var['goods_0_93639400_1496671475']['goods_number']; ?></div>
-                        <a href="javascript:;" class="p-del" onClick="deleteCartGoods(<?php echo $this->_var['goods_0_93639400_1496671475']['rec_id']; ?>)">删除</a>
+                            <span class="p-img"><a href="<?php echo $this->_var['goods_0_00267900_1497190843']['url']; ?>"><img src="<?php if ($this->_var['goods_0_00267900_1497190843']['goods_thumb'] == 'package_img'): ?>themes/68ecshopcom_360buy/images/jmpic/ico_cart_package.gif<?php else: ?><?php echo $this->_var['goods_0_00267900_1497190843']['goods_thumb']; ?><?php endif; ?>" width="50" height="50" alt="<?php echo $this->_var['goods_0_00267900_1497190843']['short_name']; ?>"></a></span>
+                        <div class="p-name"><a href="<?php echo $this->_var['goods_0_00267900_1497190843']['url']; ?>" title="<?php echo $this->_var['goods_0_00267900_1497190843']['short_name']; ?>"><?php echo $this->_var['goods_0_00267900_1497190843']['short_name']; ?></a></div>
+                        <div class="p-price"><strong><?php echo $this->_var['goods_0_00267900_1497190843']['goods_price']; ?></strong>×<?php echo $this->_var['goods_0_00267900_1497190843']['goods_number']; ?></div>
+                        <a href="javascript:;" class="p-del" onClick="deleteCartGoods(<?php echo $this->_var['goods_0_00267900_1497190843']['rec_id']; ?>)">删除</a>
                         </div>
                     </div>
                     <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>

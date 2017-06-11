@@ -56,8 +56,10 @@
     <td width="10%" align="right"><span onclick="listTable.edit(this, 'edit_sort_order', {$cat.cat_id})">{$cat.sort_order}</span></td>
     <td width="24%" align="center">
       <!--<a href="category.php?act=move&cat_id={$cat.cat_id}">{$lang.move_goods}</a> |-->
-      <a href="category.php?act=edit&amp;cat_id={$cat.cat_id}">{$lang.edit}</a> |
-      <a href="javascript:;" onclick="listTable.remove({$cat.cat_id}, '{$lang.drop_confirm}')" title="{$lang.remove}">{$lang.remove}</a>
+      <a href="category.php?act=edit&amp;cat_id={$cat.cat_id}">{$lang.edit}</a>
+      {if $cat.cat_id != 1}
+      |<a href="javascript:;" onclick="listTable.remove({$cat.cat_id}, '{$lang.drop_confirm}')" title="{$lang.remove}">{$lang.remove}</a>
+      {/if}
 	  <!--代码修改_start Byjdy-->
 	  {if $cat.level eq 0}
 	  <!--| <a href="category_flashimg.php?act=list&amp;cat_id={$cat.cat_id}">设置轮播图片</a>	  -->
