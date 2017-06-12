@@ -235,7 +235,7 @@ function action_certify()
     $db = $GLOBALS['db'];
     $upload_size_limit = $_CFG['upload_size_limit'] == '-1' ? ini_get('upload_max_filesize') : $_CFG['upload_size_limit'];
     if (empty($access_token) || empty($access_data)) {
-        helper::json('false', 'access_token错误');
+        helper::json('false', '登录超时，请重新登录');
     } elseif (empty($zhizhao)) {
         helper::json('false', '未上传营业执照');
     } elseif (empty($organization_code)) {

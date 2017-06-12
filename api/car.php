@@ -76,10 +76,14 @@ function action_add($db, $ecs)
     $price = helper::post('price');//零售价
     $lower_price = helper::post('lower_price');//最低价
     $phone = helper::post('phone');//联系电话
+    $access_token = helper::post('access_token');
+    $access_data = helper::get_cache($access_token);
 
     $hock_list = helper::getHockList();
 
-    if (empty($cid)) {
+    if (empty($access_token) || empty($access_data)) {
+        helper::json('false', '登录超时，请重新登录');
+    } elseif (empty($cid)) {
         helper::json('false', '车型不能为空');
     } elseif (empty($register_time)) {
         helper::json('false', '上牌时间不能空');
@@ -99,6 +103,8 @@ function action_add($db, $ecs)
         helper::json('false', '联系电话不能空');
     } elseif (empty($img)) {
         helper::json('false', '图片不能空');
+    } elseif (count($img['name']) > 8) {
+        helper::json('false', '最多只能上传8张图片哦');
     } elseif (!isset($hock_list[$hock_type])) {
         helper::json('false', '非法的抵押方式');
     }
@@ -114,47 +120,99 @@ function action_add($db, $ecs)
         'hock_type' => $hock_type,
         'register_time' => $register_time,
         'miles' => $miles,
+        'user_id' => $access_data['uid'],
     );
 
-    $flow = true;
+    $flow = false;
     $db->query('begin');
     //goods表
-    if ($db->autoExecute($ecs->table('goods_car'), $car, 'INSERT') === false) {
-        $flow = false;
+    if ($db->autoExecute($ecs->table('goods_car'), $car, 'INSERT')) {
+        $flow = true;
     }
 
     $goods_car_id = $db->insert_id();
 
-    $_CFG = $GLOBALS['_CFG'];
-    include_once(ROOT_PATH . '/includes/cls_image.php');
-    require_once(ROOT_PATH . '/' . ADMIN_PATH . '/includes/lib_goods.php');
-    $image = new cls_image($_CFG['bgcolor']);
-    foreach ($img['name'] as $key=>$val) {
-        $tmp = array(
-            'name' => $img['name'][$key],
-            'type' => $img['type'][$key],
-            'tmp_name' => $img['tmp_name'][$key],
-            'error' => $img['error'][$key],
-            'size' => $img['size'][$key],
-        );
-        $car_img = $image->upload_image($tmp);
-        $original_img = reformat_image_name('goods', $goods_car_id, $car_img, 'source');
-        $goods_img = reformat_image_name('goods', $goods_car_id, $car_img, 'goods');
-        $car_thumb = $image->make_thumb($car_img, $GLOBALS['_CFG']['thumb_width'],  $GLOBALS['_CFG']['thumb_height']);
-        $goods_thumb = reformat_image_name('goods_thumb', $goods_car_id, $car_thumb, 'thumb');
-        unset($tmp);
-        var_dump($car_img,$car_thumb);exit;
-    }
+    if ($flow) {
+        $_CFG = $GLOBALS['_CFG'];
+        include_once(ROOT_PATH . '/includes/cls_image.php');
+        require_once(ROOT_PATH . '/' . ADMIN_PATH . '/includes/lib_goods.php');
+        $image = new cls_image($_CFG['bgcolor']);
+        foreach ($img['name'] as $key=>$val) {
+            $tmp = array(
+                'name' => $img['name'][$key],
+                'type' => $img['type'][$key],
+                'tmp_name' => $img['tmp_name'][$key],
+                'error' => $img['error'][$key],
+                'size' => $img['size'][$key],
+            );
+            $car_img = $image->upload_image($tmp);
+            $source_img = reformat_image_name('goods', $goods_car_id, $car_img, 'source');
+            $goods_thumb = $image->make_thumb(ROOT_PATH . '/' . $source_img, $GLOBALS['_CFG']['thumb_width'],  $GLOBALS['_CFG']['thumb_height']);
+            $goods_thumb = reformat_image_name('goods_thumb', $goods_car_id, $goods_thumb, 'thumb');
 
-    //goods_attr表
-    //goods_gallery表
+            $img_data = array(
+                'goods_car_id' => $goods_car_id,
+                'thumb_url' => $goods_thumb,
+                'img_original' => $source_img,
+            );
+            if ($db->autoExecute($ecs->table('goods_car_img'), $img_data, 'INSERT') === false) {
+                $flow = false;
+                break;
+            }
+            unset($tmp, $img_data);
+        }
+    }
 
     if (empty($flow)) {
         $db->query('rollback');
     } else {
         $db->query('commit');
+        helper::json('true', '发布车源成功');
+    }
+    helper::json('false', '发布车源失败');
+}
+
+/**
+ * 删除车源
+ * @param $db
+ * @param $ecs
+ */
+function action_del($db, $ecs)
+{
+    $goods_id = helper::post('goods_id', 0);
+    $access_token = helper::post('access_token');
+    $access_data = helper::get_cache($access_token);
+
+    if (empty($access_token) || empty($access_data)) {
+        helper::json('false', '登录超时，请重新登录');
+    } elseif (empty($goods_id)) {
+        helper::json('false', '参数不正确');
     }
 
+    $flow = false;
+    $db->query('begin');
+    $db->query('DELETE FROM '.$ecs->table('goods_car').' WHERE id = '. $goods_id.' AND user_id='.$access_data['uid']);
+    if($db->affected_rows() > 0) {
+        $flow = true;
+    }
+
+    $img_count = $db->getOne('SELECT COUNT(*) num FROM '. $ecs->table('goods_car_img'). ' WHERE goods_car_id='.$goods_id);
+    if ($flow && $img_count > 0) {
+        $db->query('DELETE FROM '.$ecs->table('goods_car_img').' WHERE goods_car_id = '. $goods_id);
+        if ($db->affected_rows() > 0) {
+            $flow = true;
+        } else {
+            $flow = false;
+        }
+    }
+
+    if (empty($flow)) {
+        $db->query('rollback');
+        helper::json('false', '操作失败');
+    }
+
+    $db->query('commit');
+    helper::json('true', '操作成功');
 }
 
 function action_default()
