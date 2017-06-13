@@ -28,15 +28,21 @@ call_user_func($function_name, $GLOBALS['db'], $GLOBALS['ecs']);
  */
 function action_category($db, $ecs)
 {
-    $cid = helper::get('cid', 0, 'intval');
+    $cid = helper::post('cat_id', 0, 'intval');
+    $access_token = helper::post('access_token');
+    $access_data = helper::get_cache($access_token);
+
+    if (empty($access_token) || empty($access_data)) {
+        helper::json('false', '登录超时，请重新登录');
+    }
     $list = array();
     if (empty($cid)) {
-        $brand_list = $db->getAll("SELECT cat_id cid, cat_name name,cat_logo logo FROM " . $ecs->table('category') . ' WHERE parent_id=1');
+        $brand_list = $db->getAll("SELECT cat_id, cat_name name,cat_logo logo FROM " . $ecs->table('category') . ' WHERE parent_id=1');
         $list = helper::orderBrand($brand_list);
     } else {
         $cat = $db->getRow("SELECT * FROM ". $ecs->table('category') . " WHERE cat_id={$cid}");
         if (!empty($cat)) {
-            $list = $db->getAll("SELECT cat_id cid, cat_name name,cat_logo logo FROM ". $ecs->table('category') . " WHERE parent_id={$cid}");
+            $list = $db->getAll("SELECT cat_id, cat_name name,cat_logo logo FROM ". $ecs->table('category') . " WHERE parent_id={$cid}");
             foreach ($list as &$row) {
                if (!empty($row['logo'])) {
                    $row['logo'] = 'http://' . $_SERVER['HTTP_HOST'] . '/data/category_img/'. $row['logo'];
@@ -67,7 +73,7 @@ function action_car_place($db, $ecs)
 function action_add($db, $ecs)
 {
     $img = empty($_FILES['img'])?null:$_FILES['img'];
-    $cid = helper::post('cid', 0);//车型
+    $cid = helper::post('cat_id', 0);//车型
     $register_time = helper::post('register_time', null, 'strtotime');//上牌时间
     $place = helper::post('place');//所在地
     $miles = helper::post('miles');//表显里程
@@ -173,6 +179,35 @@ function action_add($db, $ecs)
 }
 
 /**
+ * 管理车源
+ * @param $db
+ * @param $ecs
+ */
+function action_list($db, $ecs)
+{
+    $page = helper::post('page', 1);
+    $access_token = helper::post('access_token');
+    $access_data = helper::get_cache($access_token);
+
+    if (empty($access_token) || empty($access_data)) {
+        helper::json('false', '登录超时，请重新登录');
+    }
+
+    $limit = 10;
+    $offset = ($page - 1) * $limit;
+
+    $sql = "SELECT id goods_id,cat_id,register_time,miles,price,view_count FROM ". $ecs->table('goods_car') . " WHERE user_id=".$access_data['uid']." limit {$offset},{$limit}";
+    $list = $db->getAll($sql);
+
+    foreach ($list as &$row) {
+        $row['title'] = '';
+        $row['register_time'] = date('Y年m月', $row['register_time']);
+    }
+
+    helper::json('true', '', $list);
+}
+
+/**
  * 删除车源
  * @param $db
  * @param $ecs
@@ -213,6 +248,24 @@ function action_del($db, $ecs)
 
     $db->query('commit');
     helper::json('true', '操作成功');
+}
+
+/**
+ * 获取城市信息
+ * @param $db
+ * @param $ecs
+ */
+function action_region($db, $ecs)
+{
+    $region_id = helper::post('region_id', 1);
+    $access_token = helper::post('access_token');
+    $access_data = helper::get_cache($access_token);
+
+    if (empty($access_token) || empty($access_data)) {
+        helper::json('false', '登录超时，请重新登录');
+    }
+    $list = $db->getAll('SELECT region_id id,region_name name FROM '.$ecs->table('region').' WHERE parent_id='.$region_id);
+    helper::json('true', '', $list);
 }
 
 function action_default()

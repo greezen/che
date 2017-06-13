@@ -151,7 +151,7 @@ class helper
                 $field = $fun($field);
             }
         }
-        if (!empty($key) && isset($_POST[$key])) {
+        if (!empty($key) && !empty($_POST[$key])) {
             return $fun($_POST[$key]);
         }
 

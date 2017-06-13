@@ -338,4 +338,197 @@ return array(
         'remark' => '',
         'demo' => '',
     ),
+    array(
+        'id' => 'v1-0_category',
+        'title' => '车型列表信息',
+        'api' => '/api/car.php?act=category',
+        'method' => 'POST',
+        'param' =>
+            array(
+                array(
+                    'attr' => 'access_token',
+                    'type' => 'string',
+                    'desc' => 'access_token',
+                    'required' => true,
+                ),
+                array(
+                    'attr' => 'cat_id',
+                    'type' => 'int',
+                    'desc' => '车型id,不填则获取第一级的车型列表信息',
+                    'required' => false,
+                ),
+            ),
+        'response' => '
+        {
+            "result":"true",//失败返回字符串false,msg中是具体的错误和提示信息
+            "msg":"",
+            "data":{
+                    "A": [ //排序A-Z,只有第一级有排序
+                        {
+                            "cat_id": "2",//车型id
+                            "name": "奥迪",//车型名称
+                            "logo": "http://che.dev/data/category_img/1497016763990882049.jpg"//车型logo图片
+                        }
+                    ]
+                }
+        }
+
+    ',
+        'remark' => '',
+        'demo' => '',
+    ),
+    array(
+        'id' => 'v1-0_add',
+        'title' => '发布车源',
+        'api' => '/api/car.php?act=add',
+        'method' => 'POST',
+        'param' =>
+            array(
+                array(
+                    'attr' => 'access_token',
+                    'type' => 'string',
+                    'desc' => 'access_token',
+                    'required' => true,
+                ),
+                array(
+                    'attr' => 'cat_id',
+                    'type' => 'int',
+                    'desc' => '车型id',
+                    'required' => true,
+                ),
+                array(
+                    'attr' => 'register_time',
+                    'type' => 'date',
+                    'desc' => '上牌时间(2017-05)',
+                    'required' => true,
+                ),
+                array(
+                    'attr' => 'miles',
+                    'type' => 'float',
+                    'desc' => '里程数',
+                    'required' => true,
+                ),
+                array(
+                    'attr' => 'hock_type',
+                    'type' => 'string',
+                    'desc' => '抵押方式(all=>全款，bank=>抵押银行，loan=>低押小贷,personal=>低押个人)',
+                    'required' => true,
+                ),
+                array(
+                    'attr' => 'new_car_price',
+                    'type' => 'float',
+                    'desc' => '新车指导价',
+                    'required' => true,
+                ),
+                array(
+                    'attr' => 'price',
+                    'type' => 'float',
+                    'desc' => '零售价',
+                    'required' => true,
+                ),
+                array(
+                    'attr' => 'lower_price',
+                    'type' => 'float',
+                    'desc' => '最低价',
+                    'required' => true,
+                ),
+                array(
+                    'attr' => 'phone',
+                    'type' => 'float',
+                    'desc' => '联系电话',
+                    'required' => true,
+                ),
+                array(
+                    'attr' => 'img[]',
+                    'type' => 'file',
+                    'desc' => '商品图片',
+                    'required' => true,
+                ),
+            ),
+        'response' => '
+        {
+            "result":"true",//失败返回字符串false,msg中是具体的错误和提示信息
+            "msg":"",
+            "data":[]
+        }
+
+    ',
+        'remark' => '',
+        'demo' => '',
+    ),
+    array(
+        'id' => 'v1-0_del',
+        'title' => '删除车源',
+        'api' => '/api/car.php?act=del',
+        'method' => 'POST',
+        'param' =>
+            array(
+                array(
+                    'attr' => 'access_token',
+                    'type' => 'string',
+                    'desc' => 'access_token',
+                    'required' => true,
+                ),
+                array(
+                    'attr' => 'goods_id',
+                    'type' => 'int',
+                    'desc' => '车源id',
+                    'required' => true,
+                ),
+            ),
+        'response' => '
+        {
+            "result":"true",//失败返回字符串false,msg中是具体的错误和提示信息
+            "msg":"",
+            "data":[]
+        }
+
+    ',
+        'remark' => '',
+        'demo' => '',
+    ),
+    array(
+        'id' => 'v1-0_region',
+        'title' => '获取城市列表信息',
+        'api' => '/api/car.php?act=region',
+        'method' => 'POST',
+        'param' =>
+            array(
+                array(
+                    'attr' => 'access_token',
+                    'type' => 'string',
+                    'desc' => 'access_token',
+                    'required' => true,
+                ),
+                array(
+                    'attr' => 'region_id',
+                    'type' => 'int',
+                    'desc' => '城市id(不填则获取一级城市的信息，即省份直辖市)',
+                    'required' => false,
+                ),
+            ),
+        'response' => '
+        {
+            "result":"true",//失败返回字符串false,msg中是具体的错误和提示信息
+            "msg":"",
+            "data":[
+                {
+                    "id": "2",//城市id
+                    "name": "北京"//城市名称
+                },
+                {
+                    "id": "3",
+                    "name": "安徽"
+                },
+                {
+                    "id": "4",
+                    "name": "福建"
+                },...
+            ]
+        }
+
+    ',
+        'remark' => '',
+        'demo' => '',
+    ),
 );
