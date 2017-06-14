@@ -75,7 +75,8 @@ function action_add($db, $ecs)
     $img = empty($_FILES['img'])?null:$_FILES['img'];
     $cid = helper::post('cat_id', 0);//车型
     $register_time = helper::post('register_time', null, 'strtotime');//上牌时间
-    $place = helper::post('place');//所在地
+    $province = helper::post('province_id', 0);//所在地省份
+    $city = helper::post('city_id', 0);//所在地市
     $miles = helper::post('miles');//表显里程
     $hock_type = helper::post('hock_type');//抵押方式
     $new_car_price = helper::post('new_car_price');//新车指导价
@@ -92,23 +93,25 @@ function action_add($db, $ecs)
     } elseif (empty($cid)) {
         helper::json('false', '车型不能为空');
     } elseif (empty($register_time)) {
-        helper::json('false', '上牌时间不能空');
-    } elseif (empty($place)) {
-        helper::json('false', '所在地不能空');
+        helper::json('false', '上牌时间不能为空');
+    } elseif (empty($province)) {
+        helper::json('false', '所在地省份不能为空');
+    }  elseif (empty($city)) {
+        helper::json('false', '所在地市不能为空');
     } elseif (empty($miles)) {
-        helper::json('false', '表显里程不能空');
+        helper::json('false', '表显里程不能为空');
     } elseif (empty($hock_type)) {
-        helper::json('false', '抵押方式不能空');
+        helper::json('false', '抵押方式不能为空');
     } elseif (empty($new_car_price)) {
-        helper::json('false', '新车指导价不能空');
+        helper::json('false', '新车指导价不能为空');
     } elseif (empty($price)) {
-        helper::json('false', '零售价不能空');
+        helper::json('false', '零售价不能为空');
     } elseif (empty($lower_price)) {
-        helper::json('false', '最低价不能空');
+        helper::json('false', '最低价不能为空');
     } elseif (empty($phone)) {
-        helper::json('false', '联系电话不能空');
+        helper::json('false', '联系电话不能为空');
     } elseif (empty($img)) {
-        helper::json('false', '图片不能空');
+        helper::json('false', '图片不能为空');
     } elseif (count($img['name']) > 8) {
         helper::json('false', '最多只能上传8张图片哦');
     } elseif (!isset($hock_list[$hock_type])) {
@@ -127,6 +130,8 @@ function action_add($db, $ecs)
         'register_time' => $register_time,
         'miles' => $miles,
         'user_id' => $access_data['uid'],
+        'province_id' => $province,
+        'city_id' => $city,
     );
 
     $flow = false;
@@ -196,12 +201,18 @@ function action_list($db, $ecs)
     $limit = 10;
     $offset = ($page - 1) * $limit;
 
-    $sql = "SELECT id goods_id,cat_id,register_time,miles,price,view_count FROM ". $ecs->table('goods_car') . " WHERE user_id=".$access_data['uid']." limit {$offset},{$limit}";
+    $sql = "SELECT id goods_id,cat_id,register_time,miles,price,view_count,city_id city FROM ".
+        $ecs->table('goods_car') . " WHERE user_id=".$access_data['uid'].
+        " ORDER BY sort_order,id DESC limit {$offset},{$limit}";
     $list = $db->getAll($sql);
 
     foreach ($list as &$row) {
-        $row['title'] = '';
+        $row['title'] = getTitle($row['cat_id']);
         $row['register_time'] = date('Y年m月', $row['register_time']);
+        $img = $db->getOne('SELECT thumb_url FROM '.$ecs->table('goods_car_img').' WHERE goods_car_id='.$row['goods_id'].' LIMIT 1');
+        $row['img'] = empty($img)?'':'http://'.$_SERVER['HTTP_HOST'].'/'.$img;
+        $row['city'] = $db->getOne('SELECT region_name FROM '.$ecs->table('region').' WHERE region_id='.$row['city'].' LIMIT 1');
+        unset($row['cat_id']);
     }
 
     helper::json('true', '', $list);
@@ -271,4 +282,20 @@ function action_region($db, $ecs)
 function action_default()
 {
     exit();
+}
+
+/**
+ * 获取车源标题
+ * @param $cat_id
+ * @return string
+ */
+function getTitle($cat_id)
+{
+    static $arr = array();
+    if ($cat_id != 1) {
+        $row = $GLOBALS['db']->getRow('SELECT cat_id,cat_name,parent_id FROM '.$GLOBALS['ecs']->table('category').' WHERE cat_id='.$cat_id);
+        $arr[] = $row['cat_name'];
+        getTitle($row['parent_id']);
+    }
+    return implode(' ', array_reverse($arr));
 }
