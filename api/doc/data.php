@@ -585,4 +585,123 @@ return array(
         'remark' => '',
         'demo' => '',
     ),
+    array(
+        'id' => 'v1-0_article_category',
+        'title' => '资讯分类',
+        'api' => '/api/article.php?act=category',
+        'method' => 'GET',
+        'param' =>
+            array(
+            ),
+        'response' => '
+        {
+            "result":"true",//失败返回字符串false,msg中是具体的错误和提示信息
+            "msg":"",
+            "data":[
+                        {
+                            "cat_id": "1", //资讯分类id
+                            "name": "系统分类"//资讯分类名称
+                        },...
+                    ]
+        }
+
+    ',
+        'remark' => '',
+        'demo' => '',
+    ),
+    array(
+        'id' => 'v1-0_article_list',
+        'title' => '资讯列表',
+        'api' => '/api/article.php?act=list',
+        'method' => 'GET',
+        'param' =>
+            array(
+                array(
+                    'attr' => 'cat_id',
+                    'type' => 'int',
+                    'desc' => '资讯分类id',
+                    'required' => true,
+                ),
+                array(
+                    'attr' => 'page',
+                    'type' => 'int',
+                    'desc' => '页码（默认第一页，每页10条数据）',
+                    'required' => false,
+                ),
+            ),
+        'response' => '
+        {
+            "result":"true",//失败返回字符串false,msg中是具体的错误和提示信息
+            "msg":"",
+            "data":[
+                        {
+                            "article_id": "130", //资讯id
+                            "title": "网店一条街和网店连锁店的未来",//资讯标题
+                            "description": "",//资讯描述
+                            "add_time": "2015-07-19",//资讯发布时间
+                            "thumb": "http://che.dev/includes/ueditor/php/../../../images/image//18321437614219.jpg"//资讯
+                        },...
+                    ]
+        }
+
+    ',
+        'remark' => '',
+        'demo' => '',
+    ),
+    array(
+        'id' => 'v1-0_article_detail',
+        'title' => '资讯详情',
+        'api' => '/api/article.php?act=detail',
+        'method' => 'GET',
+        'param' =>
+            array(
+                array(
+                    'attr' => 'article_id',
+                    'type' => 'int',
+                    'desc' => '资讯id',
+                    'required' => true,
+                ),
+            ),
+        'response' => '
+        {
+            "result":"true",//失败返回字符串false,msg中是具体的错误和提示信息
+            "msg":"",
+            "data":{
+                        "title": "网店一条街和网店连锁店的未来",//资讯标题
+                        "content": "我是资讯",//资讯内容
+                        "add_time": "2015-07-19 23:18:28",//资讯发布时间
+                        "author": "张三",//作者
+                        "dig": "10"//点赞数
+                    }
+        }
+
+    ',
+        'remark' => '',
+        'demo' => '',
+    ),
+    array(
+        'id' => 'v1-0_article_dig',
+        'title' => '资讯点赞',
+        'api' => '/api/article.php?act=dig',
+        'method' => 'POST',
+        'param' =>
+            array(
+                array(
+                    'attr' => 'article_id',
+                    'type' => 'int',
+                    'desc' => '资讯id',
+                    'required' => true,
+                ),
+            ),
+        'response' => '
+        {
+            "result":"true",//失败返回字符串false,msg中是具体的错误和提示信息
+            "msg":"",
+            "data":[]
+        }
+
+    ',
+        'remark' => '',
+        'demo' => '',
+    ),
 );
