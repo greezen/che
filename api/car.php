@@ -191,6 +191,7 @@ function action_add($db, $ecs)
 function action_edit($db, $ecs)
 {
     $img = empty($_FILES['img'])?null:$_FILES['img'];
+    $goods_id = helper::post('goods_id', 0);
     $cid = helper::post('cat_id', 0);//车型
     $register_time = helper::post('register_time', null, 'strtotime');//上牌时间
     $province = helper::post('province_id', 0);//所在地省份
@@ -228,12 +229,21 @@ function action_edit($db, $ecs)
         helper::json('false', '最低价不能为空');
     } elseif (empty($phone)) {
         helper::json('false', '联系电话不能为空');
-    } elseif (empty($img)) {
-        helper::json('false', '图片不能为空');
     } elseif (count($img['name']) > 8) {
         helper::json('false', '最多只能上传8张图片哦');
     } elseif (!isset($hock_list[$hock_type])) {
         helper::json('false', '非法的抵押方式');
+    } elseif (empty($goods_id)) {
+        helper::json('false', '参数不正确');
+    }
+
+    $img_count = $db->getOne("SELECT COUNT(img_id) FROM ".$ecs->table('goods_car_img')." WHERE goods_car_id={$goods_id}");
+
+    $total_img = $img_count + count($img['name']);
+    if ($total_img > 8) {
+        helper::json('false', '最多只能上传8张图片哦');
+    } elseif ($total_img == 0) {
+        helper::json('false', '图片不能为空');
     }
 
     $car = array(
@@ -255,11 +265,11 @@ function action_edit($db, $ecs)
     $flow = false;
     $db->query('begin');
     //goods表
-    if ($db->autoExecute($ecs->table('goods_car'), $car, 'INSERT')) {
+    if ($db->autoExecute($ecs->table('goods_car'), $car, 'UPDATE', 'id='.$goods_id)) {
         $flow = true;
     }
 
-    $goods_car_id = $db->insert_id();
+    $goods_car_id = $goods_id;
 
     if ($flow) {
         $_CFG = $GLOBALS['_CFG'];
@@ -296,9 +306,9 @@ function action_edit($db, $ecs)
         $db->query('rollback');
     } else {
         $db->query('commit');
-        helper::json('true', '发布车源成功');
+        helper::json('true', '更新车源成功');
     }
-    helper::json('false', '发布车源失败');
+    helper::json('false', '更新车源失败');
 }
 
 /**
@@ -338,7 +348,7 @@ function action_del_img($db, $ecs)
     }
 
     if (!empty($img_id) && !empty($goods_id)) {
-        $uid = $db->getOne("SELECT uid FROM ".$ecs->table('goods_car')." WHERE id={$goods_id}");
+        $uid = $db->getOne("SELECT user_id FROM ".$ecs->table('goods_car')." WHERE id={$goods_id}");
         if ($uid == $access_data['uid']) {
             $db->query("DELETE FROM ".$ecs->table('goods_car_img')." WHERE img_id={$img_id} AND goods_car_id={$goods_id}");
             if ($db->affected_rows() > 0) {
@@ -495,10 +505,10 @@ function detail($goods_id, $db, $ecs, $is_view = true)
     if (!empty($goods_id)) {
         $field = array(
             'id goods_id',
-            'cat_id cat',
+            'cat_id',
             'register_time',
-            'province_id province',
-            'city_id city',
+            'province_id',
+            'city_id',
             'miles',
             'hock_type',
             'new_car_price',
@@ -509,9 +519,9 @@ function detail($goods_id, $db, $ecs, $is_view = true)
         $field = implode(',', $field);
         $info = $db->getRow("SELECT {$field} FROM ".$ecs->table('goods_car')." WHERE id={$goods_id}");
         $info['register_time'] = date('Y-m', $info['register_time']);
-        $info['cat'] = $db->getOne('SELECT cat_name FROM '.$ecs->table('category').' WHERE cat_id='.$info['cat']);
-        $info['province'] = $db->getOne('SELECT region_name FROM '.$ecs->table('region').' WHERE region_id='.$info['province']);
-        $info['city'] = $db->getOne('SELECT region_name FROM '.$ecs->table('region').' WHERE region_id='.$info['city']);
+        $info['cat_name'] = $db->getOne('SELECT cat_name FROM '.$ecs->table('category').' WHERE cat_id='.$info['cat_id']);
+        $info['province'] = $db->getOne('SELECT region_name FROM '.$ecs->table('region').' WHERE region_id='.$info['province_id']);
+        $info['city'] = $db->getOne('SELECT region_name FROM '.$ecs->table('region').' WHERE region_id='.$info['city_id']);
         $info['img'] = $db->getAll("SELECT img_id,img_original url FROM ".$ecs->table('goods_car_img')." WHERE goods_car_id={$goods_id}");
         foreach ($info['img'] as &$item) {
             $item['url'] = helper::getHost() . $item['url'];
