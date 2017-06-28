@@ -184,6 +184,187 @@ function action_add($db, $ecs)
 }
 
 /**
+ * 编辑车源
+ * @param $db
+ * @param $ecs
+ */
+function action_edit($db, $ecs)
+{
+    $img = empty($_FILES['img'])?null:$_FILES['img'];
+    $cid = helper::post('cat_id', 0);//车型
+    $register_time = helper::post('register_time', null, 'strtotime');//上牌时间
+    $province = helper::post('province_id', 0);//所在地省份
+    $city = helper::post('city_id', 0);//所在地市
+    $miles = helper::post('miles');//表显里程
+    $hock_type = helper::post('hock_type');//抵押方式
+    $new_car_price = helper::post('new_car_price');//新车指导价
+    $price = helper::post('price');//零售价
+    $lower_price = helper::post('lower_price');//最低价
+    $phone = helper::post('phone');//联系电话
+    $access_token = helper::post('access_token');
+    $access_data = helper::get_cache($access_token);
+
+    $hock_list = helper::getHockList();
+
+    if (empty($access_token) || empty($access_data)) {
+        helper::json('false', '登录超时，请重新登录');
+    } elseif (empty($cid)) {
+        helper::json('false', '车型不能为空');
+    } elseif (empty($register_time)) {
+        helper::json('false', '上牌时间不能为空');
+    } elseif (empty($province)) {
+        helper::json('false', '所在地省份不能为空');
+    }  elseif (empty($city)) {
+        helper::json('false', '所在地市不能为空');
+    } elseif (empty($miles)) {
+        helper::json('false', '表显里程不能为空');
+    } elseif (empty($hock_type)) {
+        helper::json('false', '抵押方式不能为空');
+    } elseif (empty($new_car_price)) {
+        helper::json('false', '新车指导价不能为空');
+    } elseif (empty($price)) {
+        helper::json('false', '零售价不能为空');
+    } elseif (empty($lower_price)) {
+        helper::json('false', '最低价不能为空');
+    } elseif (empty($phone)) {
+        helper::json('false', '联系电话不能为空');
+    } elseif (empty($img)) {
+        helper::json('false', '图片不能为空');
+    } elseif (count($img['name']) > 8) {
+        helper::json('false', '最多只能上传8张图片哦');
+    } elseif (!isset($hock_list[$hock_type])) {
+        helper::json('false', '非法的抵押方式');
+    }
+
+    $car = array(
+        'cat_id' => $cid,
+        'price' => $price,
+        'lower_price' => $lower_price,
+        'new_car_price' => $new_car_price,
+        'time_created' => time(),
+        'sort_order' => 0,
+        'phone' => $phone,
+        'hock_type' => $hock_type,
+        'register_time' => $register_time,
+        'miles' => $miles,
+        'user_id' => $access_data['uid'],
+        'province_id' => $province,
+        'city_id' => $city,
+    );
+
+    $flow = false;
+    $db->query('begin');
+    //goods表
+    if ($db->autoExecute($ecs->table('goods_car'), $car, 'INSERT')) {
+        $flow = true;
+    }
+
+    $goods_car_id = $db->insert_id();
+
+    if ($flow) {
+        $_CFG = $GLOBALS['_CFG'];
+        include_once(ROOT_PATH . '/includes/cls_image.php');
+        require_once(ROOT_PATH . '/' . ADMIN_PATH . '/includes/lib_goods.php');
+        $image = new cls_image($_CFG['bgcolor']);
+        foreach ($img['name'] as $key=>$val) {
+            $tmp = array(
+                'name' => $img['name'][$key],
+                'type' => $img['type'][$key],
+                'tmp_name' => $img['tmp_name'][$key],
+                'error' => $img['error'][$key],
+                'size' => $img['size'][$key],
+            );
+            $car_img = $image->upload_image($tmp);
+            $source_img = reformat_image_name('goods', $goods_car_id, $car_img, 'source');
+            $goods_thumb = $image->make_thumb(ROOT_PATH . '/' . $source_img, $GLOBALS['_CFG']['thumb_width'],  $GLOBALS['_CFG']['thumb_height']);
+            $goods_thumb = reformat_image_name('goods_thumb', $goods_car_id, $goods_thumb, 'thumb');
+
+            $img_data = array(
+                'goods_car_id' => $goods_car_id,
+                'thumb_url' => $goods_thumb,
+                'img_original' => $source_img,
+            );
+            if ($db->autoExecute($ecs->table('goods_car_img'), $img_data, 'INSERT') === false) {
+                $flow = false;
+                break;
+            }
+            unset($tmp, $img_data);
+        }
+    }
+
+    if (empty($flow)) {
+        $db->query('rollback');
+    } else {
+        $db->query('commit');
+        helper::json('true', '发布车源成功');
+    }
+    helper::json('false', '发布车源失败');
+}
+
+/**
+ * 车源信息（编辑用）
+ * @param $db
+ * @param $ecs
+ */
+function action_info($db, $ecs)
+{
+    $goods_id = helper::post('goods_id', 0);
+    $access_token = helper::post('access_token');
+    $access_data = helper::get_cache($access_token);
+
+    if (empty($access_token) || empty($access_data)) {
+        helper::json('false', '登录超时，请重新登录');
+    }
+
+    $info = detail($goods_id, $db, $ecs, false);
+
+    helper::json('true', $info);
+}
+
+/**
+ * 删除车源图片
+ * @param $db
+ * @param $ecs
+ */
+function action_del_img($db, $ecs)
+{
+    $img_id = helper::post('img_id', 0);
+    $goods_id = helper::post('goods_id', 0);
+    $access_token = helper::post('access_token');
+    $access_data = helper::get_cache($access_token);
+
+    if (empty($access_token) || empty($access_data)) {
+        helper::json('false', '登录超时，请重新登录');
+    }
+
+    if (!empty($img_id) && !empty($goods_id)) {
+        $uid = $db->getOne("SELECT uid FROM ".$ecs->table('goods_car')." WHERE id={$goods_id}");
+        if ($uid == $access_data['uid']) {
+            $db->query("DELETE FROM ".$ecs->table('goods_car_img')." WHERE img_id={$img_id} AND goods_car_id={$goods_id}");
+            if ($db->affected_rows() > 0) {
+                helper::json('true', '操作成功');
+            }
+        }
+    }
+
+    helper::json('false', '操作失败');
+}
+
+/**
+ * 车源详情（查看用）
+ * @param $db
+ * @param $ecs
+ */
+function action_view($db, $ecs)
+{
+    $goods_id = helper::get('goods_id', 0);
+
+    $info = detail($goods_id, $db, $ecs, true);
+
+    helper::json('true', $info);
+}
+
+/**
  * 管理车源
  * @param $db
  * @param $ecs
@@ -298,4 +479,48 @@ function getTitle($cat_id)
         getTitle($row['parent_id']);
     }
     return implode(' ', array_reverse($arr));
+}
+
+/**
+ * 获取车源信息
+ * @param $goods_id
+ * @param $db
+ * @param $ecs
+ * @param bool $is_view
+ * @return array
+ */
+function detail($goods_id, $db, $ecs, $is_view = true)
+{
+    $info = [];
+    if (!empty($goods_id)) {
+        $field = array(
+            'id goods_id',
+            'cat_id cat',
+            'register_time',
+            'province_id province',
+            'city_id city',
+            'miles',
+            'hock_type',
+            'new_car_price',
+            'price',
+            'lower_price',
+            'phone',
+        );
+        $field = implode(',', $field);
+        $info = $db->getRow("SELECT {$field} FROM ".$ecs->table('goods_car')." WHERE id={$goods_id}");
+        $info['register_time'] = date('Y-m', $info['register_time']);
+        $info['cat'] = $db->getOne('SELECT cat_name FROM '.$ecs->table('category').' WHERE cat_id='.$info['cat']);
+        $info['province'] = $db->getOne('SELECT region_name FROM '.$ecs->table('region').' WHERE region_id='.$info['province']);
+        $info['city'] = $db->getOne('SELECT region_name FROM '.$ecs->table('region').' WHERE region_id='.$info['city']);
+        $info['img'] = $db->getAll("SELECT img_id,img_original url FROM ".$ecs->table('goods_car_img')." WHERE goods_car_id={$goods_id}");
+        foreach ($info['img'] as &$item) {
+            $item['url'] = helper::getHost() . $item['url'];
+        }
+
+        if ($is_view) {
+            $db->query("UPDATE ".$ecs->table('goods_car')." SET `view_count`=`view_count`+1 WHERE `id`={$goods_id}");
+        }
+    }
+
+    return $info;
 }
