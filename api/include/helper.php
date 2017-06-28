@@ -296,4 +296,9 @@ class helper
             return isset($hock_list[$index]) ? $hock_list[$index] : '';
         }
     }
+
+    public static function getHost()
+    {
+        return 'http://'.$_SERVER['HTTP_HOST'].'/';
+    }
 }
