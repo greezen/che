@@ -501,7 +501,7 @@ return array(
     ),
     array(
         'id' => 'v1-0_car_del_img',
-        'title' => '获取车源信息',
+        'title' => '删除车源图片',
         'api' => '/api/car.php?act=del_img',
         'method' => 'POST',
         'param' =>
