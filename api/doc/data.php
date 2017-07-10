@@ -492,7 +492,36 @@ return array(
         {
             "result":"true",//失败返回字符串false,msg中是具体的错误和提示信息
             "msg":"",
-            "data":[]
+            "data":{
+                        "goods_id": "1",//产口id
+                        "cat_id": "5",//车型id
+                        "register_time": "2017-06",//上牌时间
+                        "province_id": "3",//车牌所在省份id
+                        "city_id": "36",//车牌所在城市id
+                        "miles": "10",//里程数
+                        "hock_type": "all",//抵押方式
+                        "new_car_price": "36.00",//新车指导价
+                        "price": "28.00",//零售价
+                        "lower_price": "27.00",//最低价
+                        "phone": "15566978546",//联系电话
+                        "cat_name": "奥迪A4L",//车型
+                        "province": "安徽",//车牌所在省份
+                        "city": "安庆",//车牌所在城市
+                        "img": [//车源图片
+                            {
+                                "img_id": "1",//图片id
+                                "url": "http://che.dev/images/201706/source_img/1_G_1498575394951.jpg"//图片链接
+                            },
+                            {
+                                "img_id": "3",
+                                "url": "http://che.dev/images/201706/source_img/1_G_1498663103892.jpg"
+                            },
+                            {
+                                "img_id": "4",
+                                "url": "http://che.dev/images/201706/source_img/1_G_1498663103654.jpg"
+                            }
+                        ]
+                 }
         }
 
     ',
@@ -762,18 +791,36 @@ return array(
         {
             "result":"true",//失败返回字符串false,msg中是具体的错误和提示信息
             "msg":"",
-            "data":[
-                        {
-                            "goods_id": "6",//产品id
-                            "register_time": "2015年06月",//上牌时间
-                            "miles": "1",//公里数
-                            "price": "8.00",//价格
-                            "view_count": "0",//浏览数
-                            "city": "深圳",//城市
-                            "title": "奥迪 一汽大众奥迪",//标题
-                            "img": "http://che.dev/images/201706/thumb_img/6_thumb_G_1497452073311.jpg"//图片
-                        },...
-                    ]
+            "data":{
+                        "goods_id": "1",//产品id
+                        "cat_id": "5",//车型id
+                        "register_time": "2017-06",//上牌时间
+                        "province_id": "3",//车牌所在省份id
+                        "city_id": "36",//车牌所在城市id
+                        "miles": "10",//表显里程数
+                        "hock_type": "全款",//抵押方式
+                        "new_car_price": "36.00",//新车指导价
+                        "price": "28.00",//零售价
+                        "lower_price": "27.00",//最低价
+                        "phone": "15566978546",//联系电话
+                        "cat_name": "奥迪A4L",//车型
+                        "province": "安徽",//车牌所在省
+                        "city": "安庆",//车牌所在市
+                        "img": [//车源图片
+                            {
+                                "img_id": "1",//图片id
+                                "url": "http://che.dev/images/201706/source_img/1_G_1498575394951.jpg"//图片链接
+                            },
+                            {
+                                "img_id": "3",
+                                "url": "http://che.dev/images/201706/source_img/1_G_1498663103892.jpg"
+                            },
+                            {
+                                "img_id": "4",
+                                "url": "http://che.dev/images/201706/source_img/1_G_1498663103654.jpg"
+                            }
+                        ]
+                    }
         }
 
     ',

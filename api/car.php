@@ -328,7 +328,7 @@ function action_info($db, $ecs)
 
     $info = detail($goods_id, $db, $ecs, false);
 
-    helper::json('true', $info);
+    helper::json('true', '', $info);
 }
 
 /**
@@ -371,7 +371,7 @@ function action_view($db, $ecs)
 
     $info = detail($goods_id, $db, $ecs, true);
 
-    helper::json('true', $info);
+    helper::json('true', '', $info);
 }
 
 /**
@@ -563,6 +563,7 @@ function detail($goods_id, $db, $ecs, $is_view = true)
         }
 
         if ($is_view) {
+            $info['hock_type'] = helper::getHockList($info['hock_type']);
             $db->query("UPDATE ".$ecs->table('goods_car')." SET `view_count`=`view_count`+1 WHERE `id`={$goods_id}");
         }
     }
