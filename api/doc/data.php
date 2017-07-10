@@ -469,6 +469,165 @@ return array(
         'demo' => '',
     ),
     array(
+        'id' => 'v1-0_car_info',
+        'title' => '获取车源信息',
+        'api' => '/api/car.php?act=edit',
+        'method' => 'POST',
+        'param' =>
+            array(
+                array(
+                    'attr' => 'access_token',
+                    'type' => 'string',
+                    'desc' => 'access_token',
+                    'required' => true,
+                ),
+                array(
+                    'attr' => 'goods_id',
+                    'type' => 'int',
+                    'desc' => '产品id',
+                    'required' => true,
+                ),
+            ),
+        'response' => '
+        {
+            "result":"true",//失败返回字符串false,msg中是具体的错误和提示信息
+            "msg":"",
+            "data":[]
+        }
+
+    ',
+        'remark' => '',
+        'demo' => '',
+    ),
+    array(
+        'id' => 'v1-0_car_del_img',
+        'title' => '获取车源信息',
+        'api' => '/api/car.php?act=del_img',
+        'method' => 'POST',
+        'param' =>
+            array(
+                array(
+                    'attr' => 'access_token',
+                    'type' => 'string',
+                    'desc' => 'access_token',
+                    'required' => true,
+                ),
+                array(
+                    'attr' => 'goods_id',
+                    'type' => 'int',
+                    'desc' => '产品id',
+                    'required' => true,
+                ),
+                array(
+                    'attr' => 'img_id',
+                    'type' => 'int',
+                    'desc' => '图片id',
+                    'required' => true,
+                ),
+            ),
+        'response' => '
+        {
+            "result":"true",//失败返回字符串false,msg中是具体的错误和提示信息
+            "msg":"",
+            "data":[]
+        }
+
+    ',
+        'remark' => '',
+        'demo' => '',
+    ),
+    array(
+        'id' => 'v1-0_car_edit',
+        'title' => '编辑车源',
+        'api' => '/api/car.php?act=edit',
+        'method' => 'POST',
+        'param' =>
+            array(
+                array(
+                    'attr' => 'access_token',
+                    'type' => 'string',
+                    'desc' => 'access_token',
+                    'required' => true,
+                ),
+                array(
+                    'attr' => 'cat_id',
+                    'type' => 'int',
+                    'desc' => '车型id',
+                    'required' => true,
+                ),
+                array(
+                    'attr' => 'register_time',
+                    'type' => 'date',
+                    'desc' => '上牌时间(2017-05)',
+                    'required' => true,
+                ),
+                array(
+                    'attr' => 'province_id',
+                    'type' => 'int',
+                    'desc' => '所在地省份id',
+                    'required' => true,
+                ),
+                array(
+                    'attr' => 'city_id',
+                    'type' => 'ing',
+                    'desc' => '所在地市id',
+                    'required' => true,
+                ),
+                array(
+                    'attr' => 'miles',
+                    'type' => 'float',
+                    'desc' => '里程数',
+                    'required' => true,
+                ),
+                array(
+                    'attr' => 'hock_type',
+                    'type' => 'string',
+                    'desc' => '抵押方式(all=>全款，bank=>抵押银行，loan=>低押小贷,personal=>低押个人)',
+                    'required' => true,
+                ),
+                array(
+                    'attr' => 'new_car_price',
+                    'type' => 'float',
+                    'desc' => '新车指导价',
+                    'required' => true,
+                ),
+                array(
+                    'attr' => 'price',
+                    'type' => 'float',
+                    'desc' => '零售价',
+                    'required' => true,
+                ),
+                array(
+                    'attr' => 'lower_price',
+                    'type' => 'float',
+                    'desc' => '最低价',
+                    'required' => true,
+                ),
+                array(
+                    'attr' => 'phone',
+                    'type' => 'float',
+                    'desc' => '联系电话',
+                    'required' => true,
+                ),
+                array(
+                    'attr' => 'img[]',
+                    'type' => 'file',
+                    'desc' => '商品图片',
+                    'required' => true,
+                ),
+            ),
+        'response' => '
+        {
+            "result":"true",//失败返回字符串false,msg中是具体的错误和提示信息
+            "msg":"",
+            "data":[]
+        }
+
+    ',
+        'remark' => '',
+        'demo' => '',
+    ),
+    array(
         'id' => 'v1-0_del',
         'title' => '删除车源',
         'api' => '/api/car.php?act=del',
@@ -561,6 +720,42 @@ return array(
                     'type' => 'int',
                     'desc' => '页码（默认第一页，每页10条数据）',
                     'required' => false,
+                ),
+            ),
+        'response' => '
+        {
+            "result":"true",//失败返回字符串false,msg中是具体的错误和提示信息
+            "msg":"",
+            "data":[
+                        {
+                            "goods_id": "6",//产品id
+                            "register_time": "2015年06月",//上牌时间
+                            "miles": "1",//公里数
+                            "price": "8.00",//价格
+                            "view_count": "0",//浏览数
+                            "city": "深圳",//城市
+                            "title": "奥迪 一汽大众奥迪",//标题
+                            "img": "http://che.dev/images/201706/thumb_img/6_thumb_G_1497452073311.jpg"//图片
+                        },...
+                    ]
+        }
+
+    ',
+        'remark' => '',
+        'demo' => '',
+    ),
+    array(
+        'id' => 'v1-0_car_view',
+        'title' => '查看车源详情',
+        'api' => '/api/car.php?act=view',
+        'method' => 'GET',
+        'param' =>
+            array(
+                array(
+                    'attr' => 'goods_id',
+                    'type' => 'int',
+                    'desc' => '产品id',
+                    'required' => true,
                 ),
             ),
         'response' => '

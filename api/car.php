@@ -410,6 +410,41 @@ function action_list($db, $ecs)
 }
 
 /**
+ * 查询车源
+ * @param $db
+ * @param $ecs
+ */
+function action_search($db, $ecs)
+{
+    $page = helper::post('page', 1);
+    $access_token = helper::post('access_token');
+    $access_data = helper::get_cache($access_token);
+
+    if (empty($access_token) || empty($access_data)) {
+        helper::json('false', '登录超时，请重新登录');
+    }
+
+    $limit = 10;
+    $offset = ($page - 1) * $limit;
+
+    $sql = "SELECT id goods_id,cat_id,register_time,miles,price,view_count,city_id city FROM ".
+        $ecs->table('goods_car') . " WHERE user_id=".$access_data['uid'].
+        " ORDER BY sort_order,id DESC limit {$offset},{$limit}";
+    $list = $db->getAll($sql);
+
+    foreach ($list as &$row) {
+        $row['title'] = getTitle($row['cat_id']);
+        $row['register_time'] = date('Y年m月', $row['register_time']);
+        $img = $db->getOne('SELECT thumb_url FROM '.$ecs->table('goods_car_img').' WHERE goods_car_id='.$row['goods_id'].' LIMIT 1');
+        $row['img'] = empty($img)?'':'http://'.$_SERVER['HTTP_HOST'].'/'.$img;
+        $row['city'] = $db->getOne('SELECT region_name FROM '.$ecs->table('region').' WHERE region_id='.$row['city'].' LIMIT 1');
+        unset($row['cat_id']);
+    }
+
+    helper::json('true', '', $list);
+}
+
+/**
  * 删除车源
  * @param $db
  * @param $ecs
