@@ -416,20 +416,17 @@ function action_list($db, $ecs)
  */
 function action_search($db, $ecs)
 {
-    $page = helper::post('page', 1);
-    $access_token = helper::post('access_token');
-    $access_data = helper::get_cache($access_token);
-
-    if (empty($access_token) || empty($access_data)) {
-        helper::json('false', '登录超时，请重新登录');
-    }
-
-    $limit = 10;
-    $offset = ($page - 1) * $limit;
+    $cat_name = helper::post('cat_name', '');
+    $cat_id = helper::post('cat_id', 0);
+    $city_id = helper::post('city_id', 0);
+    $price = helper::post('price', 0);
+    $sort = helper::post('sort', 0);
+    $pub_date = helper::post('pub_date', 0);
+    $register_time = helper::post('register_time', 0);
+    $miles = helper::post('miles', 0);
 
     $sql = "SELECT id goods_id,cat_id,register_time,miles,price,view_count,city_id city FROM ".
-        $ecs->table('goods_car') . " WHERE user_id=".$access_data['uid'].
-        " ORDER BY sort_order,id DESC limit {$offset},{$limit}";
+        $ecs->table('goods_car');
     $list = $db->getAll($sql);
 
     foreach ($list as &$row) {
