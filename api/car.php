@@ -416,21 +416,21 @@ function action_list($db, $ecs)
  */
 function action_search($db, $ecs)
 {
-    $cat_name = helper::post('cat_name', '', 'trim');
-    $cat_id = helper::post('cat_id', 0, 'intval');
-    $city_id = helper::post('city_id', 0, 'intval');
-    $price = helper::post('price', 0, 'intval');
-    $sort = helper::post('sort', 0, 'trim');
-    $pub_date = helper::post('pub_date', 0, 'intval');
-    $register_time = helper::post('register_time', 0, 'intval');
-    $miles = helper::post('miles', 0, 'intval');
+    $cat_name = helper::get('cat_name', '', 'trim');
+    $cat_id = helper::get('cat_id', 0, 'intval');
+    $city_id = helper::get('city_id', 0, 'intval');
+    $price = helper::get('price', 0, 'intval');
+    $sort = helper::get('sort', 0, 'trim');
+    $pub_date = helper::get('pub_date', 0, 'intval');
+    $register_time = helper::get('register_time', 0, 'intval');
+    $miles = helper::get('miles', 0, 'intval');
 
     //车辆品牌名
     if (!empty($cat_name)) {
         $cat_id = $db->getOne("SELECT cat_id FROM ".$ecs->table('category')." WHERE `cat_name`='{$cat_name}'");
     }
 
-    //品牌车第
+    //品牌车型
     if (!empty($cat_id)) {
         $where['cat_id'] = array('=', $cat_id);
     }
@@ -442,14 +442,14 @@ function action_search($db, $ecs)
 
     //车辆价格
     if (!empty($price)) {
-        if ($price == 0) {
-            $where['price'] = array('<=', '10');
-        } elseif ($price == 1) {
-            $where['price'] = array('>', '10 AND price <= 25');
-        } elseif ($price == 2) {
-            $where['price'] = array('>', '25 AND price <= 50');
-        } elseif ($price == 3) {
-            $where['price'] = array('>', '50');
+        if ($price == 0) {//10万以下
+            $where['price'] = array('<', '10');
+        } elseif ($price == 1) {//10-25万
+            $where['price'] = array('>=', '10 AND price < 25');
+        } elseif ($price == 2) {//25-50万
+            $where['price'] = array('>=', '25 AND price < 50');
+        } elseif ($price == 3) {//50万以上
+            $where['price'] = array('>=', '50');
         }
 
     }
@@ -458,47 +458,47 @@ function action_search($db, $ecs)
     if (!empty($pub_date)) {
         $end = time();
         if ($pub_date == 0) {//1天内
-            $start = $end - 86400;
+            $start = strtotime('-1 day');
         } elseif ($pub_date == 1) {//3天内
-            $start = $end - (86400 * 3);
-        } elseif ($pub_date == 2) {//7天内
-            $start = $end - (86400 * 7);
+            $start = strtotime('-3 day');
+        } elseif ($pub_date == 2) {//一周内
+            $start = strtotime('-7 day');
         }
-        $where['time_created'] = array('>', " {$start} AND time_created <= {$end}");
+        $where['time_created'] = array('>=', " {$start} AND time_created <= {$end}");
 
     }
 
     //上牌日期
     if (!empty($register_time)) {
         $end = time();
-        if ($register_time == 0) {
+        if ($register_time == 0) {//今年
             $start = strtotime('-1 year',$end);
-        } elseif ($register_time == 1) {
+        } elseif ($register_time == 1) {//3年内
             $start = strtotime('-3 year',$end);
-        } elseif ($register_time == 2) {
+        } elseif ($register_time == 2) {//5年内
             $start = strtotime('-5 year',$end);
-        } elseif ($register_time == 3) {
+        } elseif ($register_time == 3) {//7年内
             $start = strtotime('-7 year',$end);
         }
 
-        if ($register_time == 4) {
-            $where['register_time'] = array('<', strtotime('-7 year', $end));
+        if ($register_time == 4) {//7年以上
+            $where['register_time'] = array('<=', strtotime('-7 year', $end));
         } else {
-            $where['register_time'] = array('>', '{$start} AND register_time <= {$end}');
+            $where['register_time'] = array('>=', "{$start} AND register_time <= {$end}");
         }
 
     }
 
     //行驶里程
     if (!empty($miles)) {
-        if ($miles == 0) {
-            $where['miles'] = array('<=', '1');
-        } elseif ($miles == 1) {
-            $where['miles'] = array('>', '1 AND <= 5');
-        } elseif ($miles == 2) {
-            $where['miles'] = array('>', '5 AND <= 10');
-        } elseif ($miles == 3) {
-            $where['miles'] = array('>', '10');
+        if ($miles == 0) {//1万内
+            $where['miles'] = array('<', '1');
+        } elseif ($miles == 1) {//1-5万
+            $where['miles'] = array('>=', '1 AND < 5');
+        } elseif ($miles == 2) {//5-10万
+            $where['miles'] = array('>=', '5 AND < 10');
+        } elseif ($miles == 3) {//10万以上
+            $where['miles'] = array('>=', '10');
         }
 
     }
@@ -508,8 +508,20 @@ function action_search($db, $ecs)
         $order = ' ORDER BY `price` ' . $sort;
     }
 
+    if (empty($where)) {
+        $condition = '';
+    } else {
+        $condition = ' WHERE ';
+        foreach ($where as $k => $v){
+            $condition .= $k . $v[0] . $v[1] . ' AND ';
+        }
+    }
+
+    $condition = rtrim($condition, 'AND ');
+
     $sql = "SELECT id goods_id,cat_id,register_time,miles,price,view_count,city_id city FROM ".
-        $ecs->table('goods_car');
+        $ecs->table('goods_car') . $condition . $order;
+
     $list = $db->getAll($sql);
 
     foreach ($list as &$row) {
