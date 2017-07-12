@@ -774,6 +774,60 @@ return array(
         'demo' => '',
     ),
     array(
+        'id' => 'v1-0_car_search',
+        'title' => '管理车源',
+        'api' => '/api/car.php?act=search',
+        'method' => 'GET',
+        'param' =>
+            array(
+                array(
+                    'attr' => 'cat_name',
+                    'type' => 'string',
+                    'desc' => '车辆品牌',
+                    'required' => false,
+                ),
+                array(
+                    'attr' => 'cat_id',
+                    'type' => 'int',
+                    'desc' => '品牌车系',
+                    'required' => false,
+                ),
+                array(
+                    'attr' => 'city_id',
+                    'type' => 'int',
+                    'desc' => '所在城市',
+                    'required' => false,
+                ),
+                array(
+                    'attr' => 'price',
+                    'type' => 'int',
+                    'desc' => '车辆价格',
+                    'required' => false,
+                ),
+            ),
+        'response' => '
+        {
+            "result":"true",//失败返回字符串false,msg中是具体的错误和提示信息
+            "msg":"",
+            "data":[
+                        {
+                            "goods_id": "6",//产品id
+                            "register_time": "2015年06月",//上牌时间
+                            "miles": "1",//公里数
+                            "price": "8.00",//价格
+                            "view_count": "0",//浏览数
+                            "city": "深圳",//城市
+                            "title": "奥迪 一汽大众奥迪",//标题
+                            "img": "http://che.dev/images/201706/thumb_img/6_thumb_G_1497452073311.jpg"//图片
+                        },...
+                    ]
+        }
+
+    ',
+        'remark' => '',
+        'demo' => '',
+    ),
+    array(
         'id' => 'v1-0_car_view',
         'title' => '查看车源详情',
         'api' => '/api/car.php?act=view',
