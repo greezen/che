@@ -39,8 +39,8 @@ class Easemob{
 	{
 		if (self::$obj === null) {
 			$options = array(
-				'client_id' => 'YXA6zEN2YFWZEeek16-DGVvF-g',
-				'client_secret' => 'YXA6eekSa8knGPM8FZ5J7TnJyNSxYlQ',
+				'client_id' => 'YXA6zEN2YFWZEeek16-DGVvF-g6',
+				'client_secret' => 'YXA6eekSa8knGPM8FZ5J7TnJyNSxYlQs',
 				'org_name' => 'cndnss',
 				'app_name' => 'che',
 			);
