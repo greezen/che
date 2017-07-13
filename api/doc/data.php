@@ -801,7 +801,31 @@ return array(
                 array(
                     'attr' => 'price',
                     'type' => 'int',
-                    'desc' => '车辆价格',
+                    'desc' => '车辆价格(0=>10万以下,1=>10万-25万,2=>25万-50万,3=>50万以上)',
+                    'required' => false,
+                ),
+                array(
+                    'attr' => 'sort',
+                    'type' => 'string',
+                    'desc' => '价格排序(asc=>价格升序,desc=>价格降序)',
+                    'required' => false,
+                ),
+                array(
+                    'attr' => 'pub_date',
+                    'type' => 'int',
+                    'desc' => '发布日期(0=>1天内,1=>3天内,2=>一周内)',
+                    'required' => false,
+                ),
+                array(
+                    'attr' => 'register_time',
+                    'type' => 'int',
+                    'desc' => '上牌日期(0=>今年,1=>3年内,2=>5年内,3=>7年内,4=>7年以上)',
+                    'required' => false,
+                ),
+                array(
+                    'attr' => 'miles',
+                    'type' => 'int',
+                    'desc' => '行驶里程(0=>1万以内,1=>1-5万,2=>5-10万,3=>10万以上)',
                     'required' => false,
                 ),
             ),
