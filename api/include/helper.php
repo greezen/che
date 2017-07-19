@@ -76,13 +76,14 @@ class helper
     /**
      * 生成登录token
      * @param $uid
+     * @param $phone
      * @param int $expire
      * @return string
      */
-    public static function gen_access_token($uid, $expire = 0)
+    public static function gen_access_token($uid, $phone, $expire = 0)
     {
         $token = md5(md5(uniqid()) . $uid . time());
-        $data = array('uid' => $uid);
+        $data = array('uid' => $uid, 'phone' => $phone);
         self::del_cache(self::get_cache('access_token' . $uid));
         self::del_cache('access_token' . $uid);
         self::set_cache('access_token' . $uid, $token, $expire);
@@ -300,5 +301,10 @@ class helper
     public static function getHost()
     {
         return 'http://'.$_SERVER['HTTP_HOST'].'/';
+    }
+
+    public static function getImUser($id)
+    {
+        return 'che_' . $id;
     }
 }

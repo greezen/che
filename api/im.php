@@ -71,8 +71,7 @@ function action_add_group($db, $ecs)
     $res = $im->getUser(helper::getImUser($access_data['uid']));
     //用户不存在则先创建用户
     if (isset($res['error']) && $res['error'] == 'service_resource_not_found') {
-        $user = $im->createUser($owner, '66666666');
-        if (isset($user['error'])) {
+        if (add_user($owner, '66666666', $access_data['phone'], $access_data['uid'])) {
             helper::json('false', '创建群组失败！');
         }
     }
@@ -110,26 +109,26 @@ function action_add_group($db, $ecs)
     helper::json('false', '创建群组失败');
 }
 
-function action_find_user()
+function action_find_user($db, $ecs)
 {
     $access_token = helper::post('access_token');
-    $group_name = helper::post('group_name');
-    $desc = helper::post('desc');
-    $private = helper::post('private', 0, 'intval');
-    $invite = helper::post('invite', 1, 'intval');
+    $username = helper::post('username');
     $access_data = helper::get_cache($access_token);
 
     if (empty($access_data)) {
         helper::json('false', '登录超时，请重新登录');
-    } elseif (empty($group_name)) {
-        helper::json('false', '群组名称不能为空');
-    } elseif (empty($desc)) {
-        helper::json('false', '群组简介不能为空');
-    } elseif (mb_strlen($group_name) > 20) {
-        helper::json('false', '群组名称不能超过20个字符');
-    } elseif (mb_strlen($desc) > 128) {
-        helper::json('false', '群组描述不能超过128个字符');
+    } elseif (empty($username)) {
+        helper::json('false', '用户名称不能为空');
     }
+
+    $im = Easemob::getInstance();
+
+    $res = $im->getUser($username);
+    if (isset($res['error'])) {
+        helper::json('false', '用户不存在');
+    }
+
+    helper::json('true');
 }
 
 function action_group_list()
@@ -137,8 +136,40 @@ function action_group_list()
 
 }
 
-function request($action, $param)
+/**
+ * 添加im用户
+ * @param $username
+ * @param $password
+ * @param $nickname
+ * @param $uid
+ * @return bool
+ */
+function add_user($username, $password, $nickname, $uid)
 {
     $im = Easemob::getInstance();
-    $res = $im->$action();
+
+    $res = $im->createUser($username, $password, $nickname);
+
+    if (!empty($res['error'])) {
+        return false;
+    }
+
+    $im_user = array(
+        'username' => $username,
+        'password' => md5($password),
+        'nickname' => $nickname,
+        'uid' => $uid,
+        'time_created' => time(),
+        'time_updated' => time(),
+    );
+    if ($GLOBALS['db']->autoExecute($GLOBALS['ecs']->table('im_group'), $im_user, 'INSERT')) {
+        return true;
+    }
+
+    return false;
+}
+
+function has_user($nickname)
+{
+
 }
