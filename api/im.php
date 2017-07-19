@@ -8,8 +8,8 @@
 
 define('IN_ECS', true);
 
-require('./init.php');
-require_once ROOT_PATH . 'includes/emchat/Easemob.class.php';
+require_once './init.php';
+require_once ROOT_PATH . 'includes/emchat/Easemob.php';
 
 $act = isset($_GET['act'])? $_GET['act']:'';
 
@@ -67,11 +67,11 @@ function action_add_group($db, $ecs)
     }
 
     $im = Easemob::getInstance();
-    $owner = helper::getImUser($access_data['uid']);
-    $res = $im->getUser(helper::getImUser($access_data['uid']));
+    $owner = $access_data['phone'];
+
     //用户不存在则先创建用户
-    if (isset($res['error']) && $res['error'] == 'service_resource_not_found') {
-        if (add_user($owner, '66666666', $access_data['phone'], $access_data['uid'])) {
+    if (!has_user($owner, $access_data['uid'], '')) {
+        if (!add_user($owner, substr($owner, -8), $access_data['uid'])) {
             helper::json('false', '创建群组失败！');
         }
     }
@@ -109,6 +109,11 @@ function action_add_group($db, $ecs)
     helper::json('false', '创建群组失败');
 }
 
+/**
+ * 查找用户
+ * @param $db
+ * @param $ecs
+ */
 function action_find_user($db, $ecs)
 {
     $access_token = helper::post('access_token');
@@ -121,19 +126,43 @@ function action_find_user($db, $ecs)
         helper::json('false', '用户名称不能为空');
     }
 
-    $im = Easemob::getInstance();
-
-    $res = $im->getUser($username);
-    if (isset($res['error'])) {
+    if (!has_user($username, $access_data['uid'], '')) {
         helper::json('false', '用户不存在');
     }
 
-    helper::json('true');
+    helper::json('true', '', $username);
 }
 
-function action_group_list()
+/**
+ * 获取指定用户的群组列表
+ * @param $db
+ * @param $ecs
+ */
+function action_group_list($db, $ecs)
 {
+    $access_token = helper::post('access_token');
+    $access_data = helper::get_cache($access_token);
 
+    if (empty($access_data)) {
+        helper::json('false', '登录超时，请重新登录');
+    }
+
+    $im = Easemob::getInstance();
+
+    $data = $im->getGroupsForUser($access_data['phone']);
+
+    if (!empty($data['error']) && $data['error'] == 'resource_not_found') {
+        $list = [];
+    }
+
+    foreach ($data['data'] as $item) {
+        $list[] = array(
+            'group_id' => $item['groupid'],
+            'group_name' => $item['groupname'],
+        );
+    }
+
+    helper::json('true', '', $list);
 }
 
 /**
@@ -144,7 +173,7 @@ function action_group_list()
  * @param $uid
  * @return bool
  */
-function add_user($username, $password, $nickname, $uid)
+function add_user($username, $password, $uid, $nickname = '')
 {
     $im = Easemob::getInstance();
 
@@ -162,14 +191,34 @@ function add_user($username, $password, $nickname, $uid)
         'time_created' => time(),
         'time_updated' => time(),
     );
-    if ($GLOBALS['db']->autoExecute($GLOBALS['ecs']->table('im_group'), $im_user, 'INSERT')) {
+
+    if ($GLOBALS['db']->autoExecute($GLOBALS['ecs']->table('im_user'), $im_user, 'INSERT')) {
         return true;
     }
 
     return false;
 }
 
-function has_user($nickname)
+/**
+ * 检查用户是否存在
+ * @param $username
+ * @param $uid
+ * @param $nickname
+ * @return bool
+ */
+function has_user($username, $uid, $nickname)
 {
+    $im = Easemob::getInstance();
+    $res = $im->getUser($username);
 
+    if (isset($res['error']) && $res['error'] == 'service_resource_not_found') {
+        return false;
+    }
+
+    $user = $GLOBALS['db']->getOne("SELECT username FROM ".$GLOBALS['ecs']->table('im_user')." WHERE username='{$username}'");
+    if (empty($user)) {
+        add_user($username, substr($username, -8), $uid, $nickname);
+    }
+
+    return true;
 }

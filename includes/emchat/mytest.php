@@ -9,7 +9,7 @@
 <div id="container">
 	<pre id="content">
 <?php
-include "Easemob.class.php";
+include "Easemob.php";
 
 $h=Easemob::getInstance();
 var_dump($h->getGroups());exit;
