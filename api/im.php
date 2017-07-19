@@ -110,6 +110,28 @@ function action_add_group($db, $ecs)
     helper::json('false', '创建群组失败');
 }
 
+function action_find_user()
+{
+    $access_token = helper::post('access_token');
+    $group_name = helper::post('group_name');
+    $desc = helper::post('desc');
+    $private = helper::post('private', 0, 'intval');
+    $invite = helper::post('invite', 1, 'intval');
+    $access_data = helper::get_cache($access_token);
+
+    if (empty($access_data)) {
+        helper::json('false', '登录超时，请重新登录');
+    } elseif (empty($group_name)) {
+        helper::json('false', '群组名称不能为空');
+    } elseif (empty($desc)) {
+        helper::json('false', '群组简介不能为空');
+    } elseif (mb_strlen($group_name) > 20) {
+        helper::json('false', '群组名称不能超过20个字符');
+    } elseif (mb_strlen($desc) > 128) {
+        helper::json('false', '群组描述不能超过128个字符');
+    }
+}
+
 function action_group_list()
 {
 

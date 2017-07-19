@@ -35,6 +35,11 @@ function action_register()
 
     $record = get_validate_record($phone);
 
+    $sql = "SELECT user_id FROM " . $GLOBALS['ecs']->table('users') . " WHERE mobile_phone='".$phone."'";
+    if ($GLOBALS['db']->getOne($sql)) {
+        helper::json('false', '该手机已注册');
+    }
+
     /* 手机验证码检查 */
     if(empty($code))
     {
@@ -99,7 +104,7 @@ function action_login()
     }
 
     $data = array(
-        'access_token' => helper::gen_access_token($row['user_id'], 86400 * 7)
+        'access_token' => helper::gen_access_token($row['user_id'], $phone, 86400 * 7)
     );
 
     helper::json('true', '登录成功', $data);

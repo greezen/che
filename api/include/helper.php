@@ -301,9 +301,4 @@ class helper
     {
         return 'http://'.$_SERVER['HTTP_HOST'].'/';
     }
-
-    public static function getImUser($id)
-    {
-        return 'che_' . $id;
-    }
 }
