@@ -153,13 +153,13 @@ function action_group_list($db, $ecs)
 
     if (!empty($data['error']) && $data['error'] == 'resource_not_found') {
         $list = [];
-    }
-
-    foreach ($data['data'] as $item) {
-        $list[] = array(
-            'group_id' => $item['groupid'],
-            'group_name' => $item['groupname'],
-        );
+    } else {
+        foreach ($data['data'] as $item) {
+            $list[] = array(
+                'group_id' => $item['groupid'],
+                'group_name' => $item['groupname'],
+            );
+        }
     }
 
     helper::json('true', '', $list);
