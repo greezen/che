@@ -119,6 +119,75 @@ if ($_REQUEST['act'] == 'list' || $_REQUEST['act'] == 'trash')
     $smarty->display($htm_file);
 }
 
+elseif ($_REQUEST['act'] == 'car_list')
+{
+    admin_priv('goods_manage');
+
+    $cat_id = empty($_REQUEST['cat_id']) ? 0 : intval($_REQUEST['cat_id']);
+    $code   = empty($_REQUEST['extension_code']) ? '' : trim($_REQUEST['extension_code']);
+    $suppliers_id = isset($_REQUEST['suppliers_id']) ? (empty($_REQUEST['suppliers_id']) ? '' : trim($_REQUEST['suppliers_id'])) : '';
+    $is_on_sale = isset($_REQUEST['is_on_sale']) ? ((empty($_REQUEST['is_on_sale']) && $_REQUEST['is_on_sale'] === 0) ? '' : trim($_REQUEST['is_on_sale'])) : '';
+    $handler_list = array();
+    $handler_list['virtual_card'][] = array('url'=>'virtual_card.php?act=card', 'title'=>$_LANG['card'], 'img'=>'icon_send_bonus.gif');
+    $handler_list['virtual_card'][] = array('url'=>'virtual_card.php?act=replenish', 'title'=>$_LANG['replenish'], 'img'=>'icon_add.gif');
+    $handler_list['virtual_card'][] = array('url'=>'virtual_card.php?act=batch_card_add', 'title'=>$_LANG['batch_card_add'], 'img'=>'icon_output.gif');
+
+    if ($_REQUEST['act'] == 'car_list' && isset($handler_list[$code]))
+    {
+        $smarty->assign('add_handler',      $handler_list[$code]);
+    }
+
+    /* 供货商名 */
+    $suppliers_list_name = suppliers_list_name();
+    $suppliers_exists = 0;
+    $smarty->assign('is_on_sale', $is_on_sale);
+    $smarty->assign('suppliers_id', $suppliers_id);
+    $smarty->assign('suppliers_list_name', $suppliers_list_name);
+    unset($suppliers_list_name, $suppliers_exists);
+
+
+    // 入驻商商品列表不显示添加新商品
+    $action_link = ($_REQUEST['act'] == 'car_list') ? add_link($code) : array('href' => 'goods.php?act=car_list', 'text' => $_LANG['01_goods_list']);
+    $smarty->assign('action_link',  $action_link);
+
+
+    /* 模板赋值 */
+    $goods_ur = array('' => $_LANG['01_goods_list'], 'virtual_card'=>$_LANG['50_virtual_card_list']);
+    $ur_here = ($_REQUEST['act'] == 'list') ? $goods_ur[$code] : $_LANG['11_goods_trash'];
+    $smarty->assign('ur_here', $ur_here);
+
+    $smarty->assign('code',     $code);
+    $smarty->assign('cat_list',     cat_list(0, $cat_id));
+    $smarty->assign('brand_list',   get_brand_list());
+    $smarty->assign('intro_list',   get_intro_list());
+    $smarty->assign('lang',         $_LANG);
+    $smarty->assign('list_type',    'goods');
+    $smarty->assign('use_storage',  empty($_CFG['use_storage']) ? 0 : 1);
+
+    $suppliers_list = suppliers_list_info(' is_check = 1 ');
+    $suppliers_list_count = count($suppliers_list);
+    $smarty->assign('suppliers_list', ($suppliers_list_count == 0 ? 0 : $suppliers_list)); // 取供货商列表
+
+    $goods_list = goods_list($_REQUEST['act'] == 'car_list' ? 0 : 1, ($_REQUEST['act'] == 'car_list') ? (($code == '') ? 1 : 0) : -1);
+    $smarty->assign('goods_list',   $goods_list['goods']);
+    $smarty->assign('filter',       $goods_list['filter']);
+    $smarty->assign('record_count', $goods_list['record_count']);
+    $smarty->assign('page_count',   $goods_list['page_count']);
+    $smarty->assign('full_page',    1);
+
+    /* 排序标记 */
+    $sort_flag  = sort_flag($goods_list['filter']);
+    $smarty->assign($sort_flag['tag'], $sort_flag['img']);
+
+    /* 获取商品类型存在规格的类型 */
+    $specifications = get_goods_type_specifications();
+    $smarty->assign('specifications', $specifications);
+
+    /* 显示商品列表页面 */
+    assign_query_info();
+    $htm_file = 'goods_car_list.htm';
+    $smarty->display($htm_file);
+}
 /*------------------------------------------------------ */
 //-- 添加新商品 编辑商品
 /*------------------------------------------------------ */

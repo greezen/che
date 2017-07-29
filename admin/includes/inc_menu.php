@@ -17,7 +17,8 @@ if(! defined('IN_ECS'))
 	die('Hacking attempt');
 }
 
-$modules['02_cat_and_goods']['01_goods_list'] = 'goods.php?act=list'; // 商品列表
+//$modules['02_cat_and_goods']['01_goods_list'] = 'goods.php?act=list'; // 商品列表
+$modules['02_cat_and_goods']['01_goods_list'] = 'goods.php?act=car_list'; // 商品列表
 $modules['02_cat_and_goods']['02_supplier_goods_list'] = 'goods.php?act=list&supp=1'; // 供货商商品列表
 $modules['02_cat_and_goods']['03_goods_add'] = 'goods.php?act=add'; // 添加商品
 $modules['02_cat_and_goods']['04_category_list'] = 'category.php?act=list';
