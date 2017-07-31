@@ -1019,6 +1019,71 @@ function goods_list($is_delete, $real_goods=1, $conditions = '')
     return array('goods' => $row, 'filter' => $filter, 'page_count' => $filter['page_count'], 'record_count' => $filter['record_count']);
 }
 
+function goods_car_list($is_delete, $real_goods = 1, $conditions = '')
+{
+    /* 过滤条件 */
+    $param_str = '-' . $is_delete . '-' . $real_goods;
+    $result = get_filter($param_str);
+    if ($result === false) {
+        $day = getdate();
+        /* 代码修改 By  www.68ecshop.com 促销商品时间精确到时分 Start */
+//        $today = local_mktime(23, 59, 59, $day['mon'], $day['mday'], $day['year']);
+        $today = local_mktime($day['hours'], $day['minutes'], 59, $day['mon'], $day['mday'], $day['year']);
+        /* 代码修改 By  www.68ecshop.com 促销商品时间精确到时分 End */
+
+        $filter['cat_id'] = empty($_REQUEST['cat_id']) ? 0 : intval($_REQUEST['cat_id']);
+
+        $where = $filter['cat_id'] > 0 ? " AND " . get_children($filter['cat_id']) : ' 1=1 ';
+
+
+        /* 库存警告 */
+        if ($filter['stock_warning']) {
+            $where .= ' AND goods_number <= warn_number ';
+        }
+
+        $where .= $conditions;
+
+        /* 记录总数 */
+        $sql = "SELECT COUNT(*) FROM " . $GLOBALS['ecs']->table('goods_car') . " AS g WHERE $where";
+
+        $filter['record_count'] = $GLOBALS['db']->getOne($sql);
+
+        /* 分页大小 */
+        $filter = page_and_size($filter);
+
+
+        $sql = "SELECT * " .
+            " FROM " . $GLOBALS['ecs']->table('goods_car') . " AS g WHERE $where" .
+            //" ORDER BY {$filter['sort_by']} {$filter['sort_order']} ".
+            " LIMIT " . $filter['start'] . ",{$filter['page_size']}";
+
+        $filter['keyword'] = stripslashes($filter['keyword']);
+        set_filter($filter, $sql, $param_str);
+    } else {
+        $sql = $result['sql'];
+        $filter = $result['filter'];
+    }
+    $row = $GLOBALS['db']->getAll($sql);
+
+    /* 代码增加 By  www.68ecshop.com Start */
+    $sql_fav = "SELECT gift FROM " . $GLOBALS['ecs']->table('favourable_activity') . " WHERE act_type = 0";
+    $rs_fav = $GLOBALS['db']->getCol($sql_fav);
+    $vals = array();
+    foreach ($rs_fav as $fav_val) {
+        $old_vals = unserialize($fav_val);
+        foreach ($old_vals as $old_val) {
+            $vals[] = $old_val['id'];
+        }
+    }
+
+    return array(
+        'goods' => $row,
+        'filter' => $filter,
+        'page_count' => $filter['page_count'],
+        'record_count' => $filter['record_count']
+    );
+}
+
 /**
  * 获得虚拟商品列表
  * @param type $is_delete

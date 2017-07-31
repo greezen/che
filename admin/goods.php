@@ -132,20 +132,6 @@ elseif ($_REQUEST['act'] == 'car_list')
     $handler_list['virtual_card'][] = array('url'=>'virtual_card.php?act=replenish', 'title'=>$_LANG['replenish'], 'img'=>'icon_add.gif');
     $handler_list['virtual_card'][] = array('url'=>'virtual_card.php?act=batch_card_add', 'title'=>$_LANG['batch_card_add'], 'img'=>'icon_output.gif');
 
-    if ($_REQUEST['act'] == 'car_list' && isset($handler_list[$code]))
-    {
-        $smarty->assign('add_handler',      $handler_list[$code]);
-    }
-
-    /* 供货商名 */
-    $suppliers_list_name = suppliers_list_name();
-    $suppliers_exists = 0;
-    $smarty->assign('is_on_sale', $is_on_sale);
-    $smarty->assign('suppliers_id', $suppliers_id);
-    $smarty->assign('suppliers_list_name', $suppliers_list_name);
-    unset($suppliers_list_name, $suppliers_exists);
-
-
     // 入驻商商品列表不显示添加新商品
     $action_link = ($_REQUEST['act'] == 'car_list') ? add_link($code) : array('href' => 'goods.php?act=car_list', 'text' => $_LANG['01_goods_list']);
     $smarty->assign('action_link',  $action_link);
@@ -153,7 +139,7 @@ elseif ($_REQUEST['act'] == 'car_list')
 
     /* 模板赋值 */
     $goods_ur = array('' => $_LANG['01_goods_list'], 'virtual_card'=>$_LANG['50_virtual_card_list']);
-    $ur_here = ($_REQUEST['act'] == 'list') ? $goods_ur[$code] : $_LANG['11_goods_trash'];
+    $ur_here = $goods_ur[$code];
     $smarty->assign('ur_here', $ur_here);
 
     $smarty->assign('code',     $code);
@@ -164,11 +150,7 @@ elseif ($_REQUEST['act'] == 'car_list')
     $smarty->assign('list_type',    'goods');
     $smarty->assign('use_storage',  empty($_CFG['use_storage']) ? 0 : 1);
 
-    $suppliers_list = suppliers_list_info(' is_check = 1 ');
-    $suppliers_list_count = count($suppliers_list);
-    $smarty->assign('suppliers_list', ($suppliers_list_count == 0 ? 0 : $suppliers_list)); // 取供货商列表
-
-    $goods_list = goods_list($_REQUEST['act'] == 'car_list' ? 0 : 1, ($_REQUEST['act'] == 'car_list') ? (($code == '') ? 1 : 0) : -1);
+    $goods_list = goods_car_list(0, 1);
     $smarty->assign('goods_list',   $goods_list['goods']);
     $smarty->assign('filter',       $goods_list['filter']);
     $smarty->assign('record_count', $goods_list['record_count']);
