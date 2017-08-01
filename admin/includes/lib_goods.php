@@ -1026,20 +1026,12 @@ function goods_car_list($is_delete, $real_goods = 1, $conditions = '')
     $result = get_filter($param_str);
     if ($result === false) {
         $day = getdate();
-        /* 代码修改 By  www.68ecshop.com 促销商品时间精确到时分 Start */
-//        $today = local_mktime(23, 59, 59, $day['mon'], $day['mday'], $day['year']);
-        $today = local_mktime($day['hours'], $day['minutes'], 59, $day['mon'], $day['mday'], $day['year']);
-        /* 代码修改 By  www.68ecshop.com 促销商品时间精确到时分 End */
 
         $filter['cat_id'] = empty($_REQUEST['cat_id']) ? 0 : intval($_REQUEST['cat_id']);
+        $filter['sort_by'] = empty($_REQUEST['sort_by']) ? 'id' : trim($_REQUEST['sort_by']);
+        $filter['sort_order'] = empty($_REQUEST['sort_order']) ? 'DESC' : trim($_REQUEST['sort_order']);
 
         $where = $filter['cat_id'] > 0 ? " AND " . get_children($filter['cat_id']) : ' 1=1 ';
-
-
-        /* 库存警告 */
-        if ($filter['stock_warning']) {
-            $where .= ' AND goods_number <= warn_number ';
-        }
 
         $where .= $conditions;
 
@@ -1053,8 +1045,8 @@ function goods_car_list($is_delete, $real_goods = 1, $conditions = '')
 
 
         $sql = "SELECT * " .
-            " FROM " . $GLOBALS['ecs']->table('goods_car') . " AS g WHERE $where" .
-            //" ORDER BY {$filter['sort_by']} {$filter['sort_order']} ".
+            " FROM " . $GLOBALS['ecs']->table('goods_car') . " AS g WHERE is_delete='0' AND $where" .
+            " ORDER BY {$filter['sort_by']} {$filter['sort_order']} " .
             " LIMIT " . $filter['start'] . ",{$filter['page_size']}";
 
         $filter['keyword'] = stripslashes($filter['keyword']);
@@ -1065,15 +1057,9 @@ function goods_car_list($is_delete, $real_goods = 1, $conditions = '')
     }
     $row = $GLOBALS['db']->getAll($sql);
 
-    /* 代码增加 By  www.68ecshop.com Start */
-    $sql_fav = "SELECT gift FROM " . $GLOBALS['ecs']->table('favourable_activity') . " WHERE act_type = 0";
-    $rs_fav = $GLOBALS['db']->getCol($sql_fav);
-    $vals = array();
-    foreach ($rs_fav as $fav_val) {
-        $old_vals = unserialize($fav_val);
-        foreach ($old_vals as $old_val) {
-            $vals[] = $old_val['id'];
-        }
+    foreach ($row as &$item) {
+        $item['cat_name'] = $GLOBALS['db']->getOne("SELECT cat_name FROM " . $GLOBALS['ecs']->table('category') . " WHERE cat_id=" . $item['cat_id']);
+        $item['provice'] = $GLOBALS['db']->getOne("SELECT region_name FROM " . $GLOBALS['ecs']->table('region') . " WHERE region_id=" . $item['province_id']);
     }
 
     return array(

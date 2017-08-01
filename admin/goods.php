@@ -2105,9 +2105,9 @@ elseif ($_REQUEST['act'] == 'query')
 		$smarty->assign('supplier_status_list', $supplier_status_list);
 		/* 代码增加_end  By www.68ecshop.com */
     }
-    
-    
-    $goods_list = goods_list($is_delete, ($code=='') ? 1 : 0);
+
+
+    $goods_list = goods_car_list($is_delete, ($code == '') ? 1 : 0);
 
     $handler_list = array();
     $handler_list['virtual_card'][] = array('url'=>'virtual_card.php?act=card', 'title'=>$_LANG['card'], 'img'=>'icon_send_bonus.gif');
@@ -2134,7 +2134,7 @@ elseif ($_REQUEST['act'] == 'query')
     $specifications = get_goods_type_specifications();
     $smarty->assign('specifications', $specifications);
 
-    $tpl = $is_delete ? 'goods_trash.htm' : 'goods_list.htm';
+    $tpl = $is_delete ? 'goods_trash.htm' : 'goods_car_list.htm';
 
     make_json_result($smarty->fetch($tpl), '',
         array('filter' => $goods_list['filter'], 'page_count' => $goods_list['page_count']));
@@ -2212,6 +2212,24 @@ elseif ($_REQUEST['act'] == 'remove')
         admin_log(addslashes($goods_name), 'trash', 'goods'); // 记录日志
 
         $url = 'goods.php?act=query&' . str_replace('act=remove', '', $_SERVER['QUERY_STRING']);
+
+        ecs_header("Location: $url\n");
+        exit;
+    }
+} elseif ($_REQUEST['act'] == 'rm') {
+    $goods_id = intval($_REQUEST['id']);
+
+    /* 检查权限 */
+    check_authz_json('remove_back');
+
+    $exc = new exchange($ecs->table('goods_car'), $db, 'id', 'id');
+    if ($exc->edit("is_delete = '1'", $goods_id)) {
+        clear_cache_files();
+        $goods_name = $exc->get_name($goods_id);
+
+        admin_log(addslashes($goods_name), 'trash', 'goods'); // 记录日志
+
+        $url = 'goods.php?act=query&' . str_replace('act=rm', '', $_SERVER['QUERY_STRING']);
 
         ecs_header("Location: $url\n");
         exit;
