@@ -261,7 +261,7 @@ function action_certify()
         helper::json('false', '营业执照号不能为空');
     } elseif (empty($contacts_phone)) {
         helper::json('false', '联系人手机号不能为空');
-    } elseif (empty(contacts_name)) {
+    } elseif (empty($contacts_name)) {
         helper::json('false', '联系人姓名不能为空');
     } elseif (empty($settlement_bank_account_name)) {
         helper::json('false', '对公账户名不能为空');
