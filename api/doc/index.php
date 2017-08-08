@@ -93,8 +93,8 @@ $data = require_once realpath(__DIR__ . DIRECTORY_SEPARATOR . 'data.php');
                 </div>
                 <div class="col-md-12">
                     <pre>
-    <strong>正式环境接口域名：</strong>http://diyache.adipower.net:81
-    <strong>测试环境接口域名：</strong>http://diyache.adipower.net
+    <strong>正式环境接口域名：</strong>http://diyache.adipower.net
+    <strong>测试环境接口域名：</strong>http://diyache.adipower.net:81
                     </pre>
                 </div>
             </div>

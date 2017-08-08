@@ -33,6 +33,10 @@ function action_register()
     $password = ! empty($_POST['password']) ? trim($_POST['password']) : '';
     $code = ! empty($_POST['code']) ? trim($_POST['code']) : '';
 
+    if (empty($phone)) {
+        helper::json('false', '手机号不能为空');
+    }
+
     $record = get_validate_record($phone);
 
     $sql = "SELECT user_id FROM " . $GLOBALS['ecs']->table('users') . " WHERE mobile_phone='".$phone."'";
