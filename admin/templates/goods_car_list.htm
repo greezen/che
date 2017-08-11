@@ -5,7 +5,7 @@
 {insert_scripts files="../js/utils.js,listtable.js"}
 
 <!-- 商品搜索 -->
-{include file="goods_search.htm"}
+{include file="goods_car_search.htm"}
 <!-- 商品列表 -->
 <form method="post" action="" name="listForm" onsubmit="return confirmSubmit(this)">
   <!-- start goods list -->
@@ -29,12 +29,11 @@
     <td class="first-cell" style="{if $goods.is_promote}color:red;{/if}"><span>{$goods.cat_name|escape:html}</span>
     </td>
     <td><span>{$goods.phone}</span></td>
-    <td align="right"><span>{$goods.price}
-
-    </span></td>
-    <td align="center"><span>{$goods.sort_order}</span></td>
+    <td align="right"><span>{$goods.price}</span></td>
+    <td align="center"><span>{$goods.province}</span></td>
     <td align="center">
-      <a href="goods.php?act=edit&goods_id={$goods.goods_id}{if $code neq 'real_goods'}&extension_code={$code}{/if}" title="{$lang.edit}"><img src="images/icon_edit.gif" width="16" height="16" border="0" /></a>
+      <a href="goods.php?act=edit_car&goods_id={$goods.goods_id}{if $code neq 'real_goods'}&extension_code={$code}{/if}"
+         title="{$lang.edit}"><img src="images/icon_edit.gif" width="16" height="16" border="0"/></a>
       <a href="javascript:;" onclick="listTable.remove({$goods.id}, '{$lang.trash_goods_confirm}','rm')"
          title="{$lang.trash}"><img src="images/icon_trash.gif" width="16" height="16" border="0"/></a>
     </td>

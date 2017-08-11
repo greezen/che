@@ -1031,7 +1031,8 @@ function goods_car_list($is_delete, $real_goods = 1, $conditions = '')
         $filter['sort_by'] = empty($_REQUEST['sort_by']) ? 'id' : trim($_REQUEST['sort_by']);
         $filter['sort_order'] = empty($_REQUEST['sort_order']) ? 'DESC' : trim($_REQUEST['sort_order']);
 
-        $where = $filter['cat_id'] > 0 ? " AND " . get_children($filter['cat_id']) : ' 1=1 ';
+        $where = ' 1=1 ';
+        $where .= $filter['cat_id'] > 0 ? " AND " . get_children($filter['cat_id']) : ' ';
 
         $where .= $conditions;
 
@@ -1059,7 +1060,7 @@ function goods_car_list($is_delete, $real_goods = 1, $conditions = '')
 
     foreach ($row as &$item) {
         $item['cat_name'] = $GLOBALS['db']->getOne("SELECT cat_name FROM " . $GLOBALS['ecs']->table('category') . " WHERE cat_id=" . $item['cat_id']);
-        $item['provice'] = $GLOBALS['db']->getOne("SELECT region_name FROM " . $GLOBALS['ecs']->table('region') . " WHERE region_id=" . $item['province_id']);
+        $item['province'] = $GLOBALS['db']->getOne("SELECT region_name FROM " . $GLOBALS['ecs']->table('region') . " WHERE region_id=" . $item['province_id']);
     }
 
     return array(
