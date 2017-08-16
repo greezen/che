@@ -41,7 +41,7 @@ function action_category($db, $ecs)
 function action_list($db, $ecs)
 {
     $cat_id = helper::get('cat_id');
-    $page = helper::post('page', 1);
+    $page = helper::get('page', 1);
 
     $limit = 10;
     $offset = ($page - 1) * $limit;
@@ -54,6 +54,7 @@ function action_list($db, $ecs)
             'description',
             'content',
             'add_time',
+            'dig',
         );
         $filed = implode(',', $filed);
         $sql = "SELECT {$filed} FROM ". $ecs->table('article') . " WHERE cat_id=".$cat_id. " ORDER BY add_time DESC limit {$offset},{$limit}";
