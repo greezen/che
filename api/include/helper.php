@@ -14,11 +14,11 @@ class helper
      * @param string $msg
      * @param array $data
      */
-    public static function json($result = 'true', $msg = '', $data = array())
+    public static function json($result = 'true', $msg = '', $data = array(), $option = 0)
     {
         $ret = array('result' => $result, 'msg' => $msg, 'data' => $data);
 
-        exit(json_encode($ret));
+        exit(json_encode($ret, $option));
     }
 
     /**

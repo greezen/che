@@ -99,7 +99,7 @@ function action_detail($db, $ecs)
         }
     }
 
-    helper::json('true', '', $detail);
+    helper::json('true', '', $detail, JSON_UNESCAPED_UNICODE);
 }
 
 /**
