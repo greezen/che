@@ -271,11 +271,12 @@ class helper
         foreach ($list as &$item) {
             $item['logo'] = 'http://' . $_SERVER['HTTP_HOST'] . '/data/category_img/'. $item['logo'];
             $short = GetPinyin($item['name'], true);
+            $item['sort'] = strtoupper($short[0]);
             $ret[strtoupper($short[0])][] = $item;
         }
 
         ksort($ret);
-        return $ret;
+        return array_values($ret);
     }
 
     /**
