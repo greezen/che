@@ -272,11 +272,11 @@ class helper
             $item['logo'] = 'http://' . $_SERVER['HTTP_HOST'] . '/data/category_img/'. $item['logo'];
             $short = GetPinyin($item['name'], true);
             $item['sort'] = strtoupper($short[0]);
-            $ret[strtoupper($short[0])][] = $item;
+            $ret[] = $item;
         }
 
-        ksort($ret);
-        return array_values($ret);
+        //ksort($ret);
+        return $ret;
     }
 
     /**
