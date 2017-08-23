@@ -775,7 +775,7 @@ return array(
     ),
     array(
         'id' => 'v1-0_car_search',
-        'title' => '管理车源',
+        'title' => '查找车源',
         'api' => '/api/car.php?act=search',
         'method' => 'GET',
         'param' =>
