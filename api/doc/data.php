@@ -470,8 +470,8 @@ return array(
     ),
     array(
         'id' => 'v1-0_car_info',
-        'title' => '获取车源信息',
-        'api' => '/api/car.php?act=edit',
+        'title' => '获取车源信息(编辑用)',
+        'api' => '/api/car.php?act=info',
         'method' => 'POST',
         'param' =>
             array(
@@ -576,6 +576,12 @@ return array(
                     'attr' => 'access_token',
                     'type' => 'string',
                     'desc' => 'access_token',
+                    'required' => true,
+                ),
+                array(
+                    'attr' => 'goods_id',
+                    'type' => 'int',
+                    'desc' => '产品id',
                     'required' => true,
                 ),
                 array(
