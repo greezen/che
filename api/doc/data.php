@@ -648,7 +648,7 @@ return array(
                     'attr' => 'img[]',
                     'type' => 'file',
                     'desc' => '商品图片',
-                    'required' => true,
+                    'required' => false,
                 ),
             ),
         'response' => '
