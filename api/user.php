@@ -7,6 +7,8 @@
 
 
 define('IN_ECS', true);
+define('CODE_REGISTER', 'reg');
+define('CODE_FORGET', 'fg');
 
 require('./init.php');
 
@@ -37,7 +39,7 @@ function action_register()
         helper::json('false', '手机号不能为空');
     }
 
-    $record = get_validate_record($phone);
+    $record = get_validate_record(getCodeKey(CODE_REGISTER, $phone));
 
     $sql = "SELECT user_id FROM " . $GLOBALS['ecs']->table('users') . " WHERE mobile_phone='".$phone."'";
     if ($GLOBALS['db']->getOne($sql)) {
@@ -318,7 +320,8 @@ function action_certify()
 function action_code()
 {
     require_once (ROOT_PATH . 'includes/lib_validate_record.php');
-    $phone = empty($_POST['phone'])?null:$_POST['phone'];
+    $phone = helper::post('phone');
+    $type = helper::post('type', 'reg');
 
     if (empty($phone)){
         helper::json('false', '手机不能为空');
@@ -328,7 +331,11 @@ function action_code()
         $content = '您的验证码为 ' . $code . ' 客服不会索取此验证码，请注意保管。';
 
         if (helper::send_sms($phone, $content)) {
-            save_validate_record($phone, $code, VT_MOBILE_REGISTER, time(), time() + 600);
+            $key = VT_MOBILE_REGISTER;
+            if ($type == CODE_FORGET) {
+                $key = VT_MOBILE_FIND_PWD;
+            }
+            save_validate_record($type . '_' . $phone, $code, $key, time(), time() + 600);
             helper::json('true', '发送成功');
         }
 
@@ -357,7 +364,71 @@ function action_check()
  * 忘记密码
  */
 function action_forget()
-{}
+{
+    require_once(ROOT_PATH . 'includes/lib_validate_record.php');
+    $phone = helper::post('phone');
+    $code = helper::post('code');
+
+    if (empty($phone) || empty($code)) {
+        helper::json('false', '验证码或手机不能为空');
+    }
+
+    $record = get_validate_record(getCodeKey(CODE_FORGET, $phone));
+
+    if ($record['record_code'] != $code) {
+        helper::json('false', '验证码不正确');
+    } // 检查过期时间
+    else if ($record['expired_time'] < time()) {
+        helper::json('false', '验证码已过期');
+    }
+
+    $token = md5($phone . $code . time()) . '/' . $phone;
+
+    helper::set_cache(getCodeKey(CODE_FORGET, $phone), $token, 600);
+
+    helper::json('true', '验证成功', ['token' => $token]);
+}
+
+/**
+ * 重置密码
+ */
+function action_reset()
+{
+    $token = helper::post('token');
+    $password = helper::post('password');
+
+    if (empty($token)) {
+        helper::json('false', '非法操作');
+    } elseif (empty($password) || mb_strlen($password)) {
+        helper::json('false', '密码必须6位以上');
+    }
+
+    list($tmp, $phone) = explode('/', $token, 2);
+
+    $db = $GLOBALS['db'];
+    $user = $GLOBALS['user'];
+
+    $cache = helper::get_cache(getCodeKey(CODE_FORGET, $phone));
+
+    if ($cache != $token) {
+        helper::json('false', '非法操作');
+    }
+
+    $salt = helper::rand_str(8);
+    $new_password = $user->compile_password(array('password' => $password, 'ec_salt' => $salt));
+
+    $sql = "UPDATE " . $GLOBALS['ecs']->table('users') . " SET `password` = '{$new_password}',`ec_salt` = '{$salt}' WHERE mobile_phone = " . $phone;
+    if ($db->query($sql)) {
+        helper::json('true', '密码修改成功');
+    }
+
+    helper::json('false', '密码修改失败');
+}
+
+function getCodeKey($type, $phone)
+{
+    return $type . '_' . $phone;
+}
 
 /**
  * 根据手机号生成用户名
