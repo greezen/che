@@ -60,7 +60,7 @@ return array(
                 array(
                     'attr' => 'type',
                     'type' => 'string',
-                    'desc' => '验证码类型,默认注册（reg=>注册，fg=>忘记密码）',
+                    'desc' => '验证码类型,默认为注册（reg=>注册，fg=>忘记密码）',
                     'required' => false,
                 ),
             ),
