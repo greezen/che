@@ -122,7 +122,7 @@ return array(
                 array(
                     'attr' => 'token',
                     'type' => 'string',
-                    'desc' => 'forget接品中返回的token值',
+                    'desc' => 'forget接口中返回的token值',
                     'required' => true,
                 ),
                 array(
