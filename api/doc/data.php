@@ -57,6 +57,12 @@ return array(
                     'desc' => '手机号',
                     'required' => true,
                 ),
+                array(
+                    'attr' => 'type',
+                    'type' => 'string',
+                    'desc' => '验证码类型,默认注册（reg=>注册，fg=>忘记密码）',
+                    'required' => false,
+                ),
             ),
         'response' => '
         {
@@ -72,6 +78,70 @@ return array(
             "phone" : "15566245598"
         }
                     ',
+    ),
+    array(
+        'id' => 'v1-forget',
+        'title' => '忘记密码，验证码验证',
+        'api' => '/api/user.php?act=forget',
+        'method' => 'POST',
+        'param' =>
+            array(
+                array(
+                    'attr' => 'phone',
+                    'type' => 'string(11)',
+                    'desc' => '手机号',
+                    'required' => true,
+                ),
+                array(
+                    'attr' => 'code',
+                    'type' => 'string',
+                    'desc' => '验证码',
+                    'required' => true,
+                ),
+            ),
+        'response' => '
+        {
+            "result":"true",//失败返回字符串false,msg中是具体的错误和提示信息
+            "msg":"",
+            "data":{
+                "token": "b0da7166c..."//此参数需要在重置密码时用到
+            }
+        }
+
+    ',
+        'remark' => '',
+        'demo' => '',
+    ),
+    array(
+        'id' => 'v1-reset',
+        'title' => '重置密码',
+        'api' => '/api/user.php?act=reset',
+        'method' => 'POST',
+        'param' =>
+            array(
+                array(
+                    'attr' => 'token',
+                    'type' => 'string',
+                    'desc' => 'forget接品中返回的token值',
+                    'required' => true,
+                ),
+                array(
+                    'attr' => 'password',
+                    'type' => 'string',
+                    'desc' => '新密码（长度6位以上）',
+                    'required' => true,
+                ),
+            ),
+        'response' => '
+        {
+            "result":"true",//失败返回字符串false,msg中是具体的错误和提示信息
+            "msg":"",
+            "data":[]
+        }
+
+    ',
+        'remark' => '',
+        'demo' => '',
     ),
     array(
         'id' => 'v1-0_check',
