@@ -615,7 +615,8 @@ function getTitle($cat_id)
         $arr[] = $row['cat_name'];
         getTitle($row['parent_id']);
     }
-    return implode(' ', array_reverse($arr));
+
+    return implode(' ', array_reverse(array_unique($arr)));
 }
 
 /**
