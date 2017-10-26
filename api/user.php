@@ -384,6 +384,7 @@ function action_forget()
 
     $token = md5($phone . $code . time()) . '/' . $phone;
 
+    helper::del_cache(getCodeKey(CODE_FORGET, $phone));
     helper::set_cache(getCodeKey(CODE_FORGET, $phone), $token, 600);
 
     helper::json('true', '验证成功', ['token' => $token]);
@@ -399,7 +400,7 @@ function action_reset()
 
     if (empty($token)) {
         helper::json('false', '非法操作');
-    } elseif (empty($password) || mb_strlen($password)) {
+    } elseif (empty($password) || mb_strlen($password) < 6) {
         helper::json('false', '密码必须6位以上');
     }
 
@@ -419,6 +420,7 @@ function action_reset()
 
     $sql = "UPDATE " . $GLOBALS['ecs']->table('users') . " SET `password` = '{$new_password}',`ec_salt` = '{$salt}' WHERE mobile_phone = " . $phone;
     if ($db->query($sql)) {
+        helper::del_cache(getCodeKey(CODE_FORGET, $phone));
         helper::json('true', '密码修改成功');
     }
 
