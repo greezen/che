@@ -271,7 +271,7 @@ function action_edit($db, $ecs)
 
     $goods_car_id = $goods_id;
 
-    if ($flow) {
+    if ($flow && $img) {
         $_CFG = $GLOBALS['_CFG'];
         include_once(ROOT_PATH . '/includes/cls_image.php');
         require_once(ROOT_PATH . '/' . ADMIN_PATH . '/includes/lib_goods.php');
