@@ -424,6 +424,7 @@ function action_search($db, $ecs)
     $pub_date = helper::get('pub_date', 0, 'intval');
     $register_time = helper::get('register_time', 0, 'intval');
     $miles = helper::get('miles', 0, 'intval');
+    $page = helper::get('page', 1, 'intval');
 
     //车辆品牌名
     if (!empty($cat_name)) {
@@ -517,10 +518,14 @@ function action_search($db, $ecs)
         }
     }
 
+    $pageSize = 10;
+    $offset = ($page - 1) * $pageSize;
+    $limit = " LIMIT {$offset},{$pageSize} ";
+
     $condition = rtrim($condition, 'AND ');
 
     $sql = "SELECT id goods_id,cat_id,register_time,miles,price,view_count,city_id city FROM ".
-        $ecs->table('goods_car') . $condition . $order;
+        $ecs->table('goods_car') . $condition . $order . $limit;
 
     $list = $db->getAll($sql);
 

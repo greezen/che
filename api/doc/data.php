@@ -904,6 +904,12 @@ return array(
                     'desc' => '行驶里程(0=>1万以内,1=>1-5万,2=>5-10万,3=>10万以上)',
                     'required' => false,
                 ),
+                array(
+                    'attr' => 'page',
+                    'type' => 'int',
+                    'desc' => '页码，默认第一页',
+                    'required' => false,
+                ),
             ),
         'response' => '
         {
